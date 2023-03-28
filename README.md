@@ -1,2 +1,2 @@
 # trabalhoTP1
-Repositório do primeiro trabalho de TP1.
+Repositório dos trabalhos de TP1.
