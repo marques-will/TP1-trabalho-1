@@ -1,3 +1,2 @@
 #include <iostream>
-
-cout << "aeiou yyyyyyyyyyyyyy" << endl;
+cout << "aeiou yyyyy" << endl;
