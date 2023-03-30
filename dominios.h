@@ -1,3 +1,6 @@
+#ifndef DOMINIOS_H_INCLUDED
+#define DOMINIOS_H_INCLUDED
+
 #include <stdexcept>
 using namespace std;
 // CLASSE MATRICULA
@@ -125,3 +128,5 @@ void texto::set_texto(string texto) {
 string texto::get_texto() {
     return texto;
 };
+
+#endif
