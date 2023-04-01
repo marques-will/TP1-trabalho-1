@@ -9,11 +9,11 @@ using namespace std;
 class matricula {
    private:
     int matricula;
+    void validar_matricula(int matricula);
 
    public:
     void set_matricula(int matricula);
     int get_matricula();
-    void validar_matricula(int matricula);
 };
 
 // CLASSE SENHA
@@ -72,7 +72,12 @@ class classe {
 // CLASSE DATA
 class data {
    private:
+    string data;
+
    public:
+    void set_data(string data);
+    string get_data();
+    void validar_data(string data);
 };
 
 // CLASSE TEXTO

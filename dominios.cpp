@@ -1,7 +1,10 @@
 #include "dominios.h"
 
-#include <cctype>
+#include <ctype.h>
+
+#include <algorithm>
 #include <iostream>
+#include <vector>
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
 void matricula::set_matricula(int matricula) {
@@ -14,8 +17,8 @@ int matricula::get_matricula() {
 
 void matricula::validar_matricula(int matricula) {
     string str = to_string(matricula);
-    int tamanho = str.length();
-    // if (tamanho <= 0)
+    int tam = str.length();
+    // if (tam <= 0)
 }
 
 // IMPLEMENTAÇÃO DO TELEFONE
@@ -27,8 +30,8 @@ int telefone::get_telefone() {
 }
 void telefone::validar_telefone(int telefone) {
     string str = to_string(telefone);
-    int tamanho = str.length();
-    if (tamanho >= 7 && tamanho <= 15) {
+    int tam = str.length();
+    if (tam >= 7 && tam <= 15) {
         continue;
     } else {
         throw invalid_argument("Telefone inválido");
@@ -44,9 +47,17 @@ string senha::get_senha() {
 }
 
 // IMPLEMENTAÇÃO DO CÓDIGO
+void codigo::set_codigo(string codigo) {
+    this->codigo = codigo;
+}
+
+string codigo::get_codigo() {
+    return codigo;
+}
+
 void codigo::validar_codigo(string codigo) {
-    int tamanho = codigo.length();
-    if (tamanho < 6) {
+    int tam = codigo.length();
+    if (tam != 6) {
         throw invalid_argument("Código Inválido");
     }
     for (int i = 0; i < 3; i++) {
@@ -60,12 +71,6 @@ void codigo::validar_codigo(string codigo) {
         }
     }
 }
-void codigo::set_codigo(string codigo) {
-    this->codigo = codigo;
-}
-string codigo::get_codigo() {
-    return codigo;
-}
 
 // IMPLEMENTAÇÃO DA DATA
 void data::set_data(string data) {
@@ -76,7 +81,19 @@ string data::get_data() {
     return data;
 }
 
-void data::validar_data();
+void data::validar_data(string data) {
+    int tam = data.length();
+    int dia, ano;
+    string mes;
+    int cnt = 0;
+    for (int i = 0; i < tam; i++) {
+        if (data[i] == '/')
+            cnt++;
+    }
+    if (cnt != 2) {
+        throw invalid_argument("Data Inválida");
+    }
+};
 
 // IMPLEMENTAÇÃO DO TEXTO
 void texto::set_texto(string texto) {
