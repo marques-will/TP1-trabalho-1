@@ -8,12 +8,18 @@
 
 // FUNÇÕES AUXILIARES
 template <typename T>
+
 bool inVector(const T& elemento, const vector<T>& vetor) {
     auto encontrado = find(vetor.begin(), vetor.end(), elemento);  // itera no vetor comparando cada elemento com str
     return encontrado != vetor.end();
 }
 
-
+void toupper(string& str) {
+    for (int i = 0; i < str.length(); i++) {
+        if (isalpha(str[i]))
+            str[i] = toupper(str[i]);
+    }
+};
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
 void matricula::set_matricula(int matricula) {
@@ -113,17 +119,21 @@ void data::validar_data(string data) {
     }
 
     vector<string> partes = extrair_data(data);
-    string sdia = partes[0];
-    string smes = partes[1];
-    string sano = partes[2];
+    string str_dia = partes[0];
+    string mes = partes[1];
+    string str_ano = partes[2];
 
     try {
-        int dia = stoi(sdia);
-        int ano = stoi(sano);
+        int dia = stoi(str_dia);
+        int ano = stoi(str_ano);
+        toupper(mes);
 
         if (ano < 2000 || ano > 2999)
             throw invalid_argument("Data Inválida.");
 
+        if (!inVector(mes, meses)) {
+            throw invalid_argument("Data Inválida.");
+        }
     } catch (invalid_argument& ex) {
         throw invalid_argument("Data Inválida.");
     }
