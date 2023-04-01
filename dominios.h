@@ -83,5 +83,5 @@ class texto {
    public:
     void set_texto(string texto);
     string get_texto();
-}
+};
 #endif
