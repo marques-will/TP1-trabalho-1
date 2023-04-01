@@ -9,6 +9,7 @@ using namespace std;
 // CLASSE MATRICULA
 class matricula {
    private:
+    int matricula;
     bool validar_matricula(int num_matricula);
 
    public:
