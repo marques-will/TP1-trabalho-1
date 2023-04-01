@@ -4,10 +4,10 @@
 #include "dominios.h"
 class dev{
     private:
-        matricula matricula;
-        texto nome;
-        senha senha;
-        telefone telefone;
+        // matricula matricula;
+        // texto nome;
+        // senha senha;
+        // telefone telefone;
 
     public:
 };
