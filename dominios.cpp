@@ -1,3 +1,4 @@
+// BIBLIOTECAS
 #include "dominios.h"
 
 #include <algorithm>
@@ -5,6 +6,11 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+
+// CONSTANTES
+const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const string sinais_pontuacao = ".,;?!:-@#$%&";
+const string caracteres_validos = letras_digitos + sinais_pontuacao;
 
 // FUNÇÕES AUXILIARES
 template <typename T>
@@ -39,10 +45,9 @@ void matricula::validar_matricula(int matricula) {
     string str = to_string(matricula);
     int tam = str.size();
 
-    if (tam != 7){
+    if (tam != 7) {
         throw invalid_argument("Matrícula inválida");
     }
-
 }
 
 // IMPLEMENTAÇÃO DO TELEFONE
@@ -54,9 +59,15 @@ int telefone::get_telefone() {
 }
 void telefone::validar_telefone(int telefone) {
     string str = to_string(telefone);
+
     int tam = str.size();
-    if (tam != 7 || tam != 15) {
-        throw invalid_argument("Telefone inválido");
+    if (tam != 8 || tam != 16) {
+        throw invalid_argument("O telefone deve conter o sinal de \"+\" seguido de 7 ou 15 dígitos.");
+    }
+
+    for (int i = 0; i < tam; i++) {
+        if (!(isdigit(str[i])))
+            throw invalid_argument("Telefone inválido");
     }
 }
 
@@ -80,16 +91,16 @@ string codigo::get_codigo() {
 void codigo::validar_codigo(string codigo) {
     int tam = codigo.size();
     if (tam != 6) {
-        throw invalid_argument("Código Inválido");
+        throw invalid_argument("Código deve conter 6 caracteres.");
     }
     for (int i = 0; i < 3; i++) {
         if (!isalpha(codigo[i])) {
-            throw invalid_argument("Código Inválido");
+            throw invalid_argument("Os três primeiros caracteres devem ser letras.");
         }
     }
     for (int i = 4; i < 6; i++) {
         if (!isdigit(codigo[i])) {
-            throw invalid_argument("Código Inválido");
+            throw invalid_argument("Os três últimos caracteres devem ser números.");
         }
     }
 }
@@ -141,7 +152,7 @@ void data::validar_data(string data) {
     }
 
     if (cnt != 2)
-        throw invalid_argument("Data Inválida");
+        throw invalid_argument("Data inválida.");
 
     vector<string> partes = extrair_data(data);
     string str_dia = partes[0];
@@ -154,10 +165,10 @@ void data::validar_data(string data) {
         toupper(mes);
 
         if (ano < 2000 || ano > 2999)
-            throw invalid_argument("Data Inválida.");
+            throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
 
         if (!inVector(mes, meses)) {
-            throw invalid_argument("Data Inválida.");
+            throw invalid_argument("Mês inválido.");
         }
 
         if (mes == "FEV") {
@@ -174,7 +185,7 @@ void data::validar_data(string data) {
         }
 
         if (!(dia > 0 && dia < dias[pos]))
-            throw invalid_argument("Data Inválida.");
+            throw invalid_argument("Número de dias inválido.");
 
     } catch (invalid_argument& ex) {
         throw invalid_argument("Data Inválida.");
@@ -190,7 +201,11 @@ string texto::get_texto() {
     return texto;
 }
 
-void texto::validar_texto(const string& texto){
-    if (!(texto.size() > 10 && texto.size() < 20))
-        throw invalid_argument("Texto inválido");
+void texto::validar_texto(const string& texto) {
+    if (texto.size() < 10 || texto.size() > 20)
+        throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
+    for (auto ch : texto) {
+        if (caracteres_validos.find(ch) == -1 || ch == ' ')
+            throw invalid_argument("Texto contém caractere(s) inválido(s).");
+    }
 }
