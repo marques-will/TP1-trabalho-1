@@ -29,6 +29,7 @@ void toupper(string& str) {
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
 void matricula::set_matricula(int nova_matricula) {
+    validar_matricula(nova_matricula);
     this->matricula = nova_matricula;
 }
 
