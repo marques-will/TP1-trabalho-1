@@ -37,8 +37,12 @@ int matricula::get_matricula() {
 
 void matricula::validar_matricula(int matricula) {
     string str = to_string(matricula);
-    int tam = str.length();
-    // if (tam <= 0)
+    int tam = str.size();
+
+    if (tam != 7){
+        throw invalid_argument("Matrícula inválida");
+    }
+
 }
 
 // IMPLEMENTAÇÃO DO TELEFONE
@@ -50,7 +54,7 @@ int telefone::get_telefone() {
 }
 void telefone::validar_telefone(int telefone) {
     string str = to_string(telefone);
-    int tam = str.length();
+    int tam = str.size();
     if (tam != 7 || tam != 15) {
         throw invalid_argument("Telefone inválido");
     }
@@ -74,7 +78,7 @@ string codigo::get_codigo() {
 }
 
 void codigo::validar_codigo(string codigo) {
-    int tam = codigo.length();
+    int tam = codigo.size();
     if (tam != 6) {
         throw invalid_argument("Código Inválido");
     }
@@ -126,7 +130,7 @@ bool ehBissexto(const int& ano) {
 };
 
 void data::validar_data(string data) {
-    int tam = data.length();
+    int tam = data.size();
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int cnt = 0;
@@ -136,9 +140,8 @@ void data::validar_data(string data) {
             cnt++;
     }
 
-    if (cnt != 2) {
+    if (cnt != 2)
         throw invalid_argument("Data Inválida");
-    }
 
     vector<string> partes = extrair_data(data);
     string str_dia = partes[0];
@@ -182,6 +185,12 @@ void data::validar_data(string data) {
 void texto::set_texto(string texto) {
     this->texto = texto;
 }
+
 string texto::get_texto() {
     return texto;
+}
+
+void texto::validar_texto(const string& texto){
+    if (!(texto.size() > 10 && texto.size() < 20))
+        throw invalid_argument("Texto inválido");
 }

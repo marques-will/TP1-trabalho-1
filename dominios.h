@@ -66,6 +66,7 @@ class texto {
    public:
     void set_texto(string texto);
     string get_texto();
+    void validar_texto(const string& texto);
 };
 
 // CLASSE CLASSE
@@ -85,7 +86,5 @@ class data {
     vector<string> extrair_data(const string& data);
     void validar_data(string data);
 };
-
-// CLASSE TEXTO
 
 #endif
