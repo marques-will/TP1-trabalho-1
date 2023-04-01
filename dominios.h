@@ -33,6 +33,7 @@ class telefone {
    private:
     string telefone;
     void validar_telefone(string novo_telefone);
+    void validar_digitoverificador(string novo_telefone);
 
    public:
     void set_telefone(string novo_telefone);
