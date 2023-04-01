@@ -10,33 +10,33 @@ using namespace std;
 class matricula {
    private:
     int matricula;
-
+    bool validar_matricula(int matricula);
    public:
     void set_matricula(int matricula);
     int get_matricula();
-    void validar_matricula(int matricula);
+
 };
 
 // CLASSE SENHA
 class senha {
    private:
     string senha;
-
+    bool validar_senha(string senha);
    public:
     void set_senha(string novaSenha);
     string get_senha();
-    void validar_senha(string senha);
+   
 };
 
 // CLASSE TELEFONE
 class telefone {
    private:
     string telefone;
-
+    bool validar_telefone(string telefone);
    public:
     void set_telefone(string telefone);
     string get_telefone();
-    void validar_telefone(string telefone);
+ 
 };
 
 // CLASSE RESULTADO
@@ -52,22 +52,20 @@ class resultado {
 class codigo {
    private:
     string codigo;
-
+    bool validar_codigo(string codigo);
    public:
     void set_codigo(string codigo);
     string get_codigo();
-    void validar_codigo(string codigo);
 };
 
 // CLASSE TEXTO
 class texto {
    private:
     string texto;
-
+    bool validar_texto(const string& texto);
    public:
     void set_texto(string texto);
     string get_texto();
-    void validar_texto(const string& texto);
 };
 
 // CLASSE CLASSE
@@ -80,12 +78,11 @@ class classe {
 class data {
    private:
     string data;
-
+    bool validar_data(string data);
    public:
     void set_data(string data);
     string get_data();
     vector<string> extrair_data(const string& data);
-    void validar_data(string data);
 };
 
 #endif
