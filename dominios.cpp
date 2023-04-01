@@ -14,6 +14,11 @@ bool inVector(const T& elemento, const vector<T>& vetor) {
     return encontrado != vetor.end();
 }
 
+// int posVector(const int& elemento, const vector<int>& vetor) {
+//     auto encontrado = find(vetor.begin(), vetor.end(), elemento); //é garantido que elemento estará no vetor
+//     return distance(vetor.begin(), encontrado);  // pega a distancia do inicio até o elemento
+// }
+
 void toupper(string& str) {
     for (int i = 0; i < str.length(); i++) {
         if (isalpha(str[i]))
@@ -105,15 +110,32 @@ vector<string> data::extrair_data(const string& data) {
 
     return resultado;
 }
+
+bool ehBissexto(const int& ano) {
+    bool result = false;
+
+    if (ano % 4 == 0) {
+        if (ano % 100 == 0) {
+            if (ano % 400)
+                result = true;
+        } else
+            result = true;
+    }
+
+    return result;
+};
+
 void data::validar_data(string data) {
     int tam = data.length();
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
+    vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int cnt = 0;
 
     for (int i = 0; i < tam; i++) {
         if (data[i] == '/')
             cnt++;
     }
+
     if (cnt != 2) {
         throw invalid_argument("Data Inválida");
     }
@@ -134,6 +156,23 @@ void data::validar_data(string data) {
         if (!inVector(mes, meses)) {
             throw invalid_argument("Data Inválida.");
         }
+
+        if (mes == "FEV") {
+            if (ehBissexto(ano))
+                dias[1]++;  // adiciona 1 dia em fevereiro
+        }
+
+        int pos = 0;
+        for (int i = 0; i < meses.size(); i++) {
+            if (meses[i] == mes) {
+                pos = i;
+                break;
+            }
+        }
+
+        if (!(dia > 0 && dia < dias[pos]))
+            throw invalid_argument("Data Inválida.");
+
     } catch (invalid_argument& ex) {
         throw invalid_argument("Data Inválida.");
     }
