@@ -53,9 +53,14 @@ void telefone::validar_telefone(string num_telefone) {
         throw invalid_argument("O telefone deve conter \"+\" seguido de 7 a 15 dígitos.");
     }
 
-    for (int i = 1; i < tam; i++) {
-        if (!isdigit(num_telefone[i]))
-            throw invalid_argument("O telefone deve conter \"+\" seguido de 7 ou 15 dígitos.");
+    for (int i = 0; i < tam; i++) {
+        if (i == 0) {
+            if (num_telefone[i] != '+')
+                throw invalid_argument("O primeiro caractere deve ser \"+\".");
+        } else {
+            if (!isdigit(num_telefone[i]))
+                throw invalid_argument("Número de telefone inválido.");
+        }
     }
 }
 
@@ -72,7 +77,7 @@ void senha::validar_senha(string nova_senha) {
     if (nova_senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
 
-    for (auto ch : caracteres_validos) {
+    for (auto ch : nova_senha) {
         int cnt = count(nova_senha.begin(), nova_senha.end(), ch);
         if (cnt > 1)
             throw invalid_argument("A senha não pode conter caracteres repetidos.");
