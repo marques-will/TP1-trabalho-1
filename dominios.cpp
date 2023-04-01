@@ -13,19 +13,12 @@ const string sinais_pontuacao = ".,;?!:-@#$%&";
 const string caracteres_validos = letras_digitos + sinais_pontuacao;
 
 // FUNÇÕES AUXILIARES
-template <typename T>
-
-bool inVector(const T& elemento, const vector<T>& vetor) {
-    auto encontrado = find(vetor.begin(), vetor.end(), elemento);  // itera no vetor comparando cada elemento com str
-    return encontrado != vetor.end();
-}
-
-void toupper(string& str) {
-    for (int i = 0; i < str.length(); i++) {
+void to_upper(string& str) {
+    for (int i = 0; i < str.size(); i++) {
         if (isalpha(str[i]))
             str[i] = toupper(str[i]);
     }
-};
+}
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
 void matricula::set_matricula(int nova_matricula) {
@@ -98,7 +91,7 @@ void codigo::validar_codigo(string codigo) {
         }
     }
 
-    for (int i = 4; i < 6; i++) {
+    for (int i = 3; i < 6; i++) {
         if (!isdigit(codigo[i])) {
             throw invalid_argument("Os três últimos caracteres devem ser números.");
         }
@@ -127,7 +120,7 @@ vector<string> data::extrair_data(const string& data) {
     return resultado;
 }
 
-bool ehBissexto(const int& ano) {
+bool data::ano_bissexto(const int& ano) {
     bool result = false;
 
     if (ano % 4 == 0) {
@@ -163,17 +156,18 @@ void data::validar_data(string data) {
     try {
         int dia = stoi(str_dia);
         int ano = stoi(str_ano);
-        toupper(mes);
+
+        to_upper(mes);
 
         if (ano < 2000 || ano > 2999)
             throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
 
-        if (!inVector(mes, meses)) {
+        if (find(meses.begin(), meses.end(), mes) == meses.end()) {
             throw invalid_argument("Mês inválido.");
         }
 
         if (mes == "FEV") {
-            if (ehBissexto(ano))
+            if (ano_bissexto(ano))
                 dias[1]++;  // adiciona 1 dia em fevereiro
         }
 
@@ -185,7 +179,7 @@ void data::validar_data(string data) {
             }
         }
 
-        if (!(dia > 0 && dia < dias[pos]))
+        if (!(dia > 0 && dia <= dias[pos]))
             throw invalid_argument("Número de dias inválido.");
 
     } catch (invalid_argument& ex) {

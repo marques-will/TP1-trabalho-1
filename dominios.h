@@ -86,6 +86,7 @@ class data {
     void set_data(string data);
     string get_data();
     vector<string> extrair_data(const string& nova_data);
+    bool data::ano_bissexto(const int& ano);
 };
 
 #endif
