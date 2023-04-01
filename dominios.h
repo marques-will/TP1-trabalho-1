@@ -5,32 +5,6 @@
 #include <string>
 using namespace std;
 
-// CLASS CLASSE
-class classe {
-   private:
-   public:
-};
-
-// CLASSE CODIGO
-class codigo {
-   private:
-    string codigo;
-
-   public:
-    void set_codigo(string codigo);
-    string get_codigo();
-};
-
-// CLASSE DATA
-class data {
-   private:
-    string data;
-
-   public:
-    void set_data(string data);
-    string get_data();
-};
-
 // CLASSE MATRICULA
 class matricula {
    private:
@@ -39,15 +13,6 @@ class matricula {
    public:
     void set_matricula(int matricula);
     int get_matricula();
-};
-
-// CLASSE RESULTADO
-class resultado {
-   private:
-    resultado();
-
-   public:
-    string get_resultado();
 };
 
 // CLASSE SENHA
@@ -68,6 +33,31 @@ class telefone {
    public:
     void set_telefone(int telefone);
     int get_telefone();
+};
+
+// CLASSE RESULTADO
+class resultado {
+   private:
+    resultado();
+
+   public:
+    string get_resultado();
+};
+
+// CLASSE CODIGO
+class codigo {
+   private:
+    string codigo;
+
+   public:
+    void set_codigo(string codigo);
+    string get_codigo();
+};
+
+// CLASS CLASSE
+class classe {
+   private:
+   public:
 };
 
 // CLASSE TEXTO
