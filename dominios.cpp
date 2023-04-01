@@ -37,7 +37,7 @@ int matricula::get_matricula() {
     return matricula;
 }
 
-bool matricula::validar_matricula(int num_matricula) {
+void matricula::validar_matricula(int num_matricula) {
     if (num_matricula < 1000000 || num_matricula > 9999999) {
         throw invalid_argument("A matrícula deve conter 7 dígitos.");
     }
@@ -52,7 +52,7 @@ string telefone::get_telefone() {
     return telefone;
 }
 
-bool telefone::validar_telefone(string num_telefone) {
+void telefone::validar_telefone(string num_telefone) {
     int tam = num_telefone.size();
 
     if (tam != 8 || tam != 16) {
@@ -82,7 +82,7 @@ string codigo::get_codigo() {
     return codigo;
 }
 
-bool codigo::validar_codigo(string codigo) {
+void codigo::validar_codigo(string codigo) {
     int tam = codigo.size();
 
     if (tam != 6) {
@@ -137,7 +137,7 @@ bool ehBissexto(const int& ano) {
     return result;
 };
 
-bool data::validar_data(string data) {
+void data::validar_data(string data) {
     int tam = data.size();
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -198,7 +198,7 @@ string texto::get_texto() {
     return texto;
 }
 
-bool texto::validar_texto(const string& texto) {
+void texto::validar_texto(const string& texto) {
     if (texto.size() < 10 || texto.size() > 20)
         throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
     for (auto ch : texto) {
