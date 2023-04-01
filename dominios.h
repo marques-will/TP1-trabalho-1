@@ -10,7 +10,7 @@ using namespace std;
 class matricula {
    private:
     int matricula;
-    void validar_matricula(int num_matricula);
+    void validar_matricula(int nova_matricula);
 
    public:
     void set_matricula(int nova_matricula);
@@ -21,10 +21,10 @@ class matricula {
 class senha {
    private:
     string senha;
-    bool validar_senha(string senha);
+    bool validar_senha(string nova_senha);
 
    public:
-    void set_senha(string novaSenha);
+    void set_senha(string nova_senha);
     string get_senha();
 };
 
@@ -32,10 +32,10 @@ class senha {
 class telefone {
    private:
     string telefone;
-    void validar_telefone(string telefone);
+    void validar_telefone(string novo_telefone);
 
    public:
-    void set_telefone(string telefone);
+    void set_telefone(string novo_telefone);
     string get_telefone();
 };
 
@@ -52,10 +52,10 @@ class resultado {
 class codigo {
    private:
     string codigo;
-    void validar_codigo(string codigo);
+    void validar_codigo(string novo_codigo);
 
    public:
-    void set_codigo(string codigo);
+    void set_codigo(string novo_codigo);
     string get_codigo();
 };
 
@@ -63,10 +63,10 @@ class codigo {
 class texto {
    private:
     string texto;
-    void validar_texto(const string& texto);
+    void validar_texto(const string& novo_texto);
 
    public:
-    void set_texto(string texto);
+    void set_texto(string novo_texto);
     string get_texto();
 };
 
@@ -80,12 +80,12 @@ class classe {
 class data {
    private:
     string data;
-    void validar_data(string data);
+    void validar_data(string nova_data);
 
    public:
     void set_data(string data);
     string get_data();
-    vector<string> extrair_data(const string& data);
+    vector<string> extrair_data(const string& nova_data);
 };
 
 #endif

@@ -45,6 +45,7 @@ void matricula::validar_matricula(int num_matricula) {
 
 // IMPLEMENTAÇÃO DO TELEFONE
 void telefone::set_telefone(string novo_telefone) {
+    validar_telefone(novo_telefone);
     this->telefone = novo_telefone;
 }
 
@@ -55,7 +56,7 @@ string telefone::get_telefone() {
 void telefone::validar_telefone(string num_telefone) {
     int tam = num_telefone.size();
 
-    if (tam != 8 || tam != 16) {
+    if (!(tam == 8 || tam == 16)) {
         throw invalid_argument("O telefone deve conter \"+\" seguido de 7 ou 15 dígitos.");
     }
 
@@ -67,6 +68,7 @@ void telefone::validar_telefone(string num_telefone) {
 
 // IMPLEMENTAÇÃO DA SENHA
 void senha::set_senha(string nova_senha) {
+    validar_senha(nova_senha);
     this->senha = nova_senha;
 }
 string senha::get_senha() {
@@ -75,6 +77,7 @@ string senha::get_senha() {
 
 // IMPLEMENTAÇÃO DO CÓDIGO
 void codigo::set_codigo(string novo_codigo) {
+    validar_codigo(novo_codigo);
     this->codigo = novo_codigo;
 }
 
@@ -103,8 +106,9 @@ void codigo::validar_codigo(string codigo) {
 }
 
 // IMPLEMENTAÇÃO DA DATA
-void data::set_data(string novaData) {
-    this->data = novaData;
+void data::set_data(string nova_data) {
+    validar_data(nova_data);
+    this->data = nova_data;
 }
 
 string data::get_data() {
@@ -128,7 +132,7 @@ bool ehBissexto(const int& ano) {
 
     if (ano % 4 == 0) {
         if (ano % 100 == 0) {
-            if (ano % 400)
+            if (ano % 400 == 0)
                 result = true;
         } else
             result = true;
@@ -190,8 +194,9 @@ void data::validar_data(string data) {
 };
 
 // IMPLEMENTAÇÃO DO TEXTO
-void texto::set_texto(string texto) {
-    this->texto = texto;
+void texto::set_texto(string novo_texto) {
+    validar_texto(novo_texto);
+    this->texto = novo_texto;
 }
 
 string texto::get_texto() {
