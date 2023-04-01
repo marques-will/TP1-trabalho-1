@@ -11,8 +11,7 @@ Lembre-se de alterar o padrão de formatação do código no vscode:
 Extensões:
   Formatação:
     > Better C++ Syntax
-
-    >  Prettier - Code formatter
+    > Prettier - Code formatter
     
   Git:
     > Git History
