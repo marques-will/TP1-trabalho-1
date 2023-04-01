@@ -36,45 +36,45 @@ int matricula::get_matricula() {
     return matricula;
 }
 
-void matricula::validar_matricula(int numMatricula) {
-    if (numMatricula < 1000000 || numMatricula > 9999999) {
+void matricula::validar_matricula(int num_matricula) {
+    if (num_matricula < 1000000 || num_matricula > 9999999) {
         throw invalid_argument("A matrícula deve conter 7 dígitos.");
     }
 }
 
 // IMPLEMENTAÇÃO DO TELEFONE
-void telefone::set_telefone(string novoTelefone) {
-    this->telefone = novoTelefone;
+void telefone::set_telefone(string novo_telefone) {
+    this->telefone = novo_telefone;
 }
 
 string telefone::get_telefone() {
     return telefone;
 }
 
-void telefone::validar_telefone(string numTelefone) {
-    int tam = numTelefone.size();
+void telefone::validar_telefone(string num_telefone) {
+    int tam = num_telefone.size();
 
     if (tam != 8 || tam != 16) {
         throw invalid_argument("O telefone deve conter \"+\" seguido de 7 ou 15 dígitos.");
     }
 
     for (int i = 1; i < tam; i++) {
-        if (!isdigit(numTelefone[i]))
+        if (!isdigit(num_telefone[i]))
             throw invalid_argument("O telefone deve conter \"+\" seguido de 7 ou 15 dígitos.");
     }
 }
 
 // IMPLEMENTAÇÃO DA SENHA
-void senha::set_senha(string senha) {
-    this->senha = senha;
+void senha::set_senha(string nova_senha) {
+    this->senha = nova_senha;
 }
 string senha::get_senha() {
     return senha;
 }
 
 // IMPLEMENTAÇÃO DO CÓDIGO
-void codigo::set_codigo(string codigo) {
-    this->codigo = codigo;
+void codigo::set_codigo(string novo_codigo) {
+    this->codigo = novo_codigo;
 }
 
 string codigo::get_codigo() {
