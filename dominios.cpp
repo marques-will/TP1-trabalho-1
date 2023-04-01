@@ -49,8 +49,8 @@ string telefone::get_telefone() {
 void telefone::validar_telefone(string num_telefone) {
     int tam = num_telefone.size();
 
-    if (!(tam == 8 || tam == 16)) {
-        throw invalid_argument("O telefone deve conter \"+\" seguido de 7 ou 15 dígitos.");
+    if (!(tam >= 8 && tam <= 16)) {
+        throw invalid_argument("O telefone deve conter \"+\" seguido de 7 a 15 dígitos.");
     }
 
     for (int i = 1; i < tam; i++) {
@@ -66,6 +66,17 @@ void senha::set_senha(string nova_senha) {
 }
 string senha::get_senha() {
     return senha;
+}
+
+void senha::validar_senha(string nova_senha) {
+    if (nova_senha.size() != 6)
+        throw invalid_argument("A senha deve conter 6 caracteres.");
+
+    for (auto ch : caracteres_validos) {
+        int cnt = count(nova_senha.begin(), nova_senha.end(), ch);
+        if (cnt > 1)
+            throw invalid_argument("A senha não pode conter caracteres repetidos.");
+    }
 }
 
 // IMPLEMENTAÇÃO DO CÓDIGO

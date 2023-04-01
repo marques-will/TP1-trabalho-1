@@ -21,7 +21,7 @@ class matricula {
 class senha {
    private:
     string senha;
-    bool validar_senha(string nova_senha);
+    void validar_senha(string nova_senha);
 
    public:
     void set_senha(string nova_senha);
