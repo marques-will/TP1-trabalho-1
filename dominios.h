@@ -77,6 +77,7 @@ class data {
    public:
     void set_data(string data);
     string get_data();
+    vector<string> extrair_data(const string& data);
     void validar_data(string data);
 };
 

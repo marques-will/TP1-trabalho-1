@@ -1,9 +1,9 @@
 #include "dominios.h"
 
-#include <ctype.h>
-
 #include <algorithm>
+#include <cctype>
 #include <iostream>
+#include <sstream>
 #include <vector>
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
@@ -81,11 +81,22 @@ string data::get_data() {
     return data;
 }
 
+vector<string> data::extrair_data(const string& data) {
+    vector<string> resultado;
+    string parte;
+
+    stringstream partes(data);
+    while (getline(partes, parte, '/')) {
+        resultado.push_back(parte);
+    }
+
+    return resultado;
+}
 void data::validar_data(string data) {
     int tam = data.length();
-    int dia, ano;
-    string mes;
+    vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     int cnt = 0;
+
     for (int i = 0; i < tam; i++) {
         if (data[i] == '/')
             cnt++;
@@ -93,6 +104,13 @@ void data::validar_data(string data) {
     if (cnt != 2) {
         throw invalid_argument("Data Inválida");
     }
+
+    vector<string> partes = extrair_data(data);
+    string dia = partes[0];
+    string mes = partes[1];
+    string ano = partes[2];
+
+    
 };
 
 // IMPLEMENTAÇÃO DO TEXTO
@@ -101,4 +119,7 @@ void texto::set_texto(string texto) {
 }
 string texto::get_texto() {
     return texto;
+}
+
+void main() {
 }
