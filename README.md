@@ -9,5 +9,6 @@ Lembre-se de alterar o padrão de formatação do código no vscode:
   4. Change from "Visual Studio" to ""C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}"
   
 Extensões para formatação:
-  > Better C++ Syntax.>
-  > Prettier - Code formatter.>
+  > Better C++ Syntax
+  
+  >  Prettier - Code formatter
