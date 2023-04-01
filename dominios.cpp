@@ -31,9 +31,7 @@ int telefone::get_telefone() {
 void telefone::validar_telefone(int telefone) {
     string str = to_string(telefone);
     int tam = str.length();
-    if (tam >= 7 && tam <= 15) {
-        continue;
-    } else {
+    if (!(tam >= 7 && tam <= 15)) {
         throw invalid_argument("Telefone inválido");
     }
 }
@@ -109,8 +107,6 @@ void data::validar_data(string data) {
     string dia = partes[0];
     string mes = partes[1];
     string ano = partes[2];
-
-    
 };
 
 // IMPLEMENTAÇÃO DO TEXTO
@@ -119,7 +115,4 @@ void texto::set_texto(string texto) {
 }
 string texto::get_texto() {
     return texto;
-}
-
-void main() {
 }
