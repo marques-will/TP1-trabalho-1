@@ -8,16 +8,16 @@ Lembre-se de alterar o padrão de formatação do código no vscode:
   3. Click Edit, Copy to Settings
   4. Change from "Visual Studio" to ""C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}"
   
-Extensões:
-  > Formatação:
+> Extensões:
+  1. Formatação:
   
-    *Better C++ Syntax
-    *Prettier - Code formatter
+    * Better C++ Syntax
+    * Prettier - Code formatter
     
-  >Git:
+  2. Git:
   
-    *Git History
-    *GitHub Repositories
-    *GitLens
-    *Remote Explorer
-    *Remote Development
+    * Git History
+    * GitHub Repositories
+    * GitLens
+    * Remote Explorer
+    * Remote Development
