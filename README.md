@@ -8,7 +8,8 @@ Lembre-se de alterar o padrão de formatação do código no vscode:
   3. Click Edit, Copy to Settings
   4. Change from "Visual Studio" to ""C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}"
   
-Extensões para formatação:
+Extensões:
+>> Formatação:
   > Better C++ Syntax
   
   >  Prettier - Code formatter
