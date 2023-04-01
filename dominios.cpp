@@ -6,6 +6,15 @@
 #include <sstream>
 #include <vector>
 
+// FUNÇÕES AUXILIARES
+template <typename T>
+bool inVector(const T& elemento, const vector<T>& vetor) {
+    auto encontrado = find(vetor.begin(), vetor.end(), elemento);  // itera no vetor comparando cada elemento com str
+    return encontrado != vetor.end();
+}
+
+
+
 // IMPLEMENTAÇÃO DA MATRÍCULA
 void matricula::set_matricula(int matricula) {
     this->matricula = matricula;
@@ -31,7 +40,7 @@ int telefone::get_telefone() {
 void telefone::validar_telefone(int telefone) {
     string str = to_string(telefone);
     int tam = str.length();
-    if (!(tam >= 7 && tam <= 15)) {
+    if (tam != 7 || tam != 15) {
         throw invalid_argument("Telefone inválido");
     }
 }
@@ -104,9 +113,20 @@ void data::validar_data(string data) {
     }
 
     vector<string> partes = extrair_data(data);
-    string dia = partes[0];
-    string mes = partes[1];
-    string ano = partes[2];
+    string sdia = partes[0];
+    string smes = partes[1];
+    string sano = partes[2];
+
+    try {
+        int dia = stoi(sdia);
+        int ano = stoi(sano);
+
+        if (ano < 2000 || ano > 2999)
+            throw invalid_argument("Data Inválida.");
+
+    } catch (invalid_argument& ex) {
+        throw invalid_argument("Data Inválida.");
+    }
 };
 
 // IMPLEMENTAÇÃO DO TEXTO
