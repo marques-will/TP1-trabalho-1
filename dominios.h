@@ -10,11 +10,11 @@ using namespace std;
 class matricula {
    private:
     int matricula;
-    void validar_matricula(int matricula);
 
    public:
     void set_matricula(int matricula);
     int get_matricula();
+    void validar_matricula(int matricula);
 };
 
 // CLASSE SENHA
@@ -23,8 +23,9 @@ class senha {
     string senha;
 
    public:
-    void set_senha(string senha);
+    void set_senha(string novaSenha);
     string get_senha();
+    void validar_senha(string senha);
 };
 
 // CLASSE TELEFONE

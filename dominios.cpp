@@ -20,11 +20,6 @@ bool inVector(const T& elemento, const vector<T>& vetor) {
     return encontrado != vetor.end();
 }
 
-// int posVector(const int& elemento, const vector<int>& vetor) {
-//     auto encontrado = find(vetor.begin(), vetor.end(), elemento); //é garantido que elemento estará no vetor
-//     return distance(vetor.begin(), encontrado);  // pega a distancia do inicio até o elemento
-// }
-
 void toupper(string& str) {
     for (int i = 0; i < str.length(); i++) {
         if (isalpha(str[i]))
@@ -33,41 +28,38 @@ void toupper(string& str) {
 };
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
-void matricula::set_matricula(int matricula) {
-    this->matricula = matricula;
+void matricula::set_matricula(int novaMatricula) {
+    this->matricula = novaMatricula;
 }
 
 int matricula::get_matricula() {
     return matricula;
 }
 
-void matricula::validar_matricula(int matricula) {
-    string str = to_string(matricula);
-    int tam = str.size();
-
-    if (tam != 7) {
-        throw invalid_argument("Matrícula inválida");
+void matricula::validar_matricula(int numMatricula) {
+    if (numMatricula < 1000000 || numMatricula > 9999999) {
+        throw invalid_argument("A matrícula deve conter 7 dígitos.");
     }
 }
 
 // IMPLEMENTAÇÃO DO TELEFONE
-void telefone::set_telefone(string telefone) {
-    this->telefone = telefone;
+void telefone::set_telefone(string novoTelefone) {
+    this->telefone = novoTelefone;
 }
 
 string telefone::get_telefone() {
     return telefone;
 }
 
-void telefone::validar_telefone(string telefone) {
-    int tam = telefone.size();
+void telefone::validar_telefone(string numTelefone) {
+    int tam = numTelefone.size();
 
     if (tam != 8 || tam != 16) {
         throw invalid_argument("O telefone deve conter \"+\" seguido de 7 ou 15 dígitos.");
     }
 
     for (int i = 1; i < tam; i++) {
-        if (!isdigit(telefone[i]))
+        if (!isdigit(numTelefone[i]))
             throw invalid_argument("O telefone deve conter \"+\" seguido de 7 ou 15 dígitos.");
     }
 }
@@ -110,8 +102,8 @@ void codigo::validar_codigo(string codigo) {
 }
 
 // IMPLEMENTAÇÃO DA DATA
-void data::set_data(string data) {
-    this->data = data;
+void data::set_data(string novaData) {
+    this->data = novaData;
 }
 
 string data::get_data() {

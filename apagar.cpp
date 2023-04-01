@@ -21,16 +21,7 @@ vector<string> extrair_data(const string& data) {
 }
 
 int main() {
-    string data;
-    cin >> data;
-    vector<string> partes = extrair_data(data);
-    string dia = partes[0];
-    string mes = partes[1];
-    string ano = partes[2];
-
-    cout << "Dia: " << dia << endl;
-    cout << "Mês: " << mes << endl;
-    cout << "Ano: " << ano << endl;
-
-    return 0;
+    data exemplo;
+    exemplo.set_data("12/BURRO/2099");
+    cout << exemplo.get_data() << endl;
 };
