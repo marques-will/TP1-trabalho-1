@@ -51,23 +51,24 @@ void matricula::validar_matricula(int matricula) {
 }
 
 // IMPLEMENTAÇÃO DO TELEFONE
-void telefone::set_telefone(int telefone) {
+void telefone::set_telefone(string telefone) {
     this->telefone = telefone;
 }
-int telefone::get_telefone() {
+
+string telefone::get_telefone() {
     return telefone;
 }
-void telefone::validar_telefone(int telefone) {
-    string str = to_string(telefone);
 
-    int tam = str.size();
+void telefone::validar_telefone(string telefone) {
+    int tam = telefone.size();
+
     if (tam != 8 || tam != 16) {
-        throw invalid_argument("O telefone deve conter o sinal de \"+\" seguido de 7 ou 15 dígitos.");
+        throw invalid_argument("O telefone deve conter \"+\" seguido de 7 ou 15 dígitos.");
     }
 
-    for (int i = 0; i < tam; i++) {
-        if (!(isdigit(str[i])))
-            throw invalid_argument("Telefone inválido");
+    for (int i = 1; i < tam; i++) {
+        if (!isdigit(telefone[i]))
+            throw invalid_argument("O telefone deve conter \"+\" seguido de 7 ou 15 dígitos.");
     }
 }
 
@@ -90,14 +91,17 @@ string codigo::get_codigo() {
 
 void codigo::validar_codigo(string codigo) {
     int tam = codigo.size();
+
     if (tam != 6) {
         throw invalid_argument("Código deve conter 6 caracteres.");
     }
+
     for (int i = 0; i < 3; i++) {
         if (!isalpha(codigo[i])) {
             throw invalid_argument("Os três primeiros caracteres devem ser letras.");
         }
     }
+
     for (int i = 4; i < 6; i++) {
         if (!isdigit(codigo[i])) {
             throw invalid_argument("Os três últimos caracteres devem ser números.");

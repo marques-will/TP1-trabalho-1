@@ -30,12 +30,12 @@ class senha {
 // CLASSE TELEFONE
 class telefone {
    private:
-    int telefone;
+    string telefone;
 
    public:
-    void set_telefone(int telefone);
-    int get_telefone();
-    void validar_telefone(int telefone);
+    void set_telefone(string telefone);
+    string get_telefone();
+    void validar_telefone(string telefone);
 };
 
 // CLASSE RESULTADO
