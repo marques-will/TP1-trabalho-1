@@ -40,8 +40,8 @@ class TUSenha{
 //Telefone
 class TUTelefone{
     private:
-        const static int invalido = 123456;
-        const static int valido = 1234567;
+        const static int invalido = +123456;
+        const static int valido = +1234567;
         Telefone *telefone;
         int estado;
         void setUp();                           
