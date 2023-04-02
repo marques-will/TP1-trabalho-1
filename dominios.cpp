@@ -6,7 +6,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-
+#include <string>
 // CONSTANTES
 const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const string sinais_pontuacao = ".,;?!:-@#$%&";
@@ -37,8 +37,10 @@ void Matricula::validar_matricula(int num_matricula) {
     int fator = 8;
     int soma = 0;
     int digito_real;
-    for(i=0;i<num_matricula.size()-1;i++){
-        soma = soma + fator*matricula[i];
+    string a = to_string(num_matricula);
+    for(i=0;i<a.length()-1;i++){
+        valor = a[i] - '0';
+        soma = soma + fator*valor;
         fator = fator - 1;
     }
     soma = soma % 10;
