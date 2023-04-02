@@ -90,4 +90,22 @@ class data {
     bool data::ano_bissexto(const int& ano);
 };
 
+// TESTES UNITÁRIOS
+
+class teste_dominios {
+   private:
+    string nome_dominio;
+
+    void teste_matricula();
+    void teste_senha();
+    void teste_telefone();
+    void teste_resultado();
+    void teste_codigo();
+    void teste_texto();
+    void teste_classe();
+    void teste_data();
+
+   public:
+};
+
 #endif
