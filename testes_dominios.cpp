@@ -39,3 +39,43 @@ int TUTelefone::run(){
     tearDown();
     return estado;
 }
+
+//IMPLEMENTAÇÃO DO TESTE DA SENHA
+void TUSenha::setUp(){
+    senha = new Senha();
+    estado = sucesso;
+}
+
+void TUSenha::tearDown(){
+    delete senha;
+}
+
+void TUSenha::testarCenariosucesso(){
+    try{
+        senha->setValor(valido);
+        if (senha->getValor() != valido)
+            estado = falha;
+    }
+    catch(invalid_argument &excecao){
+        estado = falha;
+    }
+}
+
+void TUSenha::testarCenariofalha(){
+    try{
+        senha->setValor(invalido);
+        estado = falha;
+    }
+    catch(invalid_argument &excecao){
+        if (senha->getValor() == invalido)
+            estado = falha;
+    }
+}
+
+int TUSenha::run(){
+    setUp();
+    testarCenariosucesso();
+    testarCenariofalha();
+    tearDown();
+    return estado;
+}

@@ -23,8 +23,8 @@ class TUMatricula{
 //Senha
 class TUSenha{
     private:
-        const static string invalido =   
-        const static string valido =  
+        const static string invalido = 111222;   
+        const static string valido =  123456;
         Senha *senha;
         int estado;
         void setUp();                           
