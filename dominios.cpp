@@ -31,13 +31,13 @@ int Matricula::get_matricula() {
 }
 
 void Matricula::validar_matricula(int num_matricula) {
-    if num_matricula.size() != 7{
+    string a = to_string(num_matricula);
+    if a.length() != 7{
         throw invalid_argument("A matrícula deve conter 7 dígitos");
     }
     int fator = 8;
     int soma = 0;
     int digito_real;
-    string a = to_string(num_matricula);
     for(i=0;i<a.length()-1;i++){
         valor = a[i] - '0';
         soma = soma + fator*valor;
