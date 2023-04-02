@@ -17,8 +17,9 @@ class desenvolvedor {
 class teste {
    private:
     teste() {
-        Nome = new nome();
-        Classe = new classe();
+        Codigo *codigo = new Codigo();
+        Texto *nome = new Texto();
+        Classe *classe = new Classe();
     }
 
    public:
@@ -27,11 +28,12 @@ class teste {
 class caso_teste {
    private:
     caso_teste() {
-        Nome = new nome();
-        Data = new data();
-        Acao = new acao();
-        Resposta = new resposta();
-        Resultado = new resultado();
+        Codigo *codigo = new Codigo();
+        Texto *nome = new Texto();
+        Data *data = new Data();
+        Texto *acao = new Texto();
+        Texto *resposta = new Texto();
+        Resultado *resultado = new Resultado();
     }
 
    public:
