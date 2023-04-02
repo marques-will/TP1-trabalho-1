@@ -6,7 +6,7 @@ using namespace std;
 //Matrícula
 class TUMatricula{
     private:
-        const static int invalido = 
+        const static int invalido = 12345
         const static int valido = 
         Matricula *matricula;
         int estado;
