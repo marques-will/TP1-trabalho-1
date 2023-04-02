@@ -50,7 +50,8 @@ void Matricula::validar_matricula(int num_matricula) {
     else{
         digito_real = soma;
     }
-    if(num_matricula[6] != digito_real){
+    int digito_encontrado = a[6] - '0';
+    if(digito_encontrado != digito_real){
         throw invalid_argument("O dígito verificador está incorreto");
     }
 }
