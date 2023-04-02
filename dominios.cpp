@@ -21,32 +21,32 @@ void to_upper(string& str) {
 }
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
-void matricula::set_matricula(int nova_matricula) {
+void Matricula::set_matricula(int nova_matricula) {
     validar_matricula(nova_matricula);
     this->matricula = nova_matricula;
 }
 
-int matricula::get_matricula() {
+int Matricula::get_matricula() {
     return matricula;
 }
 
-void matricula::validar_matricula(int num_matricula) {
+void Matricula::validar_matricula(int num_matricula) {
     if (num_matricula < 1000000 || num_matricula > 9999999) {
         throw invalid_argument("A matrícula deve conter 7 dígitos.");
     }
 }
 
 // IMPLEMENTAÇÃO DO TELEFONE
-void telefone::set_telefone(string novo_telefone) {
+void Telefone::set_telefone(string novo_telefone) {
     validar_telefone(novo_telefone);
     this->telefone = novo_telefone;
 }
 
-string telefone::get_telefone() {
+string Telefone::get_telefone() {
     return telefone;
 }
 
-void telefone::validar_telefone(string num_telefone) {
+void Telefone::validar_telefone(string num_telefone) {
     int tam = num_telefone.size();
 
     if (!(tam >= 8 && tam <= 16)) {
@@ -65,15 +65,15 @@ void telefone::validar_telefone(string num_telefone) {
 }
 
 // IMPLEMENTAÇÃO DA SENHA
-void senha::set_senha(string nova_senha) {
+void Senha::set_senha(string nova_senha) {
     validar_senha(nova_senha);
     this->senha = nova_senha;
 }
-string senha::get_senha() {
+string Senha::get_senha() {
     return senha;
 }
 
-void senha::validar_senha(string nova_senha) {
+void Senha::validar_senha(string nova_senha) {
     if (nova_senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
 
@@ -85,16 +85,16 @@ void senha::validar_senha(string nova_senha) {
 }
 
 // IMPLEMENTAÇÃO DO CÓDIGO
-void codigo::set_codigo(string novo_codigo) {
+void Codigo::set_codigo(string novo_codigo) {
     validar_codigo(novo_codigo);
     this->codigo = novo_codigo;
 }
 
-string codigo::get_codigo() {
+string Codigo::get_codigo() {
     return codigo;
 }
 
-void codigo::validar_codigo(string codigo) {
+void Codigo::validar_codigo(string codigo) {
     int tam = codigo.size();
 
     if (tam != 6) {
@@ -115,16 +115,16 @@ void codigo::validar_codigo(string codigo) {
 }
 
 // IMPLEMENTAÇÃO DA DATA
-void data::set_data(string nova_data) {
+void Data::set_data(string nova_data) {
     validar_data(nova_data);
     this->data = nova_data;
 }
 
-string data::get_data() {
+string Data::get_data() {
     return data;
 }
 
-vector<string> data::extrair_data(const string& data) {
+vector<string> Data::extrair_data(const string& data) {
     vector<string> resultado;
     string parte;
 
@@ -136,7 +136,7 @@ vector<string> data::extrair_data(const string& data) {
     return resultado;
 }
 
-bool data::ano_bissexto(const int& ano) {
+bool Data::ano_bissexto(const int& ano) {
     bool result = false;
 
     if (ano % 4 == 0) {
@@ -150,7 +150,7 @@ bool data::ano_bissexto(const int& ano) {
     return result;
 };
 
-void data::validar_data(string data) {
+void Data::validar_data(string data) {
     int tam = data.size();
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -204,16 +204,16 @@ void data::validar_data(string data) {
 };
 
 // IMPLEMENTAÇÃO DO TEXTO
-void texto::set_texto(string novo_texto) {
+void Texto::set_texto(string novo_texto) {
     validar_texto(novo_texto);
     this->texto = novo_texto;
 }
 
-string texto::get_texto() {
+string Texto::get_texto() {
     return texto;
 }
 
-void texto::validar_texto(const string& texto) {
+void Texto::validar_texto(const string& texto) {
     if (texto.size() < 10 || texto.size() > 20)
         throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
     for (auto ch : texto) {

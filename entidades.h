@@ -5,10 +5,10 @@
 class desenvolvedor{
     private:
         desenvolvedor(){
-            matricula =  new matricula();
-            texto = new texto();
-            senha = new senha();
-            telefone = new telefone();
+            Matricula =  new matricula();
+            Texto = new texto();
+            Senha = new senha();
+            Telefone = new telefone();
         }
 
     public:
@@ -17,8 +17,8 @@ class desenvolvedor{
 class teste{
     private:
         teste(){
-            nome = new nome();
-            classe = new classe();
+            Nome = new nome();
+            Classe = new classe();
         }
     public:
 };
@@ -26,11 +26,11 @@ class teste{
 class caso_teste{
     private:
         caso_teste(){
-            nome = new nome();
-            data = new data();
-            acao = new acao();
-            resposta = new resposta();
-            resultado = new resultado();
+            Nome = new nome();
+            Data = new data();
+            Acao = new acao();
+            Resposta = new resposta();
+            Resultado = new resultado();
         }
     public:
 };

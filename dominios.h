@@ -7,7 +7,7 @@
 using namespace std;
 
 // CLASSE MATRICULA
-class matricula {
+class Matricula {
    private:
     int matricula;
     void validar_matricula(int nova_matricula);
@@ -18,7 +18,7 @@ class matricula {
 };
 
 // CLASSE SENHA
-class senha {
+class Senha {
    private:
     string senha;
     void validar_senha(string nova_senha);
@@ -29,7 +29,7 @@ class senha {
 };
 
 // CLASSE TELEFONE
-class telefone {
+class Telefone {
    private:
     string telefone;
     void validar_telefone(string novo_telefone);
@@ -41,16 +41,16 @@ class telefone {
 };
 
 // CLASSE RESULTADO
-class resultado {
+class Resultado {
    private:
-    resultado();
+    Resultado();
 
    public:
     string get_resultado();
 };
 
 // CLASSE CODIGO
-class codigo {
+class Codigo {
    private:
     string codigo;
     void validar_codigo(string novo_codigo);
@@ -61,7 +61,7 @@ class codigo {
 };
 
 // CLASSE TEXTO
-class texto {
+class Texto {
    private:
     string texto;
     void validar_texto(const string& novo_texto);
@@ -72,40 +72,22 @@ class texto {
 };
 
 // CLASSE CLASSE
-class classe {
+class Classe {
    private:
    public:
 };
 
 // CLASSE DATA
-class data {
+class Data {
    private:
     string data;
     void validar_data(string nova_data);
+    vector<string> extrair_data(const string& nova_data);
+    bool ano_bissexto(const int& ano);
 
    public:
     void set_data(string data);
     string get_data();
-    vector<string> extrair_data(const string& nova_data);
-    bool data::ano_bissexto(const int& ano);
-};
-
-// TESTES UNITÁRIOS
-
-class teste_dominios {
-   private:
-    string nome_dominio;
-
-    void teste_matricula();
-    void teste_senha();
-    void teste_telefone();
-    void teste_resultado();
-    void teste_codigo();
-    void teste_texto();
-    void teste_classe();
-    void teste_data();
-
-   public:
 };
 
 #endif
