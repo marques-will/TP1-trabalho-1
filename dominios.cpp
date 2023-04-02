@@ -31,8 +31,25 @@ int Matricula::get_matricula() {
 }
 
 void Matricula::validar_matricula(int num_matricula) {
-    if (num_matricula < 1000000 || num_matricula > 9999999) {
-        throw invalid_argument("A matrícula deve conter 7 dígitos.");
+    if num_matricula.size() != 7{
+        throw invalid_argument("A matrícula deve conter 7 dígitos");
+    }
+    int fator = 8;
+    int soma = 0;
+    int digito_real;
+    for(i=0;i<num_matricula.size()-1;i++){
+        soma = soma + fator*matricula[i];
+        fator = fator - 1;
+    }
+    soma = soma % 10;
+    if (soma!=0){
+        digito_real = 10 - soma;
+    }
+    else{
+        digito_real = soma;
+    }
+    if(num_matricula[6] != digito_real){
+        throw invalid_argument("O dígito verificador está incorreto");
     }
 }
 
