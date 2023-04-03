@@ -3,9 +3,8 @@ Repositório do primeiro trabalho de TP1.
 
 > Trello do projeto:
 
-  Ler e se atentar aos REQUISITOS GERAIS do projeto
-  
-  https://trello.com/b/qLcxOvE7/trabalhotp1
+  * Ler e se atentar aos REQUISITOS GERAIS do projeto
+    https://trello.com/b/qLcxOvE7/trabalhotp1
   
 > Padrão de estilo Google:
 
