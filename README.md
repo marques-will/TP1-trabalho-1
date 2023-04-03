@@ -1,6 +1,9 @@
 # trabalhoTP1
 Repositório do primeiro trabalho de TP1.
 
+> Trello do projeto:
+  https://trello.com/invite/b/qLcxOvE7/ATTI388a1dc28b3f4207671f8000d95209cbA7A2278F/trabalhotp1
+
 > Padrão de estilo Google:
 
   1. Go Preferences -> Settings
