@@ -14,20 +14,17 @@ Repositório do primeiro trabalho de TP1.
   4. Change from "Visual Studio" to ""C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}"
   
 > Extensões:
-  1. Organização:
-  
-    * Trello Viewer
     
-  2. Ferramentas:
+  1. Ferramentas:
   
     * Doxygen Documentation Generator
     
-  3. Formatação:
+  2. Formatação:
   
     * Better C++ Syntax
     * Prettier - Code formatter
     
-  4. Git:
+  3. Git:
   
     * Git History
     * GitHub Repositories
