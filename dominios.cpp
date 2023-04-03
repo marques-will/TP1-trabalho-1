@@ -6,7 +6,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
-
+#include <string>
 // CONSTANTES
 const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const string sinais_pontuacao = ".,;?!:-@#$%&";
@@ -45,8 +45,28 @@ int Matricula::get_matricula() {
 }
 
 void Matricula::validar_matricula(int num_matricula) {
-    if (num_matricula < 1000000 || num_matricula > 9999999) {
-        throw invalid_argument("A matrícula deve conter 7 dígitos.");
+    string a = to_string(num_matricula);
+    if a.length() != 7{
+        throw invalid_argument("A matrícula deve conter 7 dígitos");
+    }
+    int fator = 8;
+    int soma = 0;
+    int digito_real;
+    for(i=0;i<a.length()-1;i++){
+        valor = a[i] - '0';
+        soma = soma + fator*valor;
+        fator = fator - 1;
+    }
+    soma = soma % 10;
+    if (soma!=0){
+        digito_real = 10 - soma;
+    }
+    else{
+        digito_real = soma;
+    }
+    int digito_encontrado = a[6] - '0';
+    if(digito_encontrado != digito_real){
+        throw invalid_argument("O dígito verificador está incorreto");
     }
 }
 
@@ -220,4 +240,4 @@ void Texto::validar_texto(const string& texto) {
         if (caracteres_validos.find(ch) == -1 || ch == ' ')
             throw invalid_argument("Texto contém caractere(s) inválido(s).");
     }
-}
+}.
