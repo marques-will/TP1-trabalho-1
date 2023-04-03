@@ -43,7 +43,6 @@ class Telefone {
 // CLASSE RESULTADO
 class Resultado {
    private:
-
    public:
     string get_resultado();
 };
@@ -82,12 +81,10 @@ class Data {
     string data;
     void validar_data(string nova_data);
     vector<string> extrair_data(const string& nova_data);
-    bool ano_bissexto(const int& ano);
 
    public:
     void set_data(string data);
     string get_data();
 };
-
 
 #endif

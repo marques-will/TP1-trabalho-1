@@ -20,6 +20,20 @@ void to_upper(string& str) {
     }
 }
 
+bool ano_bissexto(const int& ano) {
+    bool result = false;
+
+    if (ano % 4 == 0) {
+        if (ano % 100 == 0) {
+            if (ano % 400 == 0)
+                result = true;
+        } else
+            result = true;
+    }
+
+    return result;
+};
+
 // IMPLEMENTAÇÃO DA MATRÍCULA
 void Matricula::set_matricula(int nova_matricula) {
     validar_matricula(nova_matricula);
@@ -135,20 +149,6 @@ vector<string> Data::extrair_data(const string& data) {
 
     return resultado;
 }
-
-bool Data::ano_bissexto(const int& ano) {
-    bool result = false;
-
-    if (ano % 4 == 0) {
-        if (ano % 100 == 0) {
-            if (ano % 400 == 0)
-                result = true;
-        } else
-            result = true;
-    }
-
-    return result;
-};
 
 void Data::validar_data(string data) {
     int tam = data.size();
