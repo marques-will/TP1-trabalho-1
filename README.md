@@ -21,3 +21,5 @@ Repositório do primeiro trabalho de TP1.
     * GitLens
     * Remote Explorer
     * Remote Development
+  3. Organização:
+    * Trello for VSCode

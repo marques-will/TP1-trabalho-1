@@ -240,4 +240,4 @@ void Texto::validar_texto(const string& texto) {
         if (caracteres_validos.find(ch) == -1 || ch == ' ')
             throw invalid_argument("Texto contém caractere(s) inválido(s).");
     }
-}
+}.
