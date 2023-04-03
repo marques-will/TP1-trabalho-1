@@ -18,17 +18,23 @@ Repositório do primeiro trabalho de TP1.
   
     * Trello Viewer
     
-  2. Formatação:
+  2. Ferramentas:
+  
+    * Doxygen Documentation Generator
+    
+  3. Formatação:
   
     * Better C++ Syntax
     * Prettier - Code formatter
     
-  3. Git:
+  4. Git:
   
     * Git History
     * GitHub Repositories
     * GitLens
     * Remote Explorer
     * Remote Development
+    
+  
     
   
