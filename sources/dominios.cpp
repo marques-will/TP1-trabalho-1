@@ -10,6 +10,7 @@
 // CONSTANTES
 const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const string sinais_pontuacao = ".,;?!:-@#$%&";
+const string sinais_acentuacao = "´~^`";
 const string caracteres_validos = letras_digitos + sinais_pontuacao;
 
 // FUNÇÕES AUXILIARES
@@ -234,7 +235,10 @@ void Texto::validar_texto(const string& texto) {
     if (texto.size() < 10 || texto.size() > 20)
         throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
     for (auto ch : texto) {
-        if (caracteres_validos.find(ch) == -1 || ch == ' ')
+        if (caracteres_validos.find(ch) == -1)
             throw invalid_argument("Texto contém caractere(s) inválido(s).");
     }
+
+    int cont = 0;
+    for(int i = 0; i <)
 }
