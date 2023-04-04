@@ -235,7 +235,9 @@ void Texto::validar_texto(const string& texto) {
     if (texto.size() < 10 || texto.size() > 20)
         throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
     for (auto ch : texto) {
-        if (caracteres_validos.find(ch) == -1)
+        if (caracteres_validos.find(ch) == string::npos)
             throw invalid_argument("Texto contém caractere(s) inválido(s).");
     }
+    if (texto.find("  ") != string::npos)
+        throw invalid_argument("Texto contém espaço(s) em branco em sequência.");
 }
