@@ -10,7 +10,7 @@ using namespace std;
 class Matricula {
    private:
     int matricula;
-    void validar_matricula(int nova_matricula);
+    void validar_matricula(const int& nova_matricula);
 
    public:
     void set_matricula(int nova_matricula);
@@ -21,7 +21,7 @@ class Matricula {
 class Senha {
    private:
     string senha;
-    void validar_senha(string nova_senha);
+    void validar_senha(const string& nova_senha);
 
    public:
     void set_senha(string nova_senha);
@@ -32,7 +32,7 @@ class Senha {
 class Telefone {
    private:
     string telefone;
-    void validar_telefone(string novo_telefone);
+    void validar_telefone(const string& novo_telefone);
     void validar_digitoverificador(string novo_telefone);
 
    public:
@@ -51,7 +51,7 @@ class Resultado {
 class Codigo {
    private:
     string codigo;
-    void validar_codigo(string novo_codigo);
+    void validar_codigo(const string& novo_codigo);
 
    public:
     void set_codigo(string novo_codigo);
@@ -79,7 +79,7 @@ class Classe {
 class Data {
    private:
     string data;
-    void validar_data(string nova_data);
+    void validar_data(const string& nova_data);
     vector<string> extrair_data(const string& nova_data);
 
    public:

@@ -44,7 +44,7 @@ int Matricula::get_matricula() {
     return matricula;
 }
 
-void Matricula::validar_matricula(int num_matricula) {
+void Matricula::validar_matricula(const int& num_matricula) {
     string a = to_string(num_matricula);
     if (a.length() != 7) {
         throw invalid_argument("A matrícula deve conter 7 dígitos");
@@ -77,7 +77,7 @@ string Telefone::get_telefone() {
     return telefone;
 }
 
-void Telefone::validar_telefone(string num_telefone) {
+void Telefone::validar_telefone(const string& num_telefone) {
     int tam = num_telefone.size();
 
     if (!(tam >= 8 && tam <= 16)) {
@@ -104,7 +104,7 @@ string Senha::get_senha() {
     return senha;
 }
 
-void Senha::validar_senha(string nova_senha) {
+void Senha::validar_senha(const string& nova_senha) {
     if (nova_senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
 
@@ -125,7 +125,7 @@ string Codigo::get_codigo() {
     return codigo;
 }
 
-void Codigo::validar_codigo(string codigo) {
+void Codigo::validar_codigo(const string& codigo) {
     int tam = codigo.size();
 
     if (tam != 6) {
@@ -167,7 +167,7 @@ vector<string> Data::extrair_data(const string& data) {
     return resultado;
 }
 
-void Data::validar_data(string data) {
+void Data::validar_data(const string& data) {
     int tam = data.size();
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
