@@ -43,6 +43,7 @@ class Telefone {
 // CLASSE RESULTADO
 class Resultado {
    private:
+      
    public:
     string get_resultado();
 };

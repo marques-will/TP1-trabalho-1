@@ -3,7 +3,9 @@
 
 #include "dominios.h"
 #include "entidades.h"
-#include "comandos.h"
+// #include "comandos.h"
 #include <stdexcept>
 
 using namespace std;
+
+#endif
