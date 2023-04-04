@@ -172,14 +172,8 @@ void Data::validar_data(const string& data) {
     int tam = data.size();
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int cnt = 0;
 
-    for (int i = 0; i < tam; i++) {
-        if (data[i] == '/')
-            cnt++;
-    }
-
-    if (cnt != 2)
+    if (count(data.begin(), data.end(), '/') != 2)
         throw invalid_argument("Data inválida.");
 
     vector<string> partes = extrair_data(data);
@@ -234,10 +228,12 @@ string Texto::get_texto() {
 void Texto::validar_texto(const string& texto) {
     if (texto.size() < 10 || texto.size() > 20)
         throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
+
     for (auto ch : texto) {
         if (caracteres_validos.find(ch) == string::npos)
             throw invalid_argument("Texto contém caractere(s) inválido(s).");
     }
+
     if (texto.find("  ") != string::npos)
         throw invalid_argument("Texto contém espaço(s) em branco em sequência.");
 }
