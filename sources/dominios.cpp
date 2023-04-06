@@ -10,7 +10,6 @@
 // CONSTANTES
 const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const string sinais_pontuacao = ".,;?!:-@#$%&";
-const string sinais_acentuacao = "´~^`";
 const string caracteres_validos = letras_digitos + sinais_pontuacao;
 
 // FUNÇÕES AUXILIARES
@@ -29,17 +28,17 @@ bool ano_bissexto(const int& ano) {
 };
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
-void Matricula::setValor(int nova_matricula) {
-    validar(nova_matricula);
-    this->matricula = nova_matricula;
+void Matricula::setValor(int matricula) {
+    validar(matricula);
+    this->matricula = matricula;
 }
 
 int Matricula::getValor() {
     return matricula;
 }
 
-void Matricula::validar(const int& num_matricula) {
-    string a = to_string(num_matricula);
+void Matricula::validar(const int& matricula) {
+    string a = to_string(matricula);
 
     if (a.length() != 7) {
         throw invalid_argument("A matrícula deve conter 7 dígitos");
@@ -74,17 +73,17 @@ void Matricula::validar(const int& num_matricula) {
 }
 
 // IMPLEMENTAÇÃO DO TELEFONE
-void Telefone::setValor(string novo_telefone) {
-    validar(novo_telefone);
-    this->telefone = novo_telefone;
+void Telefone::setValor(string telefone) {
+    validar(telefone);
+    this->telefone = telefone;
 }
 
 string Telefone::getValor() {
     return telefone;
 }
 
-void Telefone::validar(const string& num_telefone) {
-    int tam = num_telefone.size();
+void Telefone::validar(const string& telefone) {
+    int tam = telefone.size();
 
     if (!(tam >= 8 && tam <= 16)) {
         throw invalid_argument("O telefone deve conter \"+\" seguido de 7 a 15 dígitos.");
@@ -92,39 +91,39 @@ void Telefone::validar(const string& num_telefone) {
 
     for (int i = 0; i < tam; i++) {
         if (i == 0) {
-            if (num_telefone[i] != '+')
+            if (telefone[i] != '+')
                 throw invalid_argument("O primeiro caractere deve ser \"+\".");
         } else {
-            if (!isdigit(num_telefone[i]))
+            if (!isdigit(telefone[i]))
                 throw invalid_argument("Número de telefone inválido.");
         }
     }
 }
 
 // IMPLEMENTAÇÃO DA SENHA
-void Senha::setValor(string nova_senha) {
-    validar(nova_senha);
-    this->senha = nova_senha;
+void Senha::setValor(string senha) {
+    validar(senha);
+    this->senha = senha;
 }
 string Senha::getValor() {
     return senha;
 }
 
-void Senha::validar(const string& nova_senha) {
-    if (nova_senha.size() != 6)
+void Senha::validar(const string& senha) {
+    if (senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
 
-    for (auto ch : nova_senha) {
-        int cnt = count(nova_senha.begin(), nova_senha.end(), ch);
+    for (auto ch : senha) {
+        int cnt = count(senha.begin(), senha.end(), ch);
         if (cnt > 1)
             throw invalid_argument("A senha não pode conter caracteres repetidos.");
     }
 }
 
 // IMPLEMENTAÇÃO DO CÓDIGO
-void Codigo::setValor(string novo_codigo) {
-    validar(novo_codigo);
-    this->codigo = novo_codigo;
+void Codigo::setValor(string codigo) {
+    validar(codigo);
+    this->codigo = codigo;
 }
 
 string Codigo::getValor() {
@@ -152,9 +151,9 @@ void Codigo::validar(const string& codigo) {
 }
 
 // IMPLEMENTAÇÃO DA DATA
-void Data::setValor(string nova_data) {
-    validar(nova_data);
-    this->data = nova_data;
+void Data::setValor(string data) {
+    validar(data);
+    this->data = data;
 }
 
 string Data::getValor() {
@@ -221,9 +220,9 @@ void Data::validar(const string& data) {
 };
 
 // IMPLEMENTAÇÃO DO TEXTO
-void Texto::setValor(string novo_texto) {
-    validar(novo_texto);
-    this->texto = novo_texto;
+void Texto::setValor(string texto) {
+    validar(texto);
+    this->texto = texto;
 }
 
 string Texto::getValor() {
