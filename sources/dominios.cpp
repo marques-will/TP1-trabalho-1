@@ -36,14 +36,7 @@ void Matricula::setValor(int matricula) {
 int Matricula::getValor() {
     return matricula;
 }
-
-void Matricula::validar(const int& matricula) {
-    string a = to_string(matricula);
-
-    if (a.length() != 7) {
-        throw invalid_argument("A matrícula deve conter 7 dígitos");
-    }
-
+void Matricula::validar_digitoverificador(const int&){
     int fator = 1, soma = 0, digito_real;
     for (int i = 0; i < a.length() - 1; i++) {
         int valor = a[i] - '0';
@@ -71,6 +64,14 @@ void Matricula::validar(const int& matricula) {
         throw invalid_argument("O dígito verificador está incorreto.");
     }
 }
+void Matricula::validar(const int&) {
+    validar_digitoverificador(int&);
+    string a = to_string(matricula);
+    if (a.length() != 7) {
+        throw invalid_argument("A matrícula deve conter 7 dígitos");
+    }
+}
+
 
 // IMPLEMENTAÇÃO DO TELEFONE
 void Telefone::setValor(string telefone) {
