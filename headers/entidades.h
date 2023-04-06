@@ -56,7 +56,7 @@
 //     return senha;
 // }
 
-// class test {
+// class teste {
 //    private:
 //     test() {
 //         Codigo *codigo = new Codigo();
@@ -67,7 +67,7 @@
 //    public:
 // };
 
-// class testCase {
+// class CasoDeTeste {
 //    private:
 //     testCase() {
 //         Codigo *codigo = new Codigo();

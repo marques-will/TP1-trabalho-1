@@ -43,7 +43,6 @@ class Telefone {
 // CLASSE RESULTADO
 class Resultado {
    private:
-      
    public:
 };
 // CLASSE CODIGO
@@ -79,7 +78,7 @@ class Data {
    private:
     string data;
     void validar(const string&);
-    vector<string> extrair_data(const string& );
+    vector<string> extrair_data(const string&);
 
    public:
     void setValor(string);
