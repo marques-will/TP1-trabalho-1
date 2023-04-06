@@ -36,20 +36,25 @@ void Matricula::setValor(int matricula) {
 int Matricula::getValor() {
     return matricula;
 }
-void Matricula::validar_digitoverificador(const int&){
+
+void Matricula::validar(const int& matricula) {
+    string a = to_string(matricula);
+
+    if (a.length() != 7) {
+        throw invalid_argument("A matrícula deve conter 7 dígitos");
+    }
+
     int fator = 1, soma = 0, digito_real;
     for (int i = 0; i < a.length() - 1; i++) {
         int valor = a[i] - '0';
         soma = soma + fator * valor;
-        if(i % 2 == 0){
+        if (i % 2 == 0) {
             fator = 2;
             continue;
-        }
-        else{
+        } else {
             fator = 1;
             continue;
         }
-        
     }
 
     soma = soma % 10;
@@ -64,14 +69,6 @@ void Matricula::validar_digitoverificador(const int&){
         throw invalid_argument("O dígito verificador está incorreto.");
     }
 }
-void Matricula::validar(const int&) {
-    validar_digitoverificador(int&);
-    string a = to_string(matricula);
-    if (a.length() != 7) {
-        throw invalid_argument("A matrícula deve conter 7 dígitos");
-    }
-}
-
 
 // IMPLEMENTAÇÃO DO TELEFONE
 void Telefone::setValor(string telefone) {
