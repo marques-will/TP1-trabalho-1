@@ -11,6 +11,8 @@ class Matricula {
    private:
     int matricula;
     void validar(const int&);
+    void validar_digitoverificador(const int&);
+
 
    public:
     void setValor(int);
@@ -33,7 +35,6 @@ class Telefone {
    private:
     string telefone;
     void validar(const string&);
-    void validar_digitoverificador(const string&);
 
    public:
     void setValor(string);
