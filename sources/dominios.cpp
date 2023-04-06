@@ -22,63 +22,60 @@ void to_upper(string& str) {
 }
 
 bool ano_bissexto(const int& ano) {
-    bool result = false;
-
-    if (ano % 4 == 0) {
-        if (ano % 100 == 0) {
-            if (ano % 400 == 0)
-                result = true;
-        } else
-            result = true;
+    if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)) {
+        return true;
     }
-
-    return result;
+    return false;
 };
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
-void Matricula::set_matricula(int nova_matricula) {
-    validar_matricula(nova_matricula);
+void Matricula::setValor(int nova_matricula) {
+    validar(nova_matricula);
     this->matricula = nova_matricula;
 }
 
-int Matricula::get_matricula() {
+int Matricula::getValor() {
     return matricula;
 }
 
-void Matricula::validar_matricula(const int& num_matricula) {
+void Matricula::validar(const int& num_matricula) {
     string a = to_string(num_matricula);
+
     if (a.length() != 7) {
         throw invalid_argument("A matrícula deve conter 7 dígitos");
     }
+
     int fator = 8, soma = 0, digito_real;
     for (int i = 0; i < a.length() - 1; i++) {
         int valor = a[i] - '0';
         soma = soma + fator * valor;
         fator = fator - 1;
     }
+
     soma = soma % 10;
     if (soma != 0) {
         digito_real = 10 - soma;
     } else {
         digito_real = soma;
     }
+
     int digito_encontrado = a[6] - '0';
     if (digito_encontrado != digito_real) {
-        throw invalid_argument("O dígito verificador está incorreto");
+        throw invalid_argument("O dígito verificador está incorreto.");
     }
 }
 
 // IMPLEMENTAÇÃO DO TELEFONE
-void Telefone::set_telefone(string novo_telefone) {
-    validar_telefone(novo_telefone);
+void Telefone::setValor(string novo_telefone) {
+    validar(novo_telefone);
     this->telefone = novo_telefone;
 }
 
-string Telefone::get_telefone() {
+string Telefone::getValor() {
     return telefone;
 }
 
-void Telefone::validar_telefone(const string& num_telefone) {
+void Telefone::validar(const string& num_telefone) {
     int tam = num_telefone.size();
 
     if (!(tam >= 8 && tam <= 16)) {
@@ -97,15 +94,15 @@ void Telefone::validar_telefone(const string& num_telefone) {
 }
 
 // IMPLEMENTAÇÃO DA SENHA
-void Senha::set_senha(string nova_senha) {
-    validar_senha(nova_senha);
+void Senha::setValor(string nova_senha) {
+    validar(nova_senha);
     this->senha = nova_senha;
 }
-string Senha::get_senha() {
+string Senha::getValor() {
     return senha;
 }
 
-void Senha::validar_senha(const string& nova_senha) {
+void Senha::validar(const string& nova_senha) {
     if (nova_senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
 
@@ -117,16 +114,16 @@ void Senha::validar_senha(const string& nova_senha) {
 }
 
 // IMPLEMENTAÇÃO DO CÓDIGO
-void Codigo::set_codigo(string novo_codigo) {
-    validar_codigo(novo_codigo);
+void Codigo::setValor(string novo_codigo) {
+    validar(novo_codigo);
     this->codigo = novo_codigo;
 }
 
-string Codigo::get_codigo() {
+string Codigo::getValor() {
     return codigo;
 }
 
-void Codigo::validar_codigo(const string& codigo) {
+void Codigo::validar(const string& codigo) {
     int tam = codigo.size();
 
     if (tam != 6) {
@@ -147,12 +144,12 @@ void Codigo::validar_codigo(const string& codigo) {
 }
 
 // IMPLEMENTAÇÃO DA DATA
-void Data::set_data(string nova_data) {
-    validar_data(nova_data);
+void Data::setValor(string nova_data) {
+    validar(nova_data);
     this->data = nova_data;
 }
 
-string Data::get_data() {
+string Data::getValor() {
     return data;
 }
 
@@ -168,7 +165,7 @@ vector<string> Data::extrair_data(const string& data) {
     return resultado;
 }
 
-void Data::validar_data(const string& data) {
+void Data::validar(const string& data) {
     int tam = data.size();
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -216,16 +213,16 @@ void Data::validar_data(const string& data) {
 };
 
 // IMPLEMENTAÇÃO DO TEXTO
-void Texto::set_texto(string novo_texto) {
-    validar_texto(novo_texto);
+void Texto::setValor(string novo_texto) {
+    validar(novo_texto);
     this->texto = novo_texto;
 }
 
-string Texto::get_texto() {
+string Texto::getValor() {
     return texto;
 }
 
-void Texto::validar_texto(const string& texto) {
+void Texto::validar(const string& texto) {
     if (texto.size() < 10 || texto.size() > 20)
         throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
 

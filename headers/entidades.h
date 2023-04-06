@@ -2,9 +2,9 @@
 #define ENTIDADES_H_INCLUDED
 
 #include "dominios.h"
-class desenvolvedor {
+class dev {
    private:
-    desenvolvedor() {
+    dev() {
         Matricula *matricula = new Matricula();
         Texto *texto = new Texto();
         Senha *senha = new Senha();
@@ -14,9 +14,9 @@ class desenvolvedor {
    public:
 };
 
-class teste {
+class test {
    private:
-    teste() {
+    test() {
         Codigo *codigo = new Codigo();
         Texto *nome = new Texto();
         Classe *classe = new Classe();
@@ -25,9 +25,9 @@ class teste {
    public:
 };
 
-class caso_teste {
+class testCase {
    private:
-    caso_teste() {
+    testCase() {
         Codigo *codigo = new Codigo();
         Texto *nome = new Texto();
         Data *data = new Data();

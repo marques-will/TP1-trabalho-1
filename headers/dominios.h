@@ -10,34 +10,34 @@ using namespace std;
 class Matricula {
    private:
     int matricula;
-    void validar_matricula(const int& nova_matricula);
+    void validar(const int&);
 
    public:
-    void set_matricula(int nova_matricula);
-    int get_matricula();
+    void setValor(int);
+    int getValor();
 };
 
 // CLASSE SENHA
 class Senha {
    private:
     string senha;
-    void validar_senha(const string& nova_senha);
+    void validar(const string&);
 
    public:
-    void set_senha(string nova_senha);
-    string get_senha();
+    void setValor(string);
+    string getValor();
 };
 
 // CLASSE TELEFONE
 class Telefone {
    private:
     string telefone;
-    void validar_telefone(const string& novo_telefone);
-    void validar_digitoverificador(const string& novo_telefone);
+    void validar(const string&);
+    void validar_digitoverificador(const string&);
 
    public:
-    void set_telefone(string novo_telefone);
-    string get_telefone();
+    void setValor(string);
+    string getValor();
 };
 
 // CLASSE RESULTADO
@@ -45,29 +45,27 @@ class Resultado {
    private:
       
    public:
-    string get_resultado();
 };
-
 // CLASSE CODIGO
 class Codigo {
    private:
     string codigo;
-    void validar_codigo(const string& novo_codigo);
+    void validar(const string&);
 
    public:
-    void set_codigo(string novo_codigo);
-    string get_codigo();
+    void setValor(string);
+    string getValor();
 };
 
 // CLASSE TEXTO
 class Texto {
    private:
     string texto;
-    void validar_texto(const string& novo_texto);
+    void validar(const string&);
 
    public:
-    void set_texto(string novo_texto);
-    string get_texto();
+    void setValor(string);
+    string getValor();
 };
 
 // CLASSE CLASSE
@@ -80,12 +78,12 @@ class Classe {
 class Data {
    private:
     string data;
-    void validar_data(const string& nova_data);
-    vector<string> extrair_data(const string& nova_data);
+    void validar(const string&);
+    vector<string> extrair_data(const string& );
 
    public:
-    void set_data(string data);
-    string get_data();
+    void setValor(string);
+    string getValor();
 };
 
 #endif
