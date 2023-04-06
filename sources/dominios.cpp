@@ -7,25 +7,6 @@
 #include <sstream>
 #include <string>
 #include <vector>
-// CONSTANTES
-const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const string sinais_pontuacao = ".,;?!:-@#$%&";
-const string caracteres_validos = letras_digitos + sinais_pontuacao;
-
-// FUNÇÕES AUXILIARES
-void to_upper(string& str) {
-    for (int i = 0; i < str.size(); i++) {
-        if (isalpha(str[i]))
-            str[i] = toupper(str[i]);
-    }
-}
-
-bool ano_bissexto(const int& ano) {
-    if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)) {
-        return true;
-    }
-    return false;
-};
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
 void Matricula::setValor(int matricula) {
@@ -170,6 +151,13 @@ vector<string> Data::extrair_data(const string& data) {
     return resultado;
 }
 
+bool Data::bissexto(const int& ano) {
+    if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)) {
+        return true;
+    }
+    return false;
+};
+
 void Data::validar(const string& data) {
     int tam = data.size();
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
@@ -187,7 +175,10 @@ void Data::validar(const string& data) {
         int dia = stoi(str_dia);
         int ano = stoi(str_ano);
 
-        to_upper(mes);
+        for (int i = 0; i < mes.size(); i++) {  // converte caracteres de MES para upper
+            if (isalpha(mes[i]))
+                mes[i] = toupper(mes[i]);
+        }
 
         if (ano < 2000 || ano > 2999)
             throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
@@ -197,7 +188,7 @@ void Data::validar(const string& data) {
         }
 
         if (mes == "FEV") {
-            if (ano_bissexto(ano))
+            if (bissexto(ano))
                 dias[1]++;  // adiciona 1 dia em fevereiro
         }
 
@@ -228,6 +219,10 @@ string Texto::getValor() {
 }
 
 void Texto::validar(const string& texto) {
+    const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const string sinais_pontuacao = ".,;?!:-@#$%&";
+    const string caracteres_validos = letras_digitos + sinais_pontuacao;
+
     if (texto.size() < 10 || texto.size() > 20)
         throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
 

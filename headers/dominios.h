@@ -78,8 +78,9 @@ class Classe {
 class Data {
    private:
     string data;
-    void validar(const string& data);
     vector<string> extrair_data(const string& data);
+    bool Data::bissexto(const int& ano);
+    void validar(const string& data);
 
    public:
     void setValor(string data);
