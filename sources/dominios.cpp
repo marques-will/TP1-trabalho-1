@@ -50,11 +50,19 @@ void Matricula::validar_matricula(const int& num_matricula) {
     if (a.length() != 7) {
         throw invalid_argument("A matrícula deve conter 7 dígitos");
     }
-    int fator = 8, soma = 0, digito_real;
+    int fator = 1, soma = 0, digito_real;
     for (int i = 0; i < a.length() - 1; i++) {
         int valor = a[i] - '0';
         soma = soma + fator * valor;
-        fator = fator - 1;
+        if(i % 2 == 0){
+            fator = 2;
+            continue;
+        }
+        else{
+            fator = 1;
+            continue;
+        }
+        
     }
     soma = soma % 10;
     if (soma != 0) {
