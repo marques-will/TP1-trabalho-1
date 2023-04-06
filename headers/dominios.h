@@ -45,6 +45,7 @@ class Resultado {
    private:
    public:
 };
+
 // CLASSE CODIGO
 class Codigo {
    private:
