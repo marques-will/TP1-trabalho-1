@@ -33,7 +33,6 @@ class Telefone {
    private:
     string telefone;
     void validar(const string& telefone);
-    void validar_digitoverificador(const string& telefone);
 
    public:
     void setValor(string telefone);
@@ -87,4 +86,4 @@ class Data {
     string getValor();
 };
 
-#endif
+#endif  // DOMINIOS_H_INCLUDED
