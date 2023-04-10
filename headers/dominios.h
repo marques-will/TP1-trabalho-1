@@ -6,7 +6,7 @@
 #include <vector>
 using namespace std;
 
-// CLASSE MATRICULA
+// CLASSE MATRICULA - 221006351
 class Matricula {
    private:
     int matricula;
@@ -17,7 +17,7 @@ class Matricula {
     int getValor();
 };
 
-// CLASSE SENHA
+// CLASSE SENHA - 221020940
 class Senha {
    private:
     string senha;
@@ -28,7 +28,7 @@ class Senha {
     string getValor();
 };
 
-// CLASSE TELEFONE
+// CLASSE TELEFONE - 221006351
 class Telefone {
    private:
     string telefone;
@@ -39,13 +39,13 @@ class Telefone {
     string getValor();
 };
 
-// CLASSE RESULTADO
+// CLASSE RESULTADO - 221006389
 class Resultado {
    private:
    public:
 };
 
-// CLASSE CODIGO
+// CLASSE CODIGO - 221006351
 class Codigo {
    private:
     string codigo;
@@ -56,7 +56,7 @@ class Codigo {
     string getValor();
 };
 
-// CLASSE TEXTO
+// CLASSE TEXTO - 221020940
 class Texto {
    private:
     string texto;
@@ -67,13 +67,13 @@ class Texto {
     string getValor();
 };
 
-// CLASSE CLASSE
+// CLASSE CLASSE - 221006389
 class Classe {
    private:
    public:
 };
 
-// CLASSE DATA
+// CLASSE DATA - 221020940
 class Data {
    private:
     string data;

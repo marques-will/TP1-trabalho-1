@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <cctype>
 #include <iostream>
-#include <sstream>
 #include <string>
 #include <vector>
 
@@ -140,15 +139,19 @@ string Data::getValor() {
 }
 
 vector<string> Data::extrair_data(const string& data) {
-    vector<string> resultado;
-    string parte;
+    vector<string> result;
+    string temp_str = "";
 
-    stringstream partes(data);
-    while (getline(partes, parte, '/')) {
-        resultado.push_back(parte);
+    for (int i = 0; i < data.size(); i++) {
+        if (data[i] == '/' || i == data.size() - 1) {
+            result.push_back(temp_str);
+            temp_str = "";
+        } else {
+            temp_str = temp_str + data[i];
+        }
     }
 
-    return resultado;
+    return result;
 }
 
 bool Data::bissexto(const int& ano) {
@@ -164,16 +167,14 @@ void Data::validar(const string& data) {
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     if (count(data.begin(), data.end(), '/') != 2)
-        throw invalid_argument("Data inválida.");
+        throw invalid_argument("Formato de data inválido.");
 
     vector<string> partes = extrair_data(data);
-    string str_dia = partes[0];
-    string mes = partes[1];
-    string str_ano = partes[2];
 
     try {
-        int dia = stoi(str_dia);
-        int ano = stoi(str_ano);
+        int dia = stoi(partes[0]);
+        string mes = partes[1];
+        int ano = stoi(partes[2]);
 
         for (int i = 0; i < mes.size(); i++) {  // converte caracteres de MES para upper
             if (isalpha(mes[i]))
