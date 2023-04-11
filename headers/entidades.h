@@ -1,16 +1,16 @@
-// #ifndef ENTIDADES_H_INCLUDED
-// #define ENTIDADES_H_INCLUDED
+#ifndef ENTIDADES_H_INCLUDED
+#define ENTIDADES_H_INCLUDED
 
-// #include "dominios.h"
-// class dev {
-//    private:
-//     dev() {
-//         Matricula *matricula = new Matricula();
-//         Texto *texto = new Texto();
-//         Senha *senha = new Senha();
-//         Telefone *telefone = new Telefone();
-//     }
-
+#include "../headers/dominios.h"
+class Desenvolvedor {
+   private:
+    Desenvolvedor() {
+        Matricula *matricula = new Matricula();
+        Texto *texto = new Texto();
+        Senha *senha = new Senha();
+        Telefone *telefone = new Telefone();
+    }
+};
 //    public:
 //     void setMatricula(const Matricula &);
 //     Matricula getMatricula() const;
@@ -25,7 +25,7 @@
 
 // // Matricula
 // // OBS: implementar o <PK> protected key
-// inline void Desenvolvedor::set_Matricula(const Matricula &) {
+// inline void Desenvolvedor::setMatricula(const Matricula &) {
 //     this->matricula = matricula;
 // }
 // inline Matricula Desenvolvedor::getMatricula() const {
@@ -33,52 +33,52 @@
 // }
 
 // // Nome
-// inline void Desenvolvedor::set_Texto(const Texto &) const {
+// inline void Desenvolvedor::setTexto(const Texto &) const {
 //     this->texto = nome;
 // }
-// inline Texto Desenvolvedor::get_Texto() const {
+// inline Texto Desenvolvedor::getTexto() const {
 //     return nome;
 // }
 
 // // Telefone
-// inline void Desenvolvedor::set_Telefone(const Telefone &) {
+// inline void Desenvolvedor::setTelefone(const Telefone &) {
 //     this->telefone = telefone;
 // }
-// inline Telefone Desenvolvedor::get_Telefone() const {
+// inline Telefone Desenvolvedor::getTelefone() const {
 //     return telefone;
 // }
 
 // // Senha
-// inline void Desenvolvedor::set_Senha(const Senha &) {
+// inline void Desenvolvedor::setSenha(const senha &) {
 //     this->senha = senha;
 // }
-// inline Senha Desenvolvedor::get_Senha() const {
+// inline Senha Desenvolvedor::getSenha() const {
 //     return senha;
 // }
 
-// class teste {
-//    private:
-//     test() {
-//         Codigo *codigo = new Codigo();
-//         Texto *nome = new Texto();
-//         Classe *classe = new Classe();
-//     }
+class Teste {
+   private:
+    Teste() {
+        Codigo *codigo = new Codigo();
+        Texto *nome = new Texto();
+        Classe *classe = new Classe();
+    }
 
-//    public:
-// };
+   public:
+};
 
-// class CasoDeTeste {
-//    private:
-//     testCase() {
-//         Codigo *codigo = new Codigo();
-//         Texto *nome = new Texto();
-//         Data *data = new Data();
-//         Texto *acao = new Texto();
-//         Texto *resposta = new Texto();
-//         Resultado *resultado = new Resultado();
-//     }
+class CasoTeste {
+   private:
+    CasoTeste() {
+        Codigo *codigo = new Codigo();
+        Texto *nome = new Texto();
+        Data *data = new Data();
+        Texto *acao = new Texto();
+        Texto *resposta = new Texto();
+        Resultado *resultado = new Resultado();
+    }
 
-//    public:
-// };
+   public:
+};
 
-// #endif  // ENTIDADES_H_INCLUDED
+#endif  // ENTIDADES_H_INCLUDED

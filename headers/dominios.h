@@ -10,12 +10,12 @@ using namespace std;
 // CLASSE MATRICULA - 221006351
 class Matricula {
    private:
-    int matricula;
-    void validar(const int& matricula);
+    string matricula;
+    void validar(const string& matricula);
 
    public:
-    void setValor(int matricula);
-    int getValor();
+    void setValor(string matricula);
+    string getValor();
 };
 
 // CLASSE SENHA - 221020940
