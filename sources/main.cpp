@@ -11,7 +11,20 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "Portuguese");
     Codigo teste;
-    teste.setValor("ab123");
-    cout << teste.getValor();
+    Telefone telefone;
+    teste.setValor("abc123");
+    telefone.setValor("+12345678");
+    cout << teste.getValor() << endl;
+    cout << telefone.getValor() << endl;
+    Matricula matricula;
+    matricula.setValor("1234567");
+    cout << matricula.getValor() << endl;
+    Texto texto;
+    texto.setValor("o joao eh foda");
+    cout << texto.getValor() << endl;
+    Data data;
+    data.setValor("10/DEZ/2010");
+    cout << data.getValor() << endl;
+
     return 0;
 }
