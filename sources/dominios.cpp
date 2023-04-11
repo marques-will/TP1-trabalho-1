@@ -7,16 +7,16 @@
 #include <string>
 #include <vector>
 
-// IMPLEMENTAÇÃO DA MATRÍCULA
-void Matricula::setValor(string matricula) {
-    validar(matricula);
-    this->matricula = matricula;
+// VALIDAÇÃO SETTER E GETTER
+void Dominios::setValor(string valor) {
+    this->valor = valor;
 }
 
-string Matricula::getValor() {
-    return matricula;
+string Dominios::getValor() {
+    return valor;
 }
 
+// VALIDAÇÃO DA MATRÍCULA
 void Matricula::validar(const string& matricula) {
     if (matricula.size() != 7) {
         throw invalid_argument("A matrícula deve conter 7 dígitos");
@@ -48,16 +48,7 @@ void Matricula::validar(const string& matricula) {
     }
 }
 
-// IMPLEMENTAÇÃO DO TELEFONE
-void Telefone::setValor(string telefone) {
-    validar(telefone);
-    this->telefone = telefone;
-}
-
-string Telefone::getValor() {
-    return telefone;
-}
-
+// VALIDAÇÃO DO TELEFONE
 void Telefone::validar(const string& telefone) {
     int tam = telefone.size();
 
@@ -76,15 +67,7 @@ void Telefone::validar(const string& telefone) {
     }
 }
 
-// IMPLEMENTAÇÃO DA SENHA
-void Senha::setValor(string senha) {
-    validar(senha);
-    this->senha = senha;
-}
-string Senha::getValor() {
-    return senha;
-}
-
+// VALIDAÇÃO DA SENHA
 void Senha::validar(const string& senha) {
     if (senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
@@ -96,16 +79,7 @@ void Senha::validar(const string& senha) {
     }
 }
 
-// IMPLEMENTAÇÃO DO CÓDIGO
-void Codigo::setValor(string codigo) {
-    validar(codigo);
-    this->codigo = codigo;
-}
-
-string Codigo::getValor() {
-    return codigo;
-}
-
+// VALIDAÇÃO DO CÓDIGO
 void Codigo::validar(const string& codigo) {
     int tam = codigo.size();
 
@@ -126,16 +100,7 @@ void Codigo::validar(const string& codigo) {
     }
 }
 
-// IMPLEMENTAÇÃO DA DATA
-void Data::setValor(string data) {
-    validar(data);
-    this->data = data;
-}
-
-string Data::getValor() {
-    return data;
-}
-
+// VALIDAÇÃO DA DATA
 vector<string> Data::extrair_data(const string& data) {
     vector<string> result;
     string temp_str = "";
@@ -207,16 +172,7 @@ void Data::validar(const string& data) {
     }
 };
 
-// IMPLEMENTAÇÃO DO TEXTO
-void Texto::setValor(string texto) {
-    validar(texto);
-    this->texto = texto;
-}
-
-string Texto::getValor() {
-    return texto;
-}
-
+// VALIDAÇÃO DO TEXTO
 void Texto::validar(const string& texto) {
     const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const string sinais_pontuacao = ".,;?!:-@#$%&";

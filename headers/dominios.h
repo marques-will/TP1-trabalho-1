@@ -6,76 +6,110 @@
 #include <vector>
 using namespace std;
 
-//
-// CLASSE MATRICULA - 221006351
-class Matricula {
+// CLASSE DOMINIOS
+class Dominios {
+   private:
+    string valor;
+
+   public:
+    void setValor(string);
+    string getValor();
+};
+
+// SUBCLASSE MATRICULA - 221006351
+class Matricula : public Dominios {
    private:
     string matricula;
     void validar(const string& matricula);
 
    public:
-    void setValor(string matricula);
-    string getValor();
+    void setValor(string matricula) {
+        validar(matricula);
+        Dominios::setValor(matricula);
+    };
+    string getValor() {
+        return Dominios::getValor();
+    }
 };
 
-// CLASSE SENHA - 221020940
-class Senha {
+// SUBCLASSE SENHA - 221020940
+class Senha : public Dominios {
    private:
     string senha;
     void validar(const string& senha);
 
    public:
-    void setValor(string senha);
-    string getValor();
+    void setValor(string senha) {
+        validar(senha);
+        Dominios::setValor(senha);
+    };
+    string getValor() {
+        return Dominios::getValor();
+    }
 };
 
-// CLASSE TELEFONE - 221006351
-class Telefone {
+// SUBCLASSE TELEFONE - 221006351
+class Telefone : public Dominios {
    private:
     string telefone;
     void validar(const string& telefone);
 
    public:
-    void setValor(string telefone);
-    string getValor();
+    void setValor(string telefone) {
+        validar(telefone);
+        Dominios::setValor(telefone);
+    };
+    string getValor() {
+        return Dominios::getValor();
+    }
 };
 
-// CLASSE RESULTADO - 221006389
-class Resultado {
+// SUBCLASSE RESULTADO - 221006389
+class Resultado : public Dominios {
    private:
    public:
 };
 
-// CLASSE CODIGO - 221006351
-class Codigo {
+// SUBCLASSE CODIGO - 221006351
+class Codigo : public Dominios {
    private:
     string codigo;
     void validar(const string& codigo);
 
    public:
-    void setValor(string codigo);
-    string getValor();
+    void setValor(string codigo) {
+        validar(codigo);
+        Dominios::setValor(codigo);
+    };
+    string getValor() {
+        return Dominios::getValor();
+    }
 };
 
-// CLASSE TEXTO - 221020940
-class Texto {
+// SUBCLASSE TEXTO - 221020940
+class Texto : public Dominios {
    private:
     string texto;
     void validar(const string& texto);
 
    public:
-    void setValor(string texto);
-    string getValor();
+    void setValor(string texto) {
+        validar(texto);
+        Dominios::setValor(texto);
+    };
+    string getValor() {
+        return Dominios::getValor();
+    }
 };
 
-// CLASSE CLASSE - 221006389
+// SUBCLASSE CLASSE - 221006389
 class Classe {
    private:
    public:
 };
 
-// CLASSE DATA - 221020940
-class Data {
+// SUBCLASSE DATA - 221020940
+class Data : public Dominios {
    private:
     string data;
     vector<string> extrair_data(const string& data);
@@ -83,8 +117,13 @@ class Data {
     void validar(const string& data);
 
    public:
-    void setValor(string data);
-    string getValor();
+    void setValor(string data) {
+        validar(data);
+        Dominios::setValor(data);
+    };
+    string getValor() {
+        return Dominios::getValor();
+    }
 };
 
 #endif  // DOMINIOS_H_INCLUDED
