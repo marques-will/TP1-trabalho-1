@@ -1,5 +1,5 @@
 // BIBLIOTECAS
-#include "dominios.h"
+#include "../headers/dominios.h"
 
 #include <algorithm>
 #include <cctype>
@@ -8,25 +8,23 @@
 #include <vector>
 
 // IMPLEMENTAÇÃO DA MATRÍCULA
-void Matricula::setValor(int matricula) {
+void Matricula::setValor(string matricula) {
     validar(matricula);
     this->matricula = matricula;
 }
 
-int Matricula::getValor() {
+string Matricula::getValor() {
     return matricula;
 }
 
-void Matricula::validar(const int& matricula) {
-    string a = to_string(matricula);
-
-    if (a.length() != 7) {
+void Matricula::validar(const string& matricula) {
+    if (matricula.size() != 7) {
         throw invalid_argument("A matrícula deve conter 7 dígitos");
     }
 
     int fator = 1, soma = 0, digito_real;
-    for (int i = 0; i < a.length() - 1; i++) {
-        int valor = a[i] - '0';
+    for (int i = 0; i < matricula.size() - 1; i++) {
+        int valor = matricula[i] - '0';
         soma = soma + fator * valor;
         if (i % 2 == 0) {
             fator = 2;
@@ -44,7 +42,7 @@ void Matricula::validar(const int& matricula) {
         digito_real = soma;
     }
 
-    int digito_encontrado = a[6] - '0';
+    int digito_encontrado = matricula[6] - '0';
     if (digito_encontrado != digito_real) {
         throw invalid_argument("O dígito verificador está incorreto.");
     }

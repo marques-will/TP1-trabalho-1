@@ -1,9 +1,9 @@
 #include <iostream>
 
-#include "dominios.h"
-#include "entidades.h"
-#include "testes_dominios.h"
-#include "testes_entidades.h"
+#include "../headers/dominios.h"
+#include "../headers/entidades.h"
+#include "../headers/testes_dominios.h"
+#include "../headers/testes_entidades.h"
 
 using namespace std;
 
