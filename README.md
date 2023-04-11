@@ -13,7 +13,7 @@ Repositório do primeiro trabalho de TP1.
   3. Click Edit, Copy to Settings
   4. Change from "Visual Studio" to ""C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}"
   
-## Extensões:1
+## Extensões:
     
  1. Ferramentas:
    * Doxygen Documentation Generator
@@ -42,15 +42,12 @@ Repositório do primeiro trabalho de TP1.
  * **git status**: Mostra o estado atual do repositório, incluindo os arquivos que foram alterados ou adicionados.
 
 ## Modificando o __main__:
- 1. Clone o repositório remoto com o comando `git clone url-repositorio`.
- 2. Crie um novo branch local com o nome do recurso que está trabalhando usando o comando `git checkout -b nome-branch`.
- 3. Faça as alterações necessárias no código e adicione essas mudanças ao índice com o comando `git add nome-arquivo`.
- 4. Faça um commit das mudanças com o comando `git commit -m "Mensagem de commit"`.
- 5. Envie o branch local para o repositório remoto com o comando `git push origin nome-branch`.
- 6. Abra uma nova solicitação de pull no GitHub para mesclar as alterações do branch criado com o branch `main`.
- 7. Aguarde a revisão da equipe e aprove o seu pull request no GitHub.
- 8. Se o pull request for aprovado, o código será mesclado com o branch `main`.
- 9. Atualize seu branch local com as alterações do branch `main` usando o comando `git pull origin main`.
+ 1. Acesse sua branch com com o comando `git checkout -b nome-branch`.
+ 2. Faça as alterações necessárias no código e adicione essas mudanças ao índice com o comando `git add .`. 
+ 3. Faça um commit das mudanças com o comando `git commit -m "Mensagem de commit"`.
+ 4. Envie o branch local para o repositório remoto com o comando `git push origin nome-branch`..
+ 5. Acesse o Github e crie e aprove o Pull Request e dê merge na sua branch com a branch principal (main).
+ 6. Atualize seu branch local com as alterações do branch `main` usando o comando `git pull origin main`.
 
  Mantenha o repositório atualizado e não faça alterações direto no branch main. Utilize o processo de pull request para garantir que todas as alterações sejam revisadas e aprovadas antes de serem mescladas com o branch principal.
 
