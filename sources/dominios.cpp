@@ -1,5 +1,5 @@
 // BIBLIOTECAS
-#include "dominios.h"
+#include "../headers/dominios.h"
 
 #include <algorithm>
 #include <cctype>
