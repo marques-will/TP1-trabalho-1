@@ -189,3 +189,7 @@ void Texto::validar(const string& texto) {
     if (texto.find("  ") != string::npos)
         throw invalid_argument("Texto contém espaço(s) em branco em sequência.");
 }
+// VALIDAÇÃO DE RESULTADO
+void Resultado::validar(const string& resultado) {
+    vector <string> retornos = {"APROVADO", "REPROVADO"}
+    
