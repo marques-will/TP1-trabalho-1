@@ -29,7 +29,7 @@ Repositório do primeiro trabalho de TP1.
    * Remote Explorer
 
 ## Modificando o __main__:
- 1. Acesse sua branch com com o comando `git checkout -b nome-branch`.
+ 1. Acesse sua branch com o comando `git checkout -b nome-branch`.
  2. Faça as alterações necessárias no código e adicione essas mudanças com o comando `git add .`. 
  3. Faça um commit das mudanças com o comando `git commit -m "Mensagem de commit"`.
  4. Envie o branch local para o repositório remoto com o comando `git push origin nome-branch`.
