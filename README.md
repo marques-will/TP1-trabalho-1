@@ -16,8 +16,8 @@ Repositório do primeiro trabalho de TP1.
 ## Extensões VSCode:
     
  1. Ferramentas:
-    * Doxygen Documentation Generator
-    
+   * Doxygen Documentation Generator
+   
  2. Formatação:  
    * Better C++ Syntax
    * Prettier - Code formatter
