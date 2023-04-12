@@ -71,8 +71,13 @@ class Resultado {
     void validar(const string& resultado);
 
    public:
-    void setValor(string resultado);
-    string getValor();
+   void setValor(string resultado) {
+        validar(resultado);
+        Dominios::setValor(resultado);
+    };
+    string getValor() {
+        return Dominios::getValor();
+    }
 };
 
 // SUBCLASSE CODIGO - 221006351
@@ -114,8 +119,13 @@ class Classe {
     void validar(const string& classe);
 
    public:
-    void setValor(string classe);
-    string getValor();
+    void setValor(string classe) {
+        validar(classe);
+        Dominios::setValor(classe);
+    };
+    string getValor() {
+        return Dominios::getValor();
+    };
 };
 };
 
