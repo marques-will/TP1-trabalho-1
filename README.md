@@ -30,10 +30,10 @@ Repositório do primeiro trabalho de TP1.
 
 ## Modificando o __main__:
  1. Acesse sua branch com com o comando `git checkout -b nome-branch`.
- 2. Faça as alterações necessárias no código e adicione essas mudanças ao índice com o comando `git add .`. 
+ 2. Faça as alterações necessárias no código e adicione essas mudanças com o comando `git add .`. 
  3. Faça um commit das mudanças com o comando `git commit -m "Mensagem de commit"`.
- 4. Envie o branch local para o repositório remoto com o comando `git push origin nome-branch`..
- 5. Acesse o Github e crie e aprove o Pull Request e dê merge na sua branch com a branch principal (main).
+ 4. Envie o branch local para o repositório remoto com o comando `git push origin nome-branch`.
+ 5. Acesse o Github, aprove o Pull Request e dê merge na sua branch com a main.
  6. Atualize seu branch local com as alterações do branch `main` usando o comando `git pull origin main`.
  
 ## Comandos do GIT:
