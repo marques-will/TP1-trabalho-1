@@ -11,7 +11,7 @@ Repositório do primeiro trabalho de TP1.
   1. No VsCode vá em `Preferences -> Settings`;
   2. Procure por `C_Cpp.clang_format_fallbackStyle`;
   3. Clique `Edit, Copy to Settings`
-  4. Change from `"Visual Studio"` para `"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}"`
+  4. Mude de `"Visual Studio"` para `"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0}"`
   
 ## Extensões VSCode:
     
