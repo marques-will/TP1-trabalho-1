@@ -110,7 +110,13 @@ class Texto : public Dominios {
 // SUBCLASSE CLASSE - 221006389
 class Classe {
    private:
+    string classe;
+    void validar(const string& classe);
+
    public:
+    void setValor(string classe);
+    string getValor();
+};
 };
 
 // SUBCLASSE DATA - 221020940
