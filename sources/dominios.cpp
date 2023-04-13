@@ -2,7 +2,6 @@
 #include "../headers/dominios.h"
 
 #include <algorithm>
-#include <cctype>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -65,15 +64,13 @@ void Codigo::validar(string& codigo) {
         throw invalid_argument("Código deve conter 6 caracteres.");
     }
 
-    for (int i = 0; i < 3; i++) {
-        if (!isalpha(codigo[i])) {
-            throw invalid_argument("Os três primeiros caracteres devem ser letras.");
-        }
-    }
-
-    for (int i = 3; i < 6; i++) {
-        if (!isdigit(codigo[i])) {
-            throw invalid_argument("Os três últimos caracteres devem ser números.");
+    for (int i = 0; i < 6; i++) {
+        if (i < 3) {
+            if (!isalpha(codigo[i]))
+                throw invalid_argument("Os três primeiros caracteres devem ser letras.");
+        } else {
+            if (!isdigit(codigo[i]))
+                throw invalid_argument("Os três últimos caracteres devem ser números.");
         }
     }
 }
@@ -95,13 +92,6 @@ vector<string> Data::extrair_data(string& data) {
     return result;
 }
 
-bool Data::bissexto(int& ano) {
-    if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0))
-        return true;
-
-    return false;
-};
-
 void Data::validar(string& data) {
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -111,42 +101,36 @@ void Data::validar(string& data) {
 
     vector<string> dia_mes_ano = extrair_data(data);
 
+    int dia, ano;
+    string mes;
     try {
-        int dia = stoi(dia_mes_ano[0]);
-        string mes = dia_mes_ano[1];
-        int ano = stoi(dia_mes_ano[2]);
-
-        for (int i = 0; i < mes.size(); i++) {  // converte caracteres de MES para upper
-            if (isalpha(mes[i]))
-                mes[i] = toupper(mes[i]);
-        }
-
-        if (ano < 2000 || ano > 2999)
-            throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
-
-        if (find(meses.begin(), meses.end(), mes) == meses.end()) {
-            throw invalid_argument("Mês inválido.");
-        }
-
-        if (mes == "FEV") {
-            if (bissexto(ano))
-                dias[1]++;  // adiciona 1 dia em fevereiro
-        }
-
-        int pos = 0;
-        for (int i = 0; i < meses.size(); i++) {
-            if (meses[i] == mes) {
-                pos = i;
-                break;
-            }
-        }
-
-        if (!(dia > 0 && dia <= dias[pos]))
-            throw invalid_argument("Número de dias inválido.");
-
-    } catch (invalid_argument& ex) {
+        dia = stoi(dia_mes_ano[0]);
+        mes = dia_mes_ano[1];
+        ano = stoi(dia_mes_ano[2]);
+    } catch (...) {
         throw invalid_argument("Data Inválida.");
     }
+
+    for (int i = 0; i < mes.size(); i++) {  // converte caracteres de MES para upper
+        if (isalpha(mes[i]))
+            mes[i] = isalpha(mes[i]) ? toupper(mes[i]) : mes[i];
+    }
+
+    if (ano < 2000 || ano > 2999)  // verifica se o ano está entre 2000 e 2999
+        throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
+
+    int pos;
+    if (find(meses.begin(), meses.end(), mes) == meses.end())  // verifica se a sigla está no vetor
+        throw invalid_argument("Sigla do mês inválida.");
+    else
+        pos = distance(meses.begin(), find(meses.begin(), meses.end(), mes));  // distancia do inicio até a ocorrencia
+
+    if (mes == "FEV")
+        if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0))  // verifica se é ano bissexto
+            dias[1]++;                                           // adiciona 1 dia em fevereiro
+
+    if (dia < 1 || dia > dias[pos])
+        throw invalid_argument("Número de dias inválido.");
 };
 
 // VALIDAÇÃO DO TEXTO
