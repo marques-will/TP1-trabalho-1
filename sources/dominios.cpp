@@ -2,26 +2,15 @@
 #include "../headers/dominios.h"
 
 #include <algorithm>
-#include <cctype>
 #include <iostream>
 #include <string>
 #include <vector>
 
-// VALIDAÇÃO SETTER E GETTER
-void Dominios::setValor(string valor) {
-    this->valor = valor;
-}
-
-string Dominios::getValor() {
-    return valor;
-}
-
-// VALIDAÇÃO DA MATRÍCULA
-void Matricula::validar(const string& matricula) {
-    if (matricula.size() != 7) {
+// VALIDAÇÃO DA MATRÍCULA - 221006351
+void Matricula::validar(string& matricula) {
+    if (matricula.size() != 7)
         throw invalid_argument("A matrícula deve conter 7 dígitos");
-    }
-//ALGORITMO PARA O DÍGITO VERIFICADOR
+
     int fator = 1, soma = 0, digito_real;
     for (int i = 0; i < matricula.size() - 1; i++) {
         int valor = matricula[i] - '0';
@@ -48,8 +37,8 @@ void Matricula::validar(const string& matricula) {
     }
 }
 
-// VALIDAÇÃO DO TELEFONE
-void Telefone::validar(const string& telefone) {
+// VALIDAÇÃO DO TELEFONE - 221020940
+void Telefone::validar(string& telefone) {
     int tam = telefone.size();
 
     if (!(tam >= 8 && tam <= 16)) {
@@ -67,8 +56,8 @@ void Telefone::validar(const string& telefone) {
     }
 }
 
-// VALIDAÇÃO DA SENHA
-void Senha::validar(const string& senha) {
+// VALIDAÇÃO DA SENHA - 221020940
+void Senha::validar(string& senha) {
     if (senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
 
@@ -79,8 +68,8 @@ void Senha::validar(const string& senha) {
     }
 }
 
-// VALIDAÇÃO DO CÓDIGO
-void Codigo::validar(const string& codigo) {
+// VALIDAÇÃO DO CÓDIGO - 221006351
+void Codigo::validar(string& codigo) {
     int tam = codigo.size();
 
     if (tam != 6) {
@@ -100,89 +89,73 @@ void Codigo::validar(const string& codigo) {
     }
 }
 
-// VALIDAÇÃO DA DATA
-vector<string> Data::extrair_data(const string& data) {
-    vector<string> result;
+// VALIDAÇÃO DA DATA - 221020940
+vector<string> Data::extrair_data(string& data) {
+    vector<string> dia_mes_ano;
     string temp_str = "";
 
     for (int i = 0; i < data.size(); i++) {
-        if (data[i] == '/' || i == data.size() - 1) {
-            result.push_back(temp_str);
+        if (data[i] == '/') {
+            dia_mes_ano.push_back(temp_str);
             temp_str = "";
         } else {
             temp_str = temp_str + data[i];
+            if (i == data.size() - 1)
+                dia_mes_ano.push_back(temp_str);
         }
     }
 
-    return result;
+    return dia_mes_ano;
 }
 
-bool Data::bissexto(const int& ano) {
-    if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0)) {
-        return true;
-    }
-    return false;
-};
-
-void Data::validar(const string& data) {
-    int tam = data.size();
+void Data::validar(string& data) {
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     if (count(data.begin(), data.end(), '/') != 2)
         throw invalid_argument("Formato de data inválido.");
 
-    vector<string> partes = extrair_data(data);
+    vector<string> dia_mes_ano = extrair_data(data);
 
+    int dia, ano;
+    string mes;
     try {
-        int dia = stoi(partes[0]);
-        string mes = partes[1];
-        int ano = stoi(partes[2]);
-
-        for (int i = 0; i < mes.size(); i++) {  // converte caracteres de MES para upper
-            if (isalpha(mes[i]))
-                mes[i] = toupper(mes[i]);
-        }
-
-        if (ano < 2000 || ano > 2999)
-            throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
-
-        if (find(meses.begin(), meses.end(), mes) == meses.end()) {
-            throw invalid_argument("Mês inválido.");
-        }
-
-        if (mes == "FEV") {
-            if (bissexto(ano))
-                dias[1]++;  // adiciona 1 dia em fevereiro
-        }
-
-        int pos = 0;
-        for (int i = 0; i < meses.size(); i++) {
-            if (meses[i] == mes) {
-                pos = i;
-                break;
-            }
-        }
-
-        if (!(dia > 0 && dia <= dias[pos]))
-            throw invalid_argument("Número de dias inválido.");
-
-    } catch (invalid_argument& ex) {
-        throw invalid_argument("Data Inválida.");
+        dia = stoi(dia_mes_ano[0]);
+        mes = dia_mes_ano[1];
+        ano = stoi(dia_mes_ano[2]);
+    } catch (...) {
+        throw invalid_argument("Data Inválida.");  // caso não consiga converter dia ou ano para inteiro
     }
+
+    if (ano < 2000 || ano > 2999)  // verifica se o ano está entre 2000 e 2999
+        throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
+
+    int pos;
+    if (find(meses.begin(), meses.end(), mes) == meses.end())  // verifica se a sigla está no vetor
+        throw invalid_argument("Sigla do mês inválida.");
+    else
+        pos = distance(meses.begin(), find(meses.begin(), meses.end(), mes));  // distancia do inicio até a ocorrencia
+
+    if (mes == "FEV")
+        if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0))  // verifica se é ano bissexto
+            dias[1]++;                                           // adiciona 1 dia em fevereiro
+
+    if (dia < 1 || dia > dias[pos])
+        throw invalid_argument("Dia do mês inválido.");
 };
 
-// VALIDAÇÃO DO TEXTO
-void Texto::validar(const string& texto) {
-    const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const string sinais_pontuacao = ".,;?!:-@#$%&";
-    const string caracteres_validos = letras_digitos + sinais_pontuacao;
+// VALIDAÇÃO DO TEXTO - 221020940
+void Texto::validar(string& texto) {
+    string digitos = "0123456789";
+    string letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string pontuacao = ".,;?!:-@#$%&";
+    string caracteres_validos = letras + digitos + pontuacao + " ";
 
     if (texto.size() < 10 || texto.size() > 20)
         throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
 
     for (auto ch : texto) {
-        if (caracteres_validos.find(ch) == string::npos)
+        if (find(caracteres_validos.begin(), caracteres_validos.end(), ch) == caracteres_validos.end())
             throw invalid_argument("Texto contém caractere(s) inválido(s).");
     }
 

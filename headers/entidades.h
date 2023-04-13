@@ -2,6 +2,8 @@
 #define ENTIDADES_H_INCLUDED
 
 #include "../headers/dominios.h"
+
+// ENTIDADE DESENVOLVEDOR - 221006351
 class Desenvolvedor {
    private:
     Desenvolvedor() {
@@ -56,28 +58,15 @@ class Desenvolvedor {
 //     return senha;
 // }
 
+//ENTIDADE TESTE - 221006389
 class Teste {
    private:
-    Teste() {
-        Codigo *codigo = new Codigo();
-        Texto *nome = new Texto();
-        Classe *classe = new Classe();
-    }
-
    public:
 };
 
+//ENTIDADE CASO TESTE - 221006351
 class CasoTeste {
    private:
-    CasoTeste() {
-        Codigo *codigo = new Codigo();
-        Texto *nome = new Texto();
-        Data *data = new Data();
-        Texto *acao = new Texto();
-        Texto *resposta = new Texto();
-        Resultado *resultado = new Resultado();
-    }
-
    public:
 };
 

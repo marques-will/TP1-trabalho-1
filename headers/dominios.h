@@ -77,7 +77,6 @@ class Data : public Dominios {
    private:
     string data;
     vector<string> extrair_data(string& data);
-    bool bissexto(int& ano);
     void validar(string& data);
 };
 
