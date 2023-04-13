@@ -6,21 +6,11 @@
 #include <string>
 #include <vector>
 
-// VALIDAÇÃO SETTER E GETTER
-void Dominios::setValor(string valor) {
-    this->valor = valor;
-}
-
-string Dominios::getValor() {
-    return valor;
-}
-
-// VALIDAÇÃO DA MATRÍCULA
-void Matricula::validar(const string& matricula) {
-    if (matricula.size() != 7) {
+// VALIDAÇÃO DA MATRÍCULA - 221006351
+void Matricula::validar(string& matricula) {
+    if (matricula.size() != 7)
         throw invalid_argument("A matrícula deve conter 7 dígitos");
-    }
-//ALGORITMO PARA O DÍGITO VERIFICADOR
+
     int fator = 1, soma = 0, digito_real;
     for (int i = 0; i < matricula.size() - 1; i++) {
         int valor = matricula[i] - '0';
@@ -47,8 +37,8 @@ void Matricula::validar(const string& matricula) {
     }
 }
 
-// VALIDAÇÃO DO TELEFONE
-void Telefone::validar(const string& telefone) {
+// VALIDAÇÃO DO TELEFONE - 221020940
+void Telefone::validar(string& telefone) {
     int tam = telefone.size();
 
     if (!(tam >= 8 && tam <= 16)) {
@@ -66,8 +56,8 @@ void Telefone::validar(const string& telefone) {
     }
 }
 
-// VALIDAÇÃO DA SENHA
-void Senha::validar(const string& senha) {
+// VALIDAÇÃO DA SENHA - 221020940
+void Senha::validar(string& senha) {
     if (senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
 
@@ -78,51 +68,54 @@ void Senha::validar(const string& senha) {
     }
 }
 
-// VALIDAÇÃO DO CÓDIGO
-void Codigo::validar(const string& codigo) {
+// VALIDAÇÃO DO CÓDIGO - 221006351
+void Codigo::validar(string& codigo) {
     int tam = codigo.size();
 
     if (tam != 6) {
         throw invalid_argument("Código deve conter 6 caracteres.");
     }
 
-    for (int i = 0; i < 6; i++) {
-        if (i < 3) {
-            if (!isalpha(codigo[i]))
-                throw invalid_argument("Os três primeiros caracteres devem ser letras.");
-        } else {
-            if (!isdigit(codigo[i]))
-                throw invalid_argument("Os três últimos caracteres devem ser números.");
+    for (int i = 0; i < 3; i++) {
+        if (!isalpha(codigo[i])) {
+            throw invalid_argument("Os três primeiros caracteres devem ser letras.");
+        }
+    }
+
+    for (int i = 3; i < 6; i++) {
+        if (!isdigit(codigo[i])) {
+            throw invalid_argument("Os três últimos caracteres devem ser números.");
         }
     }
 }
 
-// VALIDAÇÃO DA DATA
-vector<string> Data::extrair_data(const string& data) {
-    vector<string> result;
+// VALIDAÇÃO DA DATA - 221020940
+vector<string> Data::extrair_data(string& data) {
+    vector<string> dia_mes_ano;
     string temp_str = "";
 
     for (int i = 0; i < data.size(); i++) {
-        if (data[i] == '/' || i == data.size() - 1) {
-            result.push_back(temp_str);
+        if (data[i] == '/') {
+            dia_mes_ano.push_back(temp_str);
             temp_str = "";
         } else {
             temp_str = temp_str + data[i];
+            if (i == data.size() - 1)
+                dia_mes_ano.push_back(temp_str);
         }
     }
 
-    return result;
+    return dia_mes_ano;
 }
 
 void Data::validar(string& data) {
-
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     if (count(data.begin(), data.end(), '/') != 2)
         throw invalid_argument("Formato de data inválido.");
 
-    vector<string> partes = extrair_data(data);
+    vector<string> dia_mes_ano = extrair_data(data);
 
     int dia, ano;
     string mes;
@@ -133,7 +126,6 @@ void Data::validar(string& data) {
     } catch (...) {
         throw invalid_argument("Data Inválida.");
     }
-
 
     for (int i = 0; i < mes.size(); i++) {  // converte caracteres de MES para upper
         if (isalpha(mes[i]))
@@ -157,17 +149,18 @@ void Data::validar(string& data) {
         throw invalid_argument("Número de dias inválido.");
 };
 
-// VALIDAÇÃO DO TEXTO
-void Texto::validar(const string& texto) {
-    const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const string sinais_pontuacao = ".,;?!:-@#$%&";
-    const string caracteres_validos = letras_digitos + sinais_pontuacao;
+// VALIDAÇÃO DO TEXTO - 221020940
+void Texto::validar(string& texto) {
+    string digitos = "0123456789";
+    string letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string pontuacao = ".,;?!:-@#$%&";
+    string caracteres_validos = letras + digitos + pontuacao + " ";
 
     if (texto.size() < 10 || texto.size() > 20)
         throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
 
     for (auto ch : texto) {
-        if (caracteres_validos.find(ch) == string::npos)
+        if (find(caracteres_validos.begin(), caracteres_validos.end(), ch) == caracteres_validos.end())
             throw invalid_argument("Texto contém caractere(s) inválido(s).");
     }
 
