@@ -124,7 +124,7 @@ void Data::validar(string& data) {
         mes = dia_mes_ano[1];
         ano = stoi(dia_mes_ano[2]);
     } catch (...) {
-        throw invalid_argument("Data Inválida.");
+        throw invalid_argument("Data Inválida.");  // caso não consiga converter dia ou ano para inteiro
     }
 
     if (ano < 2000 || ano > 2999)  // verifica se o ano está entre 2000 e 2999
@@ -141,7 +141,7 @@ void Data::validar(string& data) {
             dias[1]++;                                           // adiciona 1 dia em fevereiro
 
     if (dia < 1 || dia > dias[pos])
-        throw invalid_argument("Número de dias inválido.");
+        throw invalid_argument("Dia do mês inválido.");
 };
 
 // VALIDAÇÃO DO TEXTO - 221020940
