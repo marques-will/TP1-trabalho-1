@@ -127,11 +127,6 @@ void Data::validar(string& data) {
         throw invalid_argument("Data Inválida.");
     }
 
-    for (int i = 0; i < mes.size(); i++) {  // converte caracteres de MES para upper
-        if (isalpha(mes[i]))
-            mes[i] = isalpha(mes[i]) ? toupper(mes[i]) : mes[i];
-    }
-
     if (ano < 2000 || ano > 2999)  // verifica se o ano está entre 2000 e 2999
         throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
 
