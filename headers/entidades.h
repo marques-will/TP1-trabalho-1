@@ -58,26 +58,11 @@ class Desenvolvedor {
 
 class Teste {
    private:
-    Teste() {
-        Codigo *codigo = new Codigo();
-        Texto *nome = new Texto();
-        Classe *classe = new Classe();
-    }
-
    public:
 };
 
 class CasoTeste {
    private:
-    CasoTeste() {
-        Codigo *codigo = new Codigo();
-        Texto *nome = new Texto();
-        Data *data = new Data();
-        Texto *acao = new Texto();
-        Texto *resposta = new Texto();
-        Resultado *resultado = new Resultado();
-    }
-
    public:
 };
 
