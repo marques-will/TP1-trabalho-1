@@ -20,10 +20,16 @@ void Matricula::validar(string& matricula) {
     }
 
     soma = soma % 10;
-    digito_real = (soma != 10) ? 10 - soma : soma;
+    if (soma != 0) {
+        digito_real = 10 - soma;
+    } else {
+        digito_real = soma;
+    }
+
     int digito_encontrado = matricula[6] - '0';
-    if (digito_encontrado != digito_real)
-        throw invalid_argument("Valor de matrícula inválido.");
+    if (digito_encontrado != digito_real) {
+        throw invalid_argument("O dígito verificador está incorreto.");
+    }
 }
 
 // VALIDAÇÃO DO TELEFONE
