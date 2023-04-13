@@ -15,6 +15,7 @@ void Matricula::validar(string& matricula) {
     for (int i = 0; i < matricula.size() - 1; i++) {
         int valor = matricula[i] - '0';
         soma = soma + fator * valor;
+
         if (i % 2 == 0) {
             fator = 2;
             continue;
@@ -22,6 +23,9 @@ void Matricula::validar(string& matricula) {
             fator = 1;
             continue;
         }
+        
+        // sugestão:
+        //  fator = (i % 2 == 0) ? 2 : 1;
     }
 
     soma = soma % 10;
@@ -31,6 +35,9 @@ void Matricula::validar(string& matricula) {
         digito_real = soma;
     }
 
+    // sugestão:
+    //  digito_real = (soma != 0) ? 10 - soma : soma;
+
     int digito_encontrado = matricula[6] - '0';
     if (digito_encontrado != digito_real) {
         throw invalid_argument("O dígito verificador está incorreto.");
@@ -39,13 +46,11 @@ void Matricula::validar(string& matricula) {
 
 // VALIDAÇÃO DO TELEFONE - 221020940
 void Telefone::validar(string& telefone) {
-    int tam = telefone.size();
-
-    if (!(tam >= 8 && tam <= 16)) {
+    if (telefone.size() < 8 || telefone.size() > 16) {
         throw invalid_argument("O telefone deve conter \"+\" seguido de 7 a 15 dígitos.");
     }
 
-    for (int i = 0; i < tam; i++) {
+    for (int i = 0; i < telefone.size(); i++) {
         if (i == 0) {
             if (telefone[i] != '+')
                 throw invalid_argument("O primeiro caractere deve ser \"+\".");
@@ -70,22 +75,17 @@ void Senha::validar(string& senha) {
 
 // VALIDAÇÃO DO CÓDIGO - 221006351
 void Codigo::validar(string& codigo) {
-    int tam = codigo.size();
-
-    if (tam != 6) {
+    if (codigo.size() != 6)
         throw invalid_argument("Código deve conter 6 caracteres.");
-    }
 
     for (int i = 0; i < 3; i++) {
-        if (!isalpha(codigo[i])) {
+        if (!isalpha(codigo[i]))
             throw invalid_argument("Os três primeiros caracteres devem ser letras.");
-        }
     }
 
     for (int i = 3; i < 6; i++) {
-        if (!isdigit(codigo[i])) {
+        if (!isdigit(codigo[i]))
             throw invalid_argument("Os três últimos caracteres devem ser números.");
-        }
     }
 }
 

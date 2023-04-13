@@ -29,7 +29,7 @@ int main() {
     cout << texto.getValor() << endl;
 
     Data data;
-    data.setValor("29/FEV/2021");
+    data.setValor("29/FEV/2020");
     cout << data.getValor() << endl;
 
     return 0;
