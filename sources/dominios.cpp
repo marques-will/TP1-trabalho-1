@@ -8,8 +8,9 @@
 
 // VALIDAÇÃO DA MATRÍCULA - 221006351
 void Matricula::validar(string& matricula) {
-    if (matricula.size() != 7)
+    if (matricula.size() != 7){
         throw invalid_argument("A matrícula deve conter 7 dígitos");
+    }
 
     int fator = 1, soma = 0, digito_real;
     for (int i = 0; i < matricula.size() - 1; i++) {
