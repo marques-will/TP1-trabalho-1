@@ -21,7 +21,7 @@ void Matricula::validar(const string& matricula) {
     if (matricula.size() != 7) {
         throw invalid_argument("A matrícula deve conter 7 dígitos");
     }
-
+//ALGORITMO PARA O DÍGITO VERIFICADOR
     int fator = 1, soma = 0, digito_real;
     for (int i = 0; i < matricula.size() - 1; i++) {
         int valor = matricula[i] - '0';
