@@ -10,6 +10,7 @@ using namespace std;
 class Dominios {
    private:
     string valor;
+    virtual void validar(string& valor) = 0;
 
    public:
     void setValor(string valor);
