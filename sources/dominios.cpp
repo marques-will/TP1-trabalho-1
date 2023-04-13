@@ -6,31 +6,53 @@
 #include <string>
 #include <vector>
 
-// VALIDAÇÃO DA MATRÍCULA
-void Matricula::validar(string& matricula) {
-    if (matricula.size() != 7)
-        throw invalid_argument("A matrícula deve conter 7 dígitos");
+// VALIDAÇÃO SETTER E GETTER
+void Dominios::setValor(string valor) {
+    this->valor = valor;
+}
 
+string Dominios::getValor() {
+    return valor;
+}
+
+// VALIDAÇÃO DA MATRÍCULA
+void Matricula::validar(const string& matricula) {
+    if (matricula.size() != 7) {
+        throw invalid_argument("A matrícula deve conter 7 dígitos");
+    }
+//ALGORITMO PARA O DÍGITO VERIFICADOR
     int fator = 1, soma = 0, digito_real;
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < matricula.size() - 1; i++) {
         int valor = matricula[i] - '0';
         soma = soma + fator * valor;
-        fator = (i % 2) ? 2 : 1;
+        if (i % 2 == 0) {
+            fator = 2;
+            continue;
+        } else {
+            fator = 1;
+            continue;
+        }
     }
 
     soma = soma % 10;
-    digito_real = (soma != 10) ? 10 - soma : soma;
+    if (soma != 0) {
+        digito_real = 10 - soma;
+    } else {
+        digito_real = soma;
+    }
+
     int digito_encontrado = matricula[6] - '0';
-    if (digito_encontrado != digito_real)
-        throw invalid_argument("Valor de matrícula inválido.");
+    if (digito_encontrado != digito_real) {
+        throw invalid_argument("O dígito verificador está incorreto.");
+    }
 }
 
 // VALIDAÇÃO DO TELEFONE
-void Telefone::validar(string& telefone) {
+void Telefone::validar(const string& telefone) {
     int tam = telefone.size();
 
     if (!(tam >= 8 && tam <= 16)) {
-        throw invalid_argument("O telefone deve conter caractere\"+\" seguido de 7 a 15 dígitos.");
+        throw invalid_argument("O telefone deve conter \"+\" seguido de 7 a 15 dígitos.");
     }
 
     for (int i = 0; i < tam; i++) {
@@ -45,7 +67,7 @@ void Telefone::validar(string& telefone) {
 }
 
 // VALIDAÇÃO DA SENHA
-void Senha::validar(string& senha) {
+void Senha::validar(const string& senha) {
     if (senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
 
@@ -57,7 +79,7 @@ void Senha::validar(string& senha) {
 }
 
 // VALIDAÇÃO DO CÓDIGO
-void Codigo::validar(string& codigo) {
+void Codigo::validar(const string& codigo) {
     int tam = codigo.size();
 
     if (tam != 6) {
@@ -76,7 +98,7 @@ void Codigo::validar(string& codigo) {
 }
 
 // VALIDAÇÃO DA DATA
-vector<string> Data::extrair_data(string& data) {
+vector<string> Data::extrair_data(const string& data) {
     vector<string> result;
     string temp_str = "";
 
@@ -93,13 +115,14 @@ vector<string> Data::extrair_data(string& data) {
 }
 
 void Data::validar(string& data) {
+
     vector<string> meses = {"JAN", "FEV", "MAR", "ABR", "MAI", "JUN", "JUL", "AGO", "SET", "OUT", "NOV", "DEZ"};
     vector<int> dias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
     if (count(data.begin(), data.end(), '/') != 2)
         throw invalid_argument("Formato de data inválido.");
 
-    vector<string> dia_mes_ano = extrair_data(data);
+    vector<string> partes = extrair_data(data);
 
     int dia, ano;
     string mes;
@@ -110,6 +133,7 @@ void Data::validar(string& data) {
     } catch (...) {
         throw invalid_argument("Data Inválida.");
     }
+
 
     for (int i = 0; i < mes.size(); i++) {  // converte caracteres de MES para upper
         if (isalpha(mes[i]))
@@ -134,10 +158,10 @@ void Data::validar(string& data) {
 };
 
 // VALIDAÇÃO DO TEXTO
-void Texto::validar(string& texto) {
-    string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    string sinais_pontuacao = ".,;?!:-@#$%&";
-    string caracteres_validos = letras_digitos + sinais_pontuacao;
+void Texto::validar(const string& texto) {
+    const string letras_digitos = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const string sinais_pontuacao = ".,;?!:-@#$%&";
+    const string caracteres_validos = letras_digitos + sinais_pontuacao;
 
     if (texto.size() < 10 || texto.size() > 20)
         throw invalid_argument("Texto deve conter de 10 e 20 caracteres.");
