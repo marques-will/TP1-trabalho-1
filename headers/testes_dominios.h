@@ -4,6 +4,7 @@
 #include <string>
 
 #include "../headers/dominios.h"
+
 using namespace std;
 
 // Matrícula
@@ -97,4 +98,4 @@ class TUTelefone {
 //     int run();
 // };
 
-#endif //TESTES_DOMINIOS_H_INCLUDED
+#endif  // TESTES_DOMINIOS_H_INCLUDED

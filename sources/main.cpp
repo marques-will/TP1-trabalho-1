@@ -3,7 +3,7 @@
 #include "../headers/dominios.h"
 #include "../headers/entidades.h"
 #include "../headers/testes_dominios.h"
-// #include "testes_entidades.h"
+#include "../headers/testes_entidades.h"
 using namespace std;
 
 int main() {
