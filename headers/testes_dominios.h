@@ -10,8 +10,8 @@ using namespace std;
 // Matrícula
 // class TUMatricula {
 //    private:
-//     constexpr static char VALOR_VALIDO[];
-//     constexpr static char VALOR_INVALIDO[];
+//     const static string VALOR_VALIDO;
+//     const static string VALOR_INVALIDO;
 //     Matricula *matricula;
 //     int estado;
 
@@ -29,8 +29,8 @@ using namespace std;
 // Telefone
 class TUTelefone {
    private:
-    constexpr static char VALOR_VALIDO[] = "+123456";
-    constexpr static char VALOR_INVALIDO[] = "+1234567";
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
     Telefone *telefone;
     int estado;
     void setUp();
@@ -47,8 +47,8 @@ class TUTelefone {
 // Data
 // class TUData {
 //    private:
-//     constexpr static char VALOR_VALIDO[];
-//     constexpr static char VALOR_INVALIDO[];
+//     const static string VALOR_VALIDO;
+//     const static string VALOR_INVALIDO;
 //     Data *data;
 //     int estado;
 //     void setUp();
@@ -65,8 +65,8 @@ class TUTelefone {
 // // Senha
 // class TUSenha {
 //    private:
-//     constexpr static char VALOR_VALIDO[];
-//     constexpr static char VALOR_INVALIDO[];
+//     const static string VALOR_VALIDO;
+//     const static string VALOR_INVALIDO;
 //     Senha *senha;
 //     int estado;
 //     void setUp();
@@ -83,8 +83,8 @@ class TUTelefone {
 // // Texto
 // class TUTexto {
 //    private:
-//     constexpr static char VALOR_VALIDO[];
-//     constexpr static char VALOR_INVALIDO[];
+//     const static string VALOR_VALIDO;
+//     const static string VALOR_INVALIDO;
 //     Texto *texto;
 //     int estado;
 //     void setUp();

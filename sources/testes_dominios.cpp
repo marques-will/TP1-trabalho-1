@@ -1,6 +1,8 @@
 #include "../headers/testes_dominios.h"
 
 // IMPLEMENTAÇÃO DO TESTE DO TELEFONE
+const string TUTelefone::VALOR_VALIDO = "+1234567";
+const string TUTelefone::VALOR_INVALIDO = "1234567";
 void TUTelefone::setUp() {
     telefone = new Telefone();
     estado = SUCESSO;
