@@ -1,6 +1,7 @@
 #include "../headers/testes_dominios.h"
 
 // IMPLEMENTAÇÃO DO TESTE DO TELEFONE
+
 void TUTelefone::setUp() {
     telefone = new Telefone();
     estado = SUCESSO;

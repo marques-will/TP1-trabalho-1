@@ -29,8 +29,8 @@ using namespace std;
 // Telefone
 class TUTelefone {
    private:
-    const string VALOR_VALIDO = "+1234567";
-    const string VALOR_INVALIDO = "1234567";
+    const string VALOR_VALIDO;
+    const string VALOR_INVALIDO;
     Telefone *telefone;
     int estado;
     void setUp();
