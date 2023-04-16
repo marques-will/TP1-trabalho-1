@@ -1,13 +1,12 @@
 #include <string>
-
-#include "dominios.h"
+#include "../headers/dominios.h"
 using namespace std;
 
 // Matrícula
 class TUMatricula {
    private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO;
+    string VALOR_VALIDO = "1234567";
+    string VALOR_INVALIDO = "1234569";
     Matricula *matricula;
     int estado;
 
@@ -25,8 +24,8 @@ class TUMatricula {
 // Telefone
 class TUTelefone {
    private:
-    const static int VALOR_VALIDO = +123456;
-    const static int VALOR_INVALIDO = +1234567;
+    string VALOR_VALIDO = "+123456";
+    string VALOR_INVALIDO = "+1234567";
     Telefone *telefone;
     int estado;
     void setUp();
@@ -43,8 +42,8 @@ class TUTelefone {
 // Data
 class TUData {
    private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO;
+    string VALOR_VALIDO = "10/JAN/2001";
+    string VALOR_INVALIDO = "10/JAN/1999";
     Data *data;
     int estado;
     void setUp();
@@ -61,8 +60,8 @@ class TUData {
 // Senha
 class TUSenha {
    private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO;
+    //const static string VALOR_VALIDO;
+    //const static string VALOR_INVALIDO;
     Senha *senha;
     int estado;
     void setUp();
@@ -79,8 +78,8 @@ class TUSenha {
 // Texto
 class TUTexto {
    private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO;
+    //const static string VALOR_VALIDO;
+    //const static string VALOR_INVALIDO;
     Texto *texto;
     int estado;
     void setUp();
