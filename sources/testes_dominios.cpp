@@ -1,43 +1,39 @@
-// #include "../headers/testes_dominios.h"
+#include "../headers/testes_dominios.h"
 
-// //IMPLEMENTAÇÃO DO TESTE DO TELEFONE
-// void TUTelefone::setUp(){
-//     telefone = new Telefone();
-//     estado = sucesso;
-// }
+// IMPLEMENTAÇÃO DO TESTE DO TELEFONE
+void TUTelefone::setUp() {
+    telefone = new Telefone();
+    estado = SUCESSO;
+}
 
-// void TUTelefone::tearDown(){
-//     delete telefone;
-// }
+void TUTelefone::tearDown() {
+    delete telefone;
+}
 
-// void TUTelefone::testarCenariosucesso(){
-//     try{
-//         telefone->setValor(valido);
-//         if (telefone->getValor() != valido)
-//             estado = falha;
-//     }
-//     catch(invalid_argument &excecao){
-//         estado = falha;
-//     }
-// }
+void TUTelefone::testarCenarioSucesso() {
+    try {
+        telefone->setValor(VALOR_VALIDO);
+        if (telefone->getValor() != VALOR_VALIDO)  // verifica funcionamente do setter e do getter
+            estado = FALHA;
+    } catch (invalid_argument &excecao) {  // verifica se o validador identificou como valor como válido
+        estado = FALHA;
+    }
+}
 
-// void TUTelefone::testarCenariofalha(){
-//     try{
-//         telefone->setValor(invalido);
-//         estado = falha;
-//     }
-//     catch(invalid_argument &excecao){
-//         if (telefone->getValor() == invalido)
-//             estado = falha;
-//     }
-// }
+void TUTelefone::testarCenarioFalha() {
+    try {
+        telefone->setValor(VALOR_INVALIDO);
+        estado = FALHA;  // verifica se o validador setou valor inválido
+    } catch (invalid_argument &excecao) {
+        if (telefone->getValor() == VALOR_INVALIDO)  // verifica o setter
+            estado = FALHA;
+    }
+}
 
-// int TUTelefone::run(){
-//     setUp();
-//     testarCenariosucesso();
-//     testarCenariofalha();
-//     tearDown();
-//     return estado;
-// }
-
-// //IMPLEMENTAÇÃO DO TESTE DA SENHA
+int TUTelefone::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
