@@ -14,15 +14,8 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "Portuguese");
     TUTelefone teste;
-    switch (teste.run()) {
-        case TUTelefone::SUCESSO:
-            cout << "Telefone - SUCESSO" << endl;
-            break;
-
-        case TUTelefone::FALHA:
-            cout << "Telefone - FALHA" << endl;
-            break;
-    }
+    string resultado = (teste.run()) ? "Telefone - SUCESSO " : " Telefone - FALHA ";
+    cout << resultado << endl;
 
     return 0;
 }

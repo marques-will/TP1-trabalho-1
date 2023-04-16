@@ -39,9 +39,9 @@ class TUTelefone {
     void testarCenarioFalha();
 
    public:
-    const static int SUCESSO = 0;
-    const static int FALHA = -1;
-    int run();
+    const static bool SUCESSO = true;
+    const static bool FALHA = false;
+    bool run();
 };
 
 // Data
