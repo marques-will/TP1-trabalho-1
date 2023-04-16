@@ -21,16 +21,16 @@ using namespace std;
 //     void testarCenarioFalha();
 
 //    public:
-//     constexpr static int SUCESSO = 0;
-//     constexpr static int FALHA = -1;
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
 //     int run();
 // };
 
 // Telefone
 class TUTelefone {
    private:
-    const string VALOR_VALIDO;
-    const string VALOR_INVALIDO;
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
     Telefone *telefone;
     int estado;
     void setUp();
@@ -39,8 +39,8 @@ class TUTelefone {
     void testarCenarioFalha();
 
    public:
-    constexpr static int SUCESSO = 0;
-    constexpr static int FALHA = -1;
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
     int run();
 };
 
@@ -57,8 +57,8 @@ class TUTelefone {
 //     void testarCenarioFalha();
 
 //    public:
-//     constexpr static int SUCESSO = 0;
-//     constexpr static int FALHA = -1;
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
 //     int run();
 // };
 
@@ -75,8 +75,8 @@ class TUTelefone {
 //     void testarCenarioFalha();
 
 //    public:
-//     constexpr static int SUCESSO = 0;
-//     constexpr static int FALHA = -1;
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
 //     int run();
 // };
 
@@ -93,8 +93,8 @@ class TUTelefone {
 //     void testarCenarioFalha();
 
 //    public:
-//     constexpr static int SUCESSO = 0;
-//     constexpr static int FALHA = -1;
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
 //     int run();
 // };
 
