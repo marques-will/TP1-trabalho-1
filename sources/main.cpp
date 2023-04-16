@@ -14,8 +14,7 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "Portuguese");
     TUTelefone teste;
-    int resultado = teste.run();
-    switch (resultado) {
+    switch (teste.run()) {
         case TUTelefone::SUCESSO:
             cout << "Telefone - SUCESSO" << endl;
             break;
