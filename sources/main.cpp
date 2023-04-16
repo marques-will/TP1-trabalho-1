@@ -1,21 +1,28 @@
+#include <locale.h>
+
 #include <iostream>
 
 #include "../headers/dominios.h"
 #include "../headers/entidades.h"
 #include "../headers/testes_dominios.h"
 #include "../headers/testes_entidades.h"
+#include "testes_dominios.cpp"
+using namespace std;
+
 using namespace std;
 
 int main() {
+    setlocale(LC_ALL, "Portuguese");
     TUTelefone teste;
     switch (teste.run()) {
         case TUTelefone::SUCESSO:
-            cout << "Dominios::Telefone - teste bem-sucedido" << endl;
+            cout << "Telefone - SUCESSO" << endl;
             break;
 
         case TUTelefone::FALHA:
-            cout << "Dominios::Telefone - teste falhou" << endl;
+            cout << "Telefone - FALHA" << endl;
             break;
     }
+
     return 0;
 }
