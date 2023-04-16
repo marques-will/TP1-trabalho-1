@@ -36,7 +36,7 @@ void TUTelefone::testarCenarioFalha() {
     }
 }
 
-int TUTelefone::run() {
+bool TUTelefone::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
