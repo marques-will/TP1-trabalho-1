@@ -7,7 +7,6 @@
 #include "../headers/testes_dominios.h"
 #include "../headers/testes_entidades.h"
 #include "testes_dominios.cpp"
-using namespace std;
 
 using namespace std;
 
