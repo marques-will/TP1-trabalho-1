@@ -23,7 +23,7 @@ using namespace std;
 //    public:
 //     const static int SUCESSO = 0;
 //     const static int FALHA = -1;
-//     int run();
+//     bool run();
 // };
 
 // Telefone
@@ -45,57 +45,57 @@ class TUTelefone {
 };
 
 // Data
-// class TUData {
-//    private:
-//     const static string VALOR_VALIDO;
-//     const static string VALOR_INVALIDO;
-//     Data *data;
-//     int estado;
-//     void setUp();
-//     void tearDown();
-//     void testarCenarioSucesso();
-//     void testarCenarioFalha();
+class TUData {
+   private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+    Data *data;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
 
-//    public:
-//     const static int SUCESSO = 0;
-//     const static int FALHA = -1;
-//     int run();
-// };
+   public:
+    const static bool SUCESSO = true;
+    const static bool FALHA = false;
+    bool run();
+};
 
-// // Senha
-// class TUSenha {
-//    private:
-//     const static string VALOR_VALIDO;
-//     const static string VALOR_INVALIDO;
-//     Senha *senha;
-//     int estado;
-//     void setUp();
-//     void tearDown();
-//     void testarCenarioSucesso();
-//     void testarCenarioFalha();
+// Senha
+class TUSenha {
+   private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+    Senha *senha;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
 
-//    public:
-//     const static int SUCESSO = 0;
-//     const static int FALHA = -1;
-//     int run();
-// };
+   public:
+    const static bool SUCESSO = true;
+    const static bool FALHA = false;
+    bool run();
+};
 
-// // Texto
-// class TUTexto {
-//    private:
-//     const static string VALOR_VALIDO;
-//     const static string VALOR_INVALIDO;
-//     Texto *texto;
-//     int estado;
-//     void setUp();
-//     void tearDown();
-//     void testarCenarioSucesso();
-//     void testarCenarioFalha();
+// Texto
+class TUTexto {
+   private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+    Texto *texto;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
 
-//    public:
-//     const static int SUCESSO = 0;
-//     const static int FALHA = -1;
-//     int run();
-// };
+   public:
+    const static bool SUCESSO = true;
+    const static bool FALHA = false;
+    bool run();
+};
 
 #endif  // TESTES_DOMINIOS_H_INCLUDED
