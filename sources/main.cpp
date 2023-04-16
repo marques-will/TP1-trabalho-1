@@ -12,14 +12,14 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "Portuguese");
     TUTelefone teste;
-    switch (teste.run()) {
+    int resultado = teste.run();
+    switch (resultado) {
         case TUTelefone::SUCESSO:
             cout << "Telefone - SUCESSO" << endl;
             break;
 
         case TUTelefone::FALHA:
             cout << "Telefone - FALHA" << endl;
-            break;
             break;
     }
 
