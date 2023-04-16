@@ -10,8 +10,8 @@ using namespace std;
 // Matrícula
 // class TUMatricula {
 //    private:
-//     constexpr static char VALOR_VALIDO[];
-//     constexpr static char VALOR_INVALIDO[];
+//     const static string VALOR_VALIDO;
+//     const static string VALOR_INVALIDO;
 //     Matricula *matricula;
 //     int estado;
 
@@ -21,8 +21,8 @@ using namespace std;
 //     void testarCenarioFalha();
 
 //    public:
-//     constexpr static int SUCESSO = 0;
-//     constexpr static int FALHA = -1;
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
 //     int run();
 // };
 
@@ -39,16 +39,16 @@ class TUTelefone {
     void testarCenarioFalha();
 
    public:
-    constexpr static int SUCESSO = 0;
-    constexpr static int FALHA = -1;
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
     int run();
 };
 
 // Data
 // class TUData {
 //    private:
-//     constexpr static char VALOR_VALIDO[];
-//     constexpr static char VALOR_INVALIDO[];
+//     const static string VALOR_VALIDO;
+//     const static string VALOR_INVALIDO;
 //     Data *data;
 //     int estado;
 //     void setUp();
@@ -57,16 +57,16 @@ class TUTelefone {
 //     void testarCenarioFalha();
 
 //    public:
-//     constexpr static int SUCESSO = 0;
-//     constexpr static int FALHA = -1;
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
 //     int run();
 // };
 
 // // Senha
 // class TUSenha {
 //    private:
-//     constexpr static char VALOR_VALIDO[];
-//     constexpr static char VALOR_INVALIDO[];
+//     const static string VALOR_VALIDO;
+//     const static string VALOR_INVALIDO;
 //     Senha *senha;
 //     int estado;
 //     void setUp();
@@ -75,16 +75,16 @@ class TUTelefone {
 //     void testarCenarioFalha();
 
 //    public:
-//     constexpr static int SUCESSO = 0;
-//     constexpr static int FALHA = -1;
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
 //     int run();
 // };
 
 // // Texto
 // class TUTexto {
 //    private:
-//     constexpr static char VALOR_VALIDO[];
-//     constexpr static char VALOR_INVALIDO[];
+//     const static string VALOR_VALIDO;
+//     const static string VALOR_INVALIDO;
 //     Texto *texto;
 //     int estado;
 //     void setUp();
@@ -93,8 +93,8 @@ class TUTelefone {
 //     void testarCenarioFalha();
 
 //    public:
-//     constexpr static int SUCESSO = 0;
-//     constexpr static int FALHA = -1;
+//     const static int SUCESSO = 0;
+//     const static int FALHA = -1;
 //     int run();
 // };
 
