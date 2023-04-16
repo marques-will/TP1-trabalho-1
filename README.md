@@ -32,10 +32,12 @@ Repositório do primeiro trabalho de TP1.
  1. Acesse sua branch com o comando `git checkout -b nome-branch`.
  2. Faça as alterações necessárias no código e adicione essas mudanças com o comando `git add .`. 
  3. Faça um commit das mudanças com o comando `git commit -m "Mensagem de commit"`.
- 4. Envie a branch local para o repositório remoto com o comando `git push origin nome-branch`.
- 5. Acesse o Github, mude para sua branch, clique em __contribute__ e abra um Pull Request.
- 6. Realize o merge e se necessário resolva possíveis conflitos.
- 7. Atualize sua branch local com as alterações do branch `main` usando o comando `git pull origin main`.
+ 4. Sincronize sua branch local e remota usando o comando `git merge origin/nome-branch`.
+ 5. Envie a branch local para o repositório remoto com o comando `git push origin nome-branch`.
+ 6. Acesse o Github, mude para sua branch, clique em __contribute__ e abra um Pull Request.
+ 7. Realize o merge e se necessário resolva possíveis conflitos.
+ 8. Sincronize tudo usando o comando `git pull origin main`.
+
  
 ## Comandos do GIT:
  * **git init**: Inicializa um repositório Git em um diretório local.
