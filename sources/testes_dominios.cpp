@@ -3,7 +3,7 @@
 #include "../headers/dominios.h"
 #include "dominios.cpp"
 
-// IMPLEMENTAÇÃO DO TESTE DO TELEFONE
+// IMPLEMENTAÇÃO DO TESTE DO TELEFONE - 221020940
 const string TUTelefone::VALOR_VALIDO = "+1234567";
 const string TUTelefone::VALOR_INVALIDO = "1234567";
 
