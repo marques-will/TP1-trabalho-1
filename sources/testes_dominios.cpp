@@ -36,7 +36,7 @@ void TUTelefone::testarCenarioFalha() {
     }
 }
 
-bool TUTelefone::run() {
+int TUTelefone::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -77,7 +77,7 @@ void TUData::testarCenarioFalha() {
     }
 }
 
-bool TUData::run() {
+int TUData::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -118,7 +118,7 @@ void TUSenha::testarCenarioFalha() {
     }
 }
 
-bool TUSenha::run() {
+int TUSenha::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -159,7 +159,7 @@ void TUTexto::testarCenarioFalha() {
     }
 }
 
-bool TUTexto::run() {
+int TUTexto::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();

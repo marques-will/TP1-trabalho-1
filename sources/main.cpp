@@ -14,24 +14,20 @@ using namespace std;
 int main() {
     setlocale(LC_ALL, "Portuguese");
 
-    string resultado, sucesso = "\033[32mSUCESSO\033[0m", falha = "\033[31mFALHA\033[0m";
+    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
 
     cout << "DOMINIOS" << endl;
     TUTelefone teste_telefone;
-    resultado = (teste_telefone.run()) ? sucesso : falha;
-    cout << setw(14) << left << setfill('-') << "Telefone" << resultado << endl; //alinhado à esquerda de 14 por causa de "Desenvolvedor"
+    cout << setw(14) << left << setfill('-') << "Telefone" << resultado[teste_telefone.run()] << endl;  // alinhado à esquerda de 14 por causa de "Desenvolvedor"
 
     TUData teste_data;
-    resultado = (teste_data.run()) ? sucesso : falha;
-    cout << setw(14) << left << setfill('-') << "Data" << resultado << endl;
+    cout << setw(14) << left << setfill('-') << "Data" << resultado[teste_data.run()] << endl;
 
     TUSenha teste_senha;
-    resultado = (teste_senha.run()) ? sucesso : falha;
-    cout << setw(14) << left << setfill('-') << "Senha" << resultado << endl;
+    cout << setw(14) << left << setfill('-') << "Senha" << resultado[teste_senha.run()] << endl;
 
     TUTexto teste_texto;
-    resultado = (teste_texto.run()) ? sucesso : falha;
-    cout << setw(14) << left << setfill('-') << "Texto" << resultado << endl;
+    cout << setw(14) << left << setfill('-') << "Texto" << resultado[teste_texto.run()] << endl;
 
     return 0;
 }
