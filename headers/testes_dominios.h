@@ -39,9 +39,9 @@ class TUTelefone {
     void testarCenarioFalha();
 
    public:
-    const static bool SUCESSO = true;
-    const static bool FALHA = false;
-    bool run();
+    const static int SUCESSO = 0;
+    const static int FALHA = 1;
+    int run();
 };
 
 // Data
@@ -57,9 +57,9 @@ class TUData {
     void testarCenarioFalha();
 
    public:
-    const static bool SUCESSO = true;
-    const static bool FALHA = false;
-    bool run();
+    const static int SUCESSO = 0;
+    const static int FALHA = 1;
+    int run();
 };
 
 // Senha
@@ -75,9 +75,9 @@ class TUSenha {
     void testarCenarioFalha();
 
    public:
-    const static bool SUCESSO = true;
-    const static bool FALHA = false;
-    bool run();
+    const static int SUCESSO = 0;
+    const static int FALHA = 1;
+    int run();
 };
 
 // Texto
@@ -93,9 +93,9 @@ class TUTexto {
     void testarCenarioFalha();
 
    public:
-    const static bool SUCESSO = true;
-    const static bool FALHA = false;
-    bool run();
+    const static int SUCESSO = 0;
+    const static int FALHA = 1;
+    int run();
 };
 
 #endif  // TESTES_DOMINIOS_H_INCLUDED
