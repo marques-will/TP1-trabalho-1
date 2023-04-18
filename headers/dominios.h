@@ -10,7 +10,7 @@ using namespace std;
 class Dominios {
    private:
     string valor;
-    virtual void validar(string& valor) = 0;  // método abstrado
+    virtual void validar(const string& valor) = 0;  // método abstrado
 
    public:
     void setValor(string valor);
@@ -29,21 +29,21 @@ inline string Dominios::getValor() const {
 class Matricula : public Dominios {
    private:
     string matricula;
-    void validar(string& matricula);
+    void validar(const string& matricula);
 };
 
 // SUBCLASSE SENHA - 221020940
 class Senha : public Dominios {
    private:
     string senha;
-    void validar(string& senha);
+    void validar(const string& senha);
 };
 
 // SUBCLASSE TELEFONE - 221006351
 class Telefone : public Dominios {
    private:
     string telefone;
-    void validar(string& telefone);
+    void validar(const string& telefone);
 };
 
 // SUBCLASSE RESULTADO - 221006389
@@ -57,14 +57,14 @@ class Resultado {
 class Codigo : public Dominios {
    private:
     string codigo;
-    void validar(string& codigo);
+    void validar(const string& codigo);
 };
 
 // SUBCLASSE TEXTO - 221020940
 class Texto : public Dominios {
    private:
     string texto;
-    void validar(string& texto);
+    void validar(const string& texto);
 };
 
 // SUBCLASSE CLASSE - 221006389
@@ -76,8 +76,8 @@ class Classe {
 class Data : public Dominios {
    private:
     string data;
-    vector<string> extrair_data(string& data);
-    void validar(string& data);
+    vector<string> extrair_data(const string& data);
+    void validar(const string& data);
 };
 
 #endif  // DOMINIOS_H_INCLUDED
