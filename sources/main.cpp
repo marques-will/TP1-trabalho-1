@@ -29,5 +29,7 @@ int main() {
     TUTexto teste_texto;
     cout << setw(14) << left << setfill('-') << "Texto" << resultado[teste_texto.run()] << endl;
 
+    cout << "\nENTIDADES" << endl;
+
     return 0;
 }
