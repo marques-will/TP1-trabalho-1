@@ -2,72 +2,189 @@
 #define ENTIDADES_H_INCLUDED
 
 #include "../headers/dominios.h"
+#include "../sources/dominios.cpp"
+// ENTIDADE ENTIDADE
+class Entidade
+{
+private:
+    Texto nome;
+
+public:
+    void setTexto(const Texto &);
+    Texto getTexto() const;
+};
+
+inline void Entidade::setTexto(const Texto &nome)
+{
+    this->nome = nome;
+}
+inline Texto Entidade::getTexto() const
+{
+    return nome;
+}
 
 // ENTIDADE DESENVOLVEDOR - 221006351
-class Desenvolvedor {
-   private:
-    Desenvolvedor() {
-        Matricula *matricula = new Matricula();
-        Texto *texto = new Texto();
-        Senha *senha = new Senha();
-        Telefone *telefone = new Telefone();
-    }
+class Desenvolvedor : public Entidade
+{
+private:
+    Matricula matricula;
+    Senha senha;
+    Telefone telefone;
+
+public:
+    void setMatricula(const Matricula &);
+    Matricula getMatricula() const;
+    void setSenha(const Senha &);
+    Senha getSenha() const;
+    void setTelefone(const Telefone &);
+    Telefone getTelefone() const;
 };
-//    public:
-//     void setMatricula(const Matricula &);
-//     Matricula getMatricula() const;
-//     void setTexto(const Texto &) const;
-//     Texto getTexto() const;
-//     void setTelefone(const Telefone &);
-//     Telefone getTelefone() const;
-//     void setSenha(const Senha &) const;
-//     Senha getSenha() const;
+
+inline void Desenvolvedor::setMatricula(const Matricula &matricula)
+{
+    this->matricula = matricula;
+}
+inline Matricula Desenvolvedor::getMatricula() const
+{
+    return matricula;
+}
+
+inline void Desenvolvedor::setSenha(const Senha &senha)
+{
+    this->senha = senha;
+}
+inline Senha Desenvolvedor::getSenha() const
+{
+    return senha;
+}
+
+inline void Desenvolvedor::setTelefone(const Telefone &telefone)
+{
+    this->telefone = telefone;
+}
+inline Telefone Desenvolvedor::getTelefone() const
+{
+    return telefone;
+}
+
+class Caso_de_Teste : public Entidade //221006351
+{
+private:
+    Codigo codigo;
+    Data data;
+    Texto acao;
+    Texto resposta;
+    Resultado resultado;
+
+public:
+    void setCodigo(const Codigo &);
+    Codigo getCodigo() const;
+    void setData(const Data &);
+    Data getData() const;
+    void setAcao(const Texto &);
+    Texto getAcao() const;
+    void setResposta(const Texto &);
+    Texto getResposta() const;
+    void setResultado(const Resultado &);
+    Resultado getResultado() const;
+};
+
+inline void Caso_de_Teste::setCodigo(const Codigo &codigo)
+{
+    this->codigo = codigo;
+}
+inline Codigo Caso_de_Teste::getCodigo() const
+{
+    return codigo;
+}
+
+inline void Caso_de_Teste::setData(const Data &data)
+{
+    this->data = data;
+}
+inline Data Caso_de_Teste::getData() const
+{
+    return data;
+}
+
+inline void Caso_de_Teste::setAcao(const Texto &acao)
+{
+    this->acao = acao;
+}
+inline Texto Caso_de_Teste::getAcao() const
+{
+    return acao;
+}
+
+inline void Caso_de_Teste::setResposta(const Texto &resposta)
+{
+    this->resposta = resposta;
+}
+inline Texto Caso_de_Teste::getResposta() const
+{
+    return resposta;
+}
+
+inline void Caso_de_Teste::setResultado(const Resultado &resultado)
+{
+    this->resultado = resultado;
+}
+inline Resultado Caso_de_Teste::getResultado() const
+{
+    return resultado;
+}
+
+// ENTIDADE TESTE - 221006389
+/// class Teste
+///{
+// private:
+// public:
 // };
-// // IMPLEMENTAÇÃO DOS MÉTODOS INLINE
 
-// // Matricula
-// // OBS: implementar o <PK> protected key
-// inline void Desenvolvedor::setMatricula(const Matricula &) {
-//     this->matricula = matricula;
-// }
-// inline Matricula Desenvolvedor::getMatricula() const {
-//     return matricula;
-// }
+// ENTIDADE CASO TESTE - 221006351
+// class CasoTeste
+//{
+// private:
+// public:
+//};
 
-// // Nome
-// inline void Desenvolvedor::setTexto(const Texto &) const {
-//     this->texto = nome;
-// }
-// inline Texto Desenvolvedor::getTexto() const {
-//     return nome;
-// }
+// Classe Entidade
+// class Entidade {
+//    public:
+//        virtual void set(const Dominios&) = 0;
+//        virtual Dominios get() = 0;
+//};
 
-// // Telefone
-// inline void Desenvolvedor::setTelefone(const Telefone &) {
-//     this->telefone = telefone;
-// }
-// inline Telefone Desenvolvedor::getTelefone() const {
-//     return telefone;
-// }
+// Classe Desenvolvedor
+// class Desenvolvedor : public Entidade {
+//   private:
+//        Matricula matricula;
+//        Senha senha;
+//       Telefone telefone;
+//       Texto nome;
+//   public:
+//       void set(const Dominios&) override;
+//       Dominios get() override;
+//};
 
-// // Senha
-// inline void Desenvolvedor::setSenha(const senha &) {
-//     this->senha = senha;
-// }
-// inline Senha Desenvolvedor::getSenha() const {
-//     return senha;
-// }
+// Implementação dos métodos da classe Desenvolvedor
+// void Desenvolvedor::set(const Dominios& dominio) {
+//   if (dynamic_cast<const Matricula*>(&dominio)) {
+//      matricula = dynamic_cast<const Matricula&>(dominio);
+//  }
+//  else if (dynamic_cast<const Senha*>(&dominio)) {
+//      senha = dynamic_cast<const Senha&>(dominio);
+//  }
+//  else if (dynamic_cast<const Telefone*>(&dominio)) {
+//      telefone = dynamic_cast<const Telefone&>(dominio);
+//  }
+//  else if (dynamic_cast<const Texto*>(&dominio)) {
+//      nome = dynamic_cast<const Texto&>(dominio);
+//  }
+//}
 
-//ENTIDADE TESTE - 221006389
-class Teste {
-   private:
-   public:
-};
+// Dominios Desenvolvedor::get() {
+//    return nome;
+//}
 
-//ENTIDADE CASO TESTE - 221006351
-class CasoTeste {
-   private:
-   public:
-};
-
-#endif  // ENTIDADES_H_INCLUDED
+#endif // ENTIDADES_H_INCLUDED
