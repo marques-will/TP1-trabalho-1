@@ -4,10 +4,11 @@
 #include <iostream>
 
 #include "../headers/dominios.h"
-#include "../headers/entidades.h"
+// #include "../headers/entidades.h"
 #include "../headers/testes_dominios.h"
-#include "../headers/testes_entidades.h"
+// #include "../headers/testes_entidades.h"
 #include "testes_dominios.cpp"
+// #include "testes_entidades.cpp"
 
 using namespace std;
 
@@ -29,7 +30,16 @@ int main() {
     TUTexto teste_texto;
     cout << setw(14) << left << setfill('-') << "Texto" << resultado[teste_texto.run()] << endl;
 
+    TUMatricula teste_matricula;
+    cout << setw(14) << left << setfill('-') << "Matricula" << resultado[teste_matricula.run()] << endl;
+
+    TUCodigo teste_codigo;
+    cout << setw(14) << left << setfill('-') << "Codigo" << resultado[teste_codigo.run()] << endl;
+
     cout << "\nENTIDADES" << endl;
+
+    // TUDesenvolvedor teste_desenvolvedor;
+    // cout << setw(14) << left << setfill('-') << "Texto" << resultado[teste_desenvolvedor.run()] << endl;
 
     return 0;
 }

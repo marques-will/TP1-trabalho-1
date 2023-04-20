@@ -10,12 +10,15 @@ void TUDesenvolvedor::setUp(){
     Matricula matricula;
     matricula.setValor("1234567");
     desenvolvedor->setMatricula(matricula);
+
     Texto nome;
     nome.setValor("joazinho");
-    desenvolvedor->setTexto(nome);
+    desenvolvedor->setNome(nome);
+
     Senha senha;
     senha.setValor("abc123");
     desenvolvedor->setSenha(senha);
+    
     Telefone telefone;
     telefone.setValor("+1234567");
     desenvolvedor->setTelefone(telefone);

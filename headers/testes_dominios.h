@@ -19,11 +19,10 @@ class TUMatricula {
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
-    int run();
 
    public:
     const static int SUCESSO = 0;
-    const static int FALHA = -1;
+    const static int FALHA = 1;
     int run();
 };
 
@@ -41,7 +40,7 @@ class TUCodigo {
 
    public:
     const static int SUCESSO = 0;
-    const static int FALHA = -1;
+    const static int FALHA = 1;
     int run();
 };
 // Telefone

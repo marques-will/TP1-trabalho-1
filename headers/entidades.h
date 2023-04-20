@@ -9,14 +9,14 @@ class Entidade {
     Texto nome;
 
    public:
-    void setNome(const Texto &);
-    Texto getNome() const;
+    void setTexto(const Texto &);
+    Texto getTexto() const;
 };
 
-inline void Entidade::setNome(const Texto &nome) {
+inline void Entidade::setTexto(const Texto &nome) {
     this->nome = nome;
 }
-inline Texto Entidade::getNome() const {
+inline Texto Entidade::getTexto() const {
     return nome;
 }
 
@@ -30,10 +30,8 @@ class Desenvolvedor : public Entidade {
    public:
     void setMatricula(const Matricula &);
     Matricula getMatricula() const;
-
     void setSenha(const Senha &);
     Senha getSenha() const;
-
     void setTelefone(const Telefone &);
     Telefone getTelefone() const;
 };
@@ -59,7 +57,7 @@ inline Telefone Desenvolvedor::getTelefone() const {
     return telefone;
 }
 
-class CasoDeTeste : public Entidade  // 221006351
+class Caso_de_Teste : public Entidade  // 221006351
 {
    private:
     Codigo codigo;
@@ -71,52 +69,48 @@ class CasoDeTeste : public Entidade  // 221006351
    public:
     void setCodigo(const Codigo &);
     Codigo getCodigo() const;
-
     void setData(const Data &);
     Data getData() const;
-
     void setAcao(const Texto &);
     Texto getAcao() const;
-
     void setResposta(const Texto &);
     Texto getResposta() const;
-
     void setResultado(const Resultado &);
     Resultado getResultado() const;
 };
 
-inline void CasoDeTeste::setCodigo(const Codigo &codigo) {
+inline void Caso_de_Teste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;
 }
-inline Codigo CasoDeTeste::getCodigo() const {
+inline Codigo Caso_de_Teste::getCodigo() const {
     return codigo;
 }
 
-inline void CasoDeTeste::setData(const Data &data) {
+inline void Caso_de_Teste::setData(const Data &data) {
     this->data = data;
 }
-inline Data CasoDeTeste::getData() const {
+inline Data Caso_de_Teste::getData() const {
     return data;
 }
 
-inline void CasoDeTeste::setAcao(const Texto &acao) {
+inline void Caso_de_Teste::setAcao(const Texto &acao) {
     this->acao = acao;
 }
-inline Texto CasoDeTeste::getAcao() const {
+inline Texto Caso_de_Teste::getAcao() const {
     return acao;
 }
 
-inline void CasoDeTeste::setResposta(const Texto &resposta) {
+inline void Caso_de_Teste::setResposta(const Texto &resposta) {
     this->resposta = resposta;
 }
-inline Texto CasoDeTeste::getResposta() const {
+inline Texto Caso_de_Teste::getResposta() const {
     return resposta;
 }
 
-inline void CasoDeTeste::setResultado(const Resultado &resultado) {
+inline void Caso_de_Teste::setResultado(const Resultado &resultado) {
     this->resultado = resultado;
 }
-inline Resultado CasoDeTeste::getResultado() const {
+inline Resultado Caso_de_Teste::getResultado() const {
     return resultado;
 }
 
