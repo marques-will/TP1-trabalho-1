@@ -1,22 +1,21 @@
 #ifndef ENTIDADES_H_INCLUDED
 #define ENTIDADES_H_INCLUDED
 
-#include "../headers/dominios.h"
-#include "../sources/dominios.cpp"
+#include "dominios.h"
 // ENTIDADE ENTIDADE
 class Entidade {
    private:
     Texto nome;
 
    public:
-    void setTexto(const Texto &);
-    Texto getTexto() const;
+    void setNome(const Texto &);
+    Texto getNome() const;
 };
 
-inline void Entidade::setTexto(const Texto &nome) {
+inline void Entidade::setNome(const Texto &nome) {
     this->nome = nome;
 }
-inline Texto Entidade::getTexto() const {
+inline Texto Entidade::getNome() const {
     return nome;
 }
 
@@ -30,10 +29,8 @@ class Desenvolvedor : public Entidade {
    public:
     void setMatricula(const Matricula &);
     Matricula getMatricula() const;
-
     void setSenha(const Senha &);
     Senha getSenha() const;
-
     void setTelefone(const Telefone &);
     Telefone getTelefone() const;
 };
@@ -71,16 +68,12 @@ class CasoDeTeste : public Entidade  // 221006351
    public:
     void setCodigo(const Codigo &);
     Codigo getCodigo() const;
-
     void setData(const Data &);
     Data getData() const;
-
     void setAcao(const Texto &);
     Texto getAcao() const;
-
     void setResposta(const Texto &);
     Texto getResposta() const;
-
     void setResultado(const Resultado &);
     Resultado getResultado() const;
 };
