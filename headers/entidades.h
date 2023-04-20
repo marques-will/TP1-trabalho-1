@@ -10,7 +10,7 @@ private:
     Texto nome;
 
 public:
-    void setTexto(const Texto &);
+    void setTexto(const Texto&);
     Texto getTexto() const;
 };
 
@@ -140,51 +140,5 @@ inline Resultado Caso_de_Teste::getResultado() const
 // private:
 // public:
 // };
-
-// ENTIDADE CASO TESTE - 221006351
-// class CasoTeste
-//{
-// private:
-// public:
-//};
-
-// Classe Entidade
-// class Entidade {
-//    public:
-//        virtual void set(const Dominios&) = 0;
-//        virtual Dominios get() = 0;
-//};
-
-// Classe Desenvolvedor
-// class Desenvolvedor : public Entidade {
-//   private:
-//        Matricula matricula;
-//        Senha senha;
-//       Telefone telefone;
-//       Texto nome;
-//   public:
-//       void set(const Dominios&) override;
-//       Dominios get() override;
-//};
-
-// Implementação dos métodos da classe Desenvolvedor
-// void Desenvolvedor::set(const Dominios& dominio) {
-//   if (dynamic_cast<const Matricula*>(&dominio)) {
-//      matricula = dynamic_cast<const Matricula&>(dominio);
-//  }
-//  else if (dynamic_cast<const Senha*>(&dominio)) {
-//      senha = dynamic_cast<const Senha&>(dominio);
-//  }
-//  else if (dynamic_cast<const Telefone*>(&dominio)) {
-//      telefone = dynamic_cast<const Telefone&>(dominio);
-//  }
-//  else if (dynamic_cast<const Texto*>(&dominio)) {
-//      nome = dynamic_cast<const Texto&>(dominio);
-//  }
-//}
-
-// Dominios Desenvolvedor::get() {
-//    return nome;
-//}
 
 #endif // ENTIDADES_H_INCLUDED

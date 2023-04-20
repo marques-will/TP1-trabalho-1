@@ -1,7 +1,86 @@
 #include "../headers/testes_dominios.h"
-
 #include "../headers/dominios.h"
 #include "dominios.cpp"
+using namespace std;
+
+//IMPLEMENTAÇÃO DO TESTE DA MATRÍCULA - 221006351
+const string TUMatricula::VALOR_VALIDO = "1234567";
+const string TUMatricula::VALOR_INVALIDO = "1234568";
+
+void TUMatricula::setUp(){
+    matricula = new Matricula();
+    estado = SUCESSO;
+}
+
+void TUMatricula::tearDown(){
+    delete matricula;
+}
+
+void TUMatricula::testarCenarioSucesso(){
+    try{
+        matricula->setValor(VALOR_VALIDO);
+        if(matricula->getValor() != VALOR_VALIDO)
+            estado = FALHA;
+    } catch (invalid_argument &excecao){
+        estado = FALHA;
+    }
+}
+
+void TUMatricula::testarCenarioFalha(){
+    try{
+        matricula->setValor(VALOR_INVALIDO);
+            estado = FALHA;
+    } catch (invalid_argument &excecao){
+        if (matricula->getValor()== VALOR_INVALIDO)
+            estado = FALHA;
+    }
+}
+
+int TUMatricula::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+//IMPLEMENTAÇÃO DO TESTE DO CÓDIGO - 221006351
+const string TUCodigo::VALOR_VALIDO = "ABC123";
+const string TUCodigo::VALOR_INVALIDO = "AB1234";
+
+void TUCodigo::setUp(){
+    codigo = new Codigo();
+    estado = SUCESSO;
+}
+void TUCodigo::tearDown(){
+    delete codigo;
+}
+
+void TUCodigo::testarCenarioSucesso(){
+    try{
+        codigo->setValor(VALOR_VALIDO);
+        if(codigo->getValor() != VALOR_VALIDO)
+            estado = FALHA;
+} catch (invalid_argument &excecao){
+    estado = FALHA;
+}
+}
+void TUCodigo::testarCenarioFalha() {
+    try{
+        codigo->setValor(VALOR_INVALIDO);
+        estado = FALHA;
+    } catch(invalid_argument &excecao){
+        if(codigo->getValor() == VALOR_INVALIDO)
+            estado = FALHA;
+    }
+}
+int TUCodigo::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
 
 // IMPLEMENTAÇÃO DO TESTE DO TELEFONE - 221020940
 const string TUTelefone::VALOR_VALIDO = "+1234567";
