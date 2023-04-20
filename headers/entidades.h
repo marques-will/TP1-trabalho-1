@@ -9,14 +9,14 @@ class Entidade {
     Texto nome;
 
    public:
-    void setTexto(const Texto &);
-    Texto getTexto() const;
+    void setNome(const Texto &);
+    Texto getNome() const;
 };
 
-inline void Entidade::setTexto(const Texto &nome) {
+inline void Entidade::setNome(const Texto &nome) {
     this->nome = nome;
 }
-inline Texto Entidade::getTexto() const {
+inline Texto Entidade::getNome() const {
     return nome;
 }
 
