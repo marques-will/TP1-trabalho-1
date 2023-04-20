@@ -81,10 +81,6 @@ public:
     Codigo getCodigo() const;
     void setData(const Data &);
     Data getData() const;
-    void setAcao(const Texto &);
-    Texto getAcao() const;
-    void setResposta(const Texto &);
-    Texto getResposta() const;
     void setResultado(const Resultado &);
     Resultado getResultado() const;
 };
@@ -105,24 +101,6 @@ inline void Caso_de_Teste::setData(const Data &data)
 inline Data Caso_de_Teste::getData() const
 {
     return data;
-}
-
-inline void Caso_de_Teste::setAcao(const Texto &acao)
-{
-    this->acao = acao;
-}
-inline Texto Caso_de_Teste::getAcao() const
-{
-    return acao;
-}
-
-inline void Caso_de_Teste::setResposta(const Texto &resposta)
-{
-    this->resposta = resposta;
-}
-inline Texto Caso_de_Teste::getResposta() const
-{
-    return resposta;
 }
 
 inline void Caso_de_Teste::setResultado(const Resultado &resultado)
