@@ -56,7 +56,7 @@ inline Telefone Desenvolvedor::getTelefone() const {
     return telefone;
 }
 
-class Caso_de_Teste : public Entidade  // 221006351
+class CasoDeTeste : public Entidade  // 221006351
 {
    private:
     Codigo codigo;
@@ -78,38 +78,38 @@ class Caso_de_Teste : public Entidade  // 221006351
     Resultado getResultado() const;
 };
 
-inline void Caso_de_Teste::setCodigo(const Codigo &codigo) {
+inline void CasoDeTeste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;
 }
-inline Codigo Caso_de_Teste::getCodigo() const {
+inline Codigo CasoDeTeste::getCodigo() const {
     return codigo;
 }
 
-inline void Caso_de_Teste::setData(const Data &data) {
+inline void CasoDeTeste::setData(const Data &data) {
     this->data = data;
 }
-inline Data Caso_de_Teste::getData() const {
+inline Data CasoDeTeste::getData() const {
     return data;
 }
 
-inline void Caso_de_Teste::setAcao(const Texto &acao) {
+inline void CasoDeTeste::setAcao(const Texto &acao) {
     this->acao = acao;
 }
-inline Texto Caso_de_Teste::getAcao() const {
+inline Texto CasoDeTeste::getAcao() const {
     return acao;
 }
 
-inline void Caso_de_Teste::setResposta(const Texto &resposta) {
+inline void CasoDeTeste::setResposta(const Texto &resposta) {
     this->resposta = resposta;
 }
-inline Texto Caso_de_Teste::getResposta() const {
+inline Texto CasoDeTeste::getResposta() const {
     return resposta;
 }
 
-inline void Caso_de_Teste::setResultado(const Resultado &resultado) {
+inline void CasoDeTeste::setResultado(const Resultado &resultado) {
     this->resultado = resultado;
 }
-inline Resultado Caso_de_Teste::getResultado() const {
+inline Resultado CasoDeTeste::getResultado() const {
     return resultado;
 }
 
