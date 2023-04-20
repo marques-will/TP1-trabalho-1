@@ -4,133 +4,119 @@
 #include "../headers/dominios.h"
 #include "../sources/dominios.cpp"
 // ENTIDADE ENTIDADE
-class Entidade
-{
-private:
+class Entidade {
+   private:
     Texto nome;
 
-public:
-    void setTexto(const Texto&);
+   public:
+    void setTexto(const Texto &);
     Texto getTexto() const;
 };
 
-inline void Entidade::setTexto(const Texto &nome)
-{
+inline void Entidade::setTexto(const Texto &nome) {
     this->nome = nome;
 }
-inline Texto Entidade::getTexto() const
-{
+inline Texto Entidade::getTexto() const {
     return nome;
 }
 
 // ENTIDADE DESENVOLVEDOR - 221006351
-class Desenvolvedor : public Entidade
-{
-private:
+class Desenvolvedor : public Entidade {
+   private:
     Matricula matricula;
     Senha senha;
     Telefone telefone;
 
-public:
+   public:
     void setMatricula(const Matricula &);
     Matricula getMatricula() const;
+
     void setSenha(const Senha &);
     Senha getSenha() const;
+
     void setTelefone(const Telefone &);
     Telefone getTelefone() const;
 };
 
-inline void Desenvolvedor::setMatricula(const Matricula &matricula)
-{
+inline void Desenvolvedor::setMatricula(const Matricula &matricula) {
     this->matricula = matricula;
 }
-inline Matricula Desenvolvedor::getMatricula() const
-{
+inline Matricula Desenvolvedor::getMatricula() const {
     return matricula;
 }
 
-inline void Desenvolvedor::setSenha(const Senha &senha)
-{
+inline void Desenvolvedor::setSenha(const Senha &senha) {
     this->senha = senha;
 }
-inline Senha Desenvolvedor::getSenha() const
-{
+inline Senha Desenvolvedor::getSenha() const {
     return senha;
 }
 
-inline void Desenvolvedor::setTelefone(const Telefone &telefone)
-{
+inline void Desenvolvedor::setTelefone(const Telefone &telefone) {
     this->telefone = telefone;
 }
-inline Telefone Desenvolvedor::getTelefone() const
-{
+inline Telefone Desenvolvedor::getTelefone() const {
     return telefone;
 }
 
-class Caso_de_Teste : public Entidade //221006351
+class CasoDeTeste : public Entidade  // 221006351
 {
-private:
+   private:
     Codigo codigo;
     Data data;
     Texto acao;
     Texto resposta;
     Resultado resultado;
 
-public:
+   public:
     void setCodigo(const Codigo &);
     Codigo getCodigo() const;
+
     void setData(const Data &);
     Data getData() const;
+
     void setAcao(const Texto &);
     Texto getAcao() const;
+
     void setResposta(const Texto &);
     Texto getResposta() const;
+
     void setResultado(const Resultado &);
     Resultado getResultado() const;
 };
 
-inline void Caso_de_Teste::setCodigo(const Codigo &codigo)
-{
+inline void CasoDeTeste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;
 }
-inline Codigo Caso_de_Teste::getCodigo() const
-{
+inline Codigo CasoDeTeste::getCodigo() const {
     return codigo;
 }
 
-inline void Caso_de_Teste::setData(const Data &data)
-{
+inline void CasoDeTeste::setData(const Data &data) {
     this->data = data;
 }
-inline Data Caso_de_Teste::getData() const
-{
+inline Data CasoDeTeste::getData() const {
     return data;
 }
 
-inline void Caso_de_Teste::setAcao(const Texto &acao)
-{
+inline void CasoDeTeste::setAcao(const Texto &acao) {
     this->acao = acao;
 }
-inline Texto Caso_de_Teste::getAcao() const
-{
+inline Texto CasoDeTeste::getAcao() const {
     return acao;
 }
 
-inline void Caso_de_Teste::setResposta(const Texto &resposta)
-{
+inline void CasoDeTeste::setResposta(const Texto &resposta) {
     this->resposta = resposta;
 }
-inline Texto Caso_de_Teste::getResposta() const
-{
+inline Texto CasoDeTeste::getResposta() const {
     return resposta;
 }
 
-inline void Caso_de_Teste::setResultado(const Resultado &resultado)
-{
+inline void CasoDeTeste::setResultado(const Resultado &resultado) {
     this->resultado = resultado;
 }
-inline Resultado Caso_de_Teste::getResultado() const
-{
+inline Resultado CasoDeTeste::getResultado() const {
     return resultado;
 }
 
@@ -141,4 +127,4 @@ inline Resultado Caso_de_Teste::getResultado() const
 // public:
 // };
 
-#endif // ENTIDADES_H_INCLUDED
+#endif  // ENTIDADES_H_INCLUDED
