@@ -3,7 +3,7 @@
 
 #include <string>
 
-#include "../headers/dominios.h"
+#include "dominios.h"
 
 using namespace std;
 
@@ -12,9 +12,10 @@ class TUMatricula {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
+
     Matricula *matricula;
     int estado;
-
+    
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
@@ -31,8 +32,10 @@ class TUCodigo {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
+
     Codigo *codigo;
     int estado;
+
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
@@ -48,8 +51,10 @@ class TUTelefone {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
+
     Telefone *telefone;
     int estado;
+
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
@@ -66,8 +71,10 @@ class TUData {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
+
     Data *data;
     int estado;
+
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
@@ -84,8 +91,10 @@ class TUSenha {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
+
     Senha *senha;
     int estado;
+
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
@@ -102,8 +111,10 @@ class TUTexto {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
+
     Texto *texto;
     int estado;
+
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
