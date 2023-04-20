@@ -9,39 +9,40 @@ using namespace std;
 
 // Matrícula
 class TUMatricula {
-    private:
-     const static string VALOR_VALIDO;
-     const static string VALOR_INVALIDO;
-     Matricula *matricula;
-     int estado;
+   private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+    Matricula *matricula;
+    int estado;
 
-     void setUp();
-     void tearDown();
-     void testarCenarioSucesso();
-     void testarCenarioFalha();
-     int run();
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+    int run();
 
-    public:
-     const static int SUCESSO = 0;
-     const static int FALHA = -1;
-     int run();
- };
+   public:
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
+};
 
-//CÓDIGO - 221006351
-class TUCodigo{
-    private:
-        const static string VALOR_VALIDO;
-        const static string VALOR_INVALIDO;
-        Codigo *codigo;
-        int estado;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        void testarCenarioFalha();
-    public:
-        const static int SUCESSO = 0;
-        const static int FALHA = -1;
-        int run(); 
+// CÓDIGO - 221006351
+class TUCodigo {
+   private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+    Codigo *codigo;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+   public:
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 // Telefone
 class TUTelefone {
