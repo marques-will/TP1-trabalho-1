@@ -50,6 +50,7 @@ int TUDesenvolvedor::run() {
     return estado;
 }
 
+
 //Teste CasoDeTeste
 const string TUCasoDeTeste::VALOR_VALIDO_NOME = "mariazinha1";
 const string TUCasoDeTeste::VALOR_VALIDO_DATA = "14/AGO/2003";
@@ -57,10 +58,12 @@ const string TUCasoDeTeste::VALOR_VALIDO_ACAO = "correr uma maratona";
 const string TUCasoDeTeste::VALOR_VALIDO_RESPOSTA = "Chorar muito";
 const string TUCasoDeTeste::VALOR_VALIDO_RESULTADO = "APROVADO";
 
+@
 void TUCasoDeTeste::setUp(){
     casodeteste = new CasoDeTeste();
     estado = SUCESSO;
 }
+
 
 void TUCasoDeTeste::tearDown(){
     delete casodeteste;
@@ -94,6 +97,7 @@ void TUCasoDeTeste::testarCenarioSucesso(){
     Resultado resultado;
     resultado.setValor(VALOR_VALIDO_RESULTADO);
     casodeteste->setResultado(resultado);
+
     if(casodeteste->getResultado().getValor() != VALOR_VALIDO_RESULTADO)
         estado = FALHA;
 }

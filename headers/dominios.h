@@ -47,6 +47,7 @@ class Telefone : public Dominios {
 };
 
 // SUBCLASSE RESULTADO - 221006389
+
 class Resultado : public Dominios{
    private:
     string resultado;
