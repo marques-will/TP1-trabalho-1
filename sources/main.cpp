@@ -46,5 +46,6 @@ int main() {
 
     TUCasoDeTeste teste_casodeteste;
     showResult(teste_casodeteste.run(), "CasoDeTeste");
+
     return 0;
 }

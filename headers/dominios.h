@@ -47,10 +47,12 @@ class Telefone : public Dominios {
 };
 
 // SUBCLASSE RESULTADO - 221006389
-class Resultado : public Dominios {
+
+class Resultado : public Dominios{
    private:
     string resultado;
     void validar(const string& resultado);
+    
 };
 
 // SUBCLASSE CODIGO - 221006351
@@ -68,8 +70,10 @@ class Texto : public Dominios {
 };
 
 // SUBCLASSE CLASSE - 221006389
-class Classe {
+class Classe : public Dominios{
    private:
+    string classe;
+    void validar(const string& classe);
 };
 
 // SUBCLASSE DATA - 221020940
