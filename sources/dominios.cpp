@@ -87,9 +87,9 @@ vector<string> Data::extrair_data(const string& data) {
     for (int i = 0; i < data.size(); i++) {
         if (data[i] == '/') {
             dia_mes_ano.push_back(temp_str);
-            temp_str = "";
+            temp_str.clear();
         } else {
-            temp_str = temp_str + data[i];
+            temp_str += data[i];
             if (i == data.size() - 1)
                 dia_mes_ano.push_back(temp_str);
         }
@@ -113,18 +113,16 @@ void Data::validar(const string& data) {
         dia = stoi(dia_mes_ano[0]);
         mes = dia_mes_ano[1];
         ano = stoi(dia_mes_ano[2]);
-    } catch (invalid_argument &ex) {
+    } catch (invalid_argument& ex) {
         throw invalid_argument("Data Inválida.");  // caso não consiga converter dia ou ano para inteiro
     }
 
     if (ano < 2000 || ano > 2999)  // verifica se o ano está entre 2000 e 2999
         throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
 
-    int pos;
-    if (find(meses.begin(), meses.end(), mes) == meses.end())  // verifica se a sigla está no vetor
+    int pos = distance(meses.begin(), find(meses.begin(), meses.end(), mes));
+    if (pos == 12)  // verifica se a sigla está no vetor
         throw invalid_argument("Sigla do mês inválida.");
-    else
-        pos = distance(meses.begin(), find(meses.begin(), meses.end(), mes));  // distancia do inicio até a ocorrencia
 
     if (mes == "FEV")
         if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0))  // verifica se é ano bissexto
