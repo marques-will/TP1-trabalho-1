@@ -42,5 +42,5 @@ class TUCasoDeTeste{
         const static int SUCESSO = 0;
         const static int FALHA = 1;
         int run();
-}
+};
 #endif  // TESTES_ENTIDADES_H_INCLUDED

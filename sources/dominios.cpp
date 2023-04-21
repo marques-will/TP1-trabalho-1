@@ -153,18 +153,19 @@ void Texto::validar(const string& texto) {
 
 // VALIDAÇÃO DE RESULTADO
 void Resultado::validar(const string& resultado) {
-    vector <string> retornos = {"APROVADO", "REPROVADO"}
-    
-// VALIDAÇÃO DE CLASSE
-void Classe::validar(string& claasse) {
-    vector<string> classes = {};
-    bool encontrou = false;
-    for (const auto& classe: classes) {
-        if (classe == classes) {
-            encontrou = true;
-            break;
+    vector<string> resultados = {"APROVADO", "REPROVADO"};
+    for(auto resultado: resultados){
+        if(find(resultados.begin(), resultados.end(), resultado) == resultados.end()){
+            throw invalid_argument("Os resultados apenas podem ser 'APROVADO' ou 'REPROVADO'");
         }
     }
-    void if (encontrou == false) {
-        throw invalid_argument("Classe(s) inválida(s).");
-    } 
+}
+// VALIDAÇÃO DE CLASSE
+void Classe::validar(const string& classe) {
+    vector<string> classes = {"UNIDADE", "INTEGRACAO", "FUMACA", "SISTEMA", "REGRESSAO", "ACEITACAO"};
+    for(auto classe: classes){
+        if(find(classes.begin(), classes.end(), classe) == classes.end()){
+            throw invalid_argument("Classes Inválidas");
+        }
+    }
+}
