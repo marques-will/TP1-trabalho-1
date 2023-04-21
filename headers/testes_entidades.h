@@ -24,4 +24,23 @@ class TUDesenvolvedor {
     int run();
 };
 
+class TUCasoDeTeste {
+   private:
+    const static string VALOR_VALIDO_NOME;
+    const static string VALOR_VALIDO_DATA;
+    const static string VALOR_VALIDO_ACAO;
+    const static string VALOR_VALIDO_RESPOSTA;
+    const static string VALOR_VALIDO_RESULTADO;
+    CasoDeTeste *casodeteste;
+    int estado;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+
+   public:
+    const static int SUCESSO = 0;
+    const static int FALHA = 1;
+    int run();
+};
 #endif  // TESTES_ENTIDADES_H_INCLUDED
