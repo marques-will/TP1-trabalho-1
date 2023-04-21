@@ -3,7 +3,7 @@
 using namespace std;
 
 // TESTE DESENVOLVEDOR
-const string TUDesenvolvedor::VALOR_VALIDO_TEXTO = "joaozinho123";
+const string TUDesenvolvedor::VALOR_VALIDO_NOME = "joaozinho123";
 const string TUDesenvolvedor::VALOR_VALIDO_MATRICULA = "1234567";
 const string TUDesenvolvedor::VALOR_VALIDO_SENHA = "abc123";
 const string TUDesenvolvedor::VALOR_VALIDO_TELEFONE = "+1234567";
@@ -25,9 +25,9 @@ void TUDesenvolvedor::testarCenarioSucesso() {
         estado = FALHA;
 
     Texto nome;
-    nome.setValor(VALOR_VALIDO_TEXTO);
-    desenvolvedor->setNome(nome);nome.setValor(VALOR_VALIDO_TEXTO);
-    if (desenvolvedor->getNome().getValor() != VALOR_VALIDO_TEXTO)
+    nome.setValor(TUDesenvolvedor::VALOR_VALIDO_NOME);
+    desenvolvedor->setNome(nome);
+    if (desenvolvedor->getNome().getValor() != TUDesenvolvedor::VALOR_VALIDO_NOME)
         estado = FALHA;
 
     Senha senha;
@@ -44,6 +44,61 @@ void TUDesenvolvedor::testarCenarioSucesso() {
 }
 
 int TUDesenvolvedor::run() {
+    setUp();
+    testarCenarioSucesso();
+    tearDown();
+    return estado;
+}
+
+//Teste CasoDeTeste
+const string TUCasoDeTeste::VALOR_VALIDO_NOME = "mariazinha1";
+const string TUCasoDeTeste::VALOR_VALIDO_DATA = "14/AGO/2003";
+const string TUCasoDeTeste::VALOR_VALIDO_ACAO = "correr uma maratona";
+const string TUCasoDeTeste::VALOR_VALIDO_RESPOSTA = "Chorar muito";
+const string TUCasoDeTeste::VALOR_VALIDO_RESULTADO "APROVADO";
+
+void TUCasoDeTeste::setUp(){
+    casodeteste = new CasoDeTeste();
+    estado = SUCESSO;
+}
+
+void TUCasoDeTeste::tearDown(){
+    delete casodeteste;
+}
+
+void TUCasoDeTeste::testarCenarioSucesso(){
+    Texto nome;
+    nome.setValor(VALOR_VALIDO_NOME);
+    casodeteste->setNome(nome);
+    if(casodeteste->getNome().getValor() != VALOR_VALIDO_NOME)
+        estado = FALHA;
+    
+    Data data;
+    data.setValor(VALOR_VALIDO_DATA);
+    casodeteste->setData(data);
+    if(casodeteste->getData().getValor() != VALOR_VALIDO_DATA)
+        estado = FALHA;
+    
+    Texto acao;
+    acao.setValor(VALOR_VALIDO_TEXTO);
+    casodeteste->setAcao(acao);
+    if(casodeteste->getAcao().getValor() != VALOR_VALIDO_ACAO)
+        estado = FALHA;
+    
+    Texto resposta;
+    resposta.setValor(VALOR_VALIDO_RESPOSTA);
+    casodeteste->setResposta(resposta);
+    if(casodeteste->getResposta().getValor() != VALOR_VALIDO_RESPOSTA)
+        estado = FALHA;
+
+    Resultado resultado;
+    resultado.setValor(VALOR_VALIDO_RESULTADO);
+    resultado->setResultado(resultado);
+    if(casodeteste->getResultado().getValor() != VALOR_VALIDO_RESULTADO)
+        estado = FALHA;
+}
+
+int TUCasoDeTeste::run(){
     setUp();
     testarCenarioSucesso();
     tearDown();
