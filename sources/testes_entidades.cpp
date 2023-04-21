@@ -55,7 +55,7 @@ const string TUCasoDeTeste::VALOR_VALIDO_NOME = "mariazinha1";
 const string TUCasoDeTeste::VALOR_VALIDO_DATA = "14/AGO/2003";
 const string TUCasoDeTeste::VALOR_VALIDO_ACAO = "correr uma maratona";
 const string TUCasoDeTeste::VALOR_VALIDO_RESPOSTA = "Chorar muito";
-const string TUCasoDeTeste::VALOR_VALIDO_RESULTADO "APROVADO";
+const string TUCasoDeTeste::VALOR_VALIDO_RESULTADO = "APROVADO";
 
 void TUCasoDeTeste::setUp(){
     casodeteste = new CasoDeTeste();
@@ -80,7 +80,7 @@ void TUCasoDeTeste::testarCenarioSucesso(){
         estado = FALHA;
     
     Texto acao;
-    acao.setValor(VALOR_VALIDO_TEXTO);
+    acao.setValor(VALOR_VALIDO_ACAO);
     casodeteste->setAcao(acao);
     if(casodeteste->getAcao().getValor() != VALOR_VALIDO_ACAO)
         estado = FALHA;
@@ -93,7 +93,7 @@ void TUCasoDeTeste::testarCenarioSucesso(){
 
     Resultado resultado;
     resultado.setValor(VALOR_VALIDO_RESULTADO);
-    resultado->setResultado(resultado);
+    casodeteste->setResultado(resultado);
     if(casodeteste->getResultado().getValor() != VALOR_VALIDO_RESULTADO)
         estado = FALHA;
 }
