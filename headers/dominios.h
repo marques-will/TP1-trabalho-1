@@ -6,30 +6,30 @@
 #include <vector>
 using namespace std;
 
-// CLASSE DOMINIOS
+// CLASSE DOMINIOS - 221020940
 class Dominios {
    private:
     string valor;
+    virtual void validar(const string& valor) = 0;  // método abstrado
 
    public:
-    void setValor(string);
-    string getValor();
+    void setValor(string valor);
+    string getValor() const;
 };
+
+inline void Dominios::setValor(string valor) {
+    validar(valor);
+    this->valor = valor;
+}
+inline string Dominios::getValor() const {
+    return valor;
+}
 
 // SUBCLASSE MATRICULA - 221006351
 class Matricula : public Dominios {
    private:
     string matricula;
     void validar(const string& matricula);
-
-   public:
-    void setValor(string matricula) {
-        validar(matricula);
-        Dominios::setValor(matricula);
-    };
-    string getValor() {
-        return Dominios::getValor();
-    }
 };
 
 // SUBCLASSE SENHA - 221020940
@@ -37,15 +37,6 @@ class Senha : public Dominios {
    private:
     string senha;
     void validar(const string& senha);
-
-   public:
-    void setValor(string senha) {
-        validar(senha);
-        Dominios::setValor(senha);
-    };
-    string getValor() {
-        return Dominios::getValor();
-    }
 };
 
 // SUBCLASSE TELEFONE - 221006351
@@ -53,15 +44,6 @@ class Telefone : public Dominios {
    private:
     string telefone;
     void validar(const string& telefone);
-
-   public:
-    void setValor(string telefone) {
-        validar(telefone);
-        Dominios::setValor(telefone);
-    };
-    string getValor() {
-        return Dominios::getValor();
-    }
 };
 
 // SUBCLASSE RESULTADO - 221006389
@@ -69,15 +51,7 @@ class Resultado {
    private:
     string resultado;
     void validar(const string& resultado);
-
-   public:
-   void setValor(string resultado) {
-        validar(resultado);
-        Dominios::setValor(resultado);
-    };
-    string getValor() {
-        return Dominios::getValor();
-    }
+    
 };
 
 // SUBCLASSE CODIGO - 221006351
@@ -85,15 +59,6 @@ class Codigo : public Dominios {
    private:
     string codigo;
     void validar(const string& codigo);
-
-   public:
-    void setValor(string codigo) {
-        validar(codigo);
-        Dominios::setValor(codigo);
-    };
-    string getValor() {
-        return Dominios::getValor();
-    }
 };
 
 // SUBCLASSE TEXTO - 221020940
@@ -101,15 +66,6 @@ class Texto : public Dominios {
    private:
     string texto;
     void validar(const string& texto);
-
-   public:
-    void setValor(string texto) {
-        validar(texto);
-        Dominios::setValor(texto);
-    };
-    string getValor() {
-        return Dominios::getValor();
-    }
 };
 
 // SUBCLASSE CLASSE - 221006389
@@ -117,16 +73,6 @@ class Classe {
    private:
     string classe;
     void validar(const string& classe);
-
-   public:
-    void setValor(string classe) {
-        validar(classe);
-        Dominios::setValor(classe);
-    };
-    string getValor() {
-        return Dominios::getValor();
-    };
-};
 };
 
 // SUBCLASSE DATA - 221020940
@@ -134,17 +80,7 @@ class Data : public Dominios {
    private:
     string data;
     vector<string> extrair_data(const string& data);
-    bool bissexto(const int& ano);
     void validar(const string& data);
-
-   public:
-    void setValor(string data) {
-        validar(data);
-        Dominios::setValor(data);
-    };
-    string getValor() {
-        return Dominios::getValor();
-    }
 };
 
 #endif  // DOMINIOS_H_INCLUDED

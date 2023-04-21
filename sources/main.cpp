@@ -1,30 +1,46 @@
-#include <iostream>
-#include "../headers/dominios.h"
-#include "dominios.cpp"
 #include <locale.h>
-//#include "../headers/entidades.h"
-//#include "../headers/testes_dominios.h"
-//#include "../headers/testes_entidades.h"
+
+#include <iomanip>
+#include <iostream>
+
+#include "../headers/dominios.h"
+#include "../headers/entidades.h"
+#include "../headers/testes_dominios.h"
+#include "../headers/testes_entidades.h"
+#include "dominios.cpp"
+#include "entidades.cpp"
+#include "testes_dominios.cpp"
+#include "testes_entidades.cpp"
 
 using namespace std;
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
-    Codigo teste;
-    Telefone telefone;
-    teste.setValor("abc123");
-    telefone.setValor("+12345678");
-    cout << teste.getValor() << endl;
-    cout << telefone.getValor() << endl;
-    Matricula matricula;
-    matricula.setValor("1234567");
-    cout << matricula.getValor() << endl;
-    Texto texto;
-    texto.setValor("o joao eh foda");
-    cout << texto.getValor() << endl;
-    Data data;
-    data.setValor("10/DEZ/2010");
-    cout << data.getValor() << endl;
+
+    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
+
+    cout << "DOMINIOS" << endl;
+    TUTelefone teste_telefone;
+    cout << setw(16) << left << setfill('.') << "Telefone" << resultado[teste_telefone.run()] << endl;  // alinhado à esquerda de 14 por causa de "Desenvolvedor"
+
+    TUData teste_data;
+    cout << setw(16) << left << setfill('.') << "Data" << resultado[teste_data.run()] << endl;
+
+    TUSenha teste_senha;
+    cout << setw(16) << left << setfill('.') << "Senha" << resultado[teste_senha.run()] << endl;
+
+    TUTexto teste_texto;
+    cout << setw(16) << left << setfill('.') << "Texto" << resultado[teste_texto.run()] << endl;
+
+    TUMatricula teste_matricula;
+    cout << setw(16) << left << setfill('.') << "Matricula" << resultado[teste_matricula.run()] << endl;
+
+    TUCodigo teste_codigo;
+    cout << setw(16) << left << setfill('.') << "Codigo" << resultado[teste_codigo.run()] << endl;
+
+    cout << "\nENTIDADES" << endl;
+    TUDesenvolvedor teste_desenvolvedor;
+    cout << setw(16) << left << setfill('.') << "Desenvolvedor" << resultado[teste_desenvolvedor.run()] << endl;
 
     return 0;
 }
