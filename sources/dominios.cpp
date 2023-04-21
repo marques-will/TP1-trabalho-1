@@ -150,3 +150,21 @@ void Texto::validar(const string& texto) {
     if (texto.find("  ") != string::npos)
         throw invalid_argument("Texto contém espaços em branco em sequência.");
 }
+
+// VALIDAÇÃO DE RESULTADO
+void Resultado::validar(const string& resultado) {
+    vector <string> retornos = {"APROVADO", "REPROVADO"}
+    
+// VALIDAÇÃO DE CLASSE
+void Classe::validar(string& claasse) {
+    vector<string> classes = {};
+    bool encontrou = false;
+    for (const auto& classe: classes) {
+        if (classe == classes) {
+            encontrou = true;
+            break;
+        }
+    }
+    void if (encontrou == false) {
+        throw invalid_argument("Classe(s) inválida(s).");
+    } 

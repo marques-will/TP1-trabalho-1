@@ -51,6 +51,7 @@ class Resultado {
    private:
     string resultado;
     void validar(const string& resultado);
+    
 };
 
 // SUBCLASSE CODIGO - 221006351
@@ -70,6 +71,8 @@ class Texto : public Dominios {
 // SUBCLASSE CLASSE - 221006389
 class Classe {
    private:
+    string classe;
+    void validar(const string& classe);
 };
 
 // SUBCLASSE DATA - 221020940
