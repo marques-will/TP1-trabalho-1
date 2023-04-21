@@ -13,34 +13,36 @@
 #include "testes_entidades.cpp"
 
 using namespace std;
+void showResult(int result, string class_name) {
+    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
+    cout << setw(16) << left << setfill('.') << class_name << resultado[result] << endl;
+}
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
 
-    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
-
     cout << "DOMINIOS" << endl;
-    TUTelefone teste_telefone;
-    cout << setw(16) << left << setfill('.') << "Telefone" << resultado[teste_telefone.run()] << endl;  // alinhado à esquerda de 14 por causa de "Desenvolvedor"
+    TUCodigo teste_codigo;
+    showResult(teste_codigo.run(), "Codigo");
 
     TUData teste_data;
-    cout << setw(16) << left << setfill('.') << "Data" << resultado[teste_data.run()] << endl;
-
-    TUSenha teste_senha;
-    cout << setw(16) << left << setfill('.') << "Senha" << resultado[teste_senha.run()] << endl;
-
-    TUTexto teste_texto;
-    cout << setw(16) << left << setfill('.') << "Texto" << resultado[teste_texto.run()] << endl;
+    showResult(teste_data.run(), "Data");
 
     TUMatricula teste_matricula;
-    cout << setw(16) << left << setfill('.') << "Matricula" << resultado[teste_matricula.run()] << endl;
+    showResult(teste_matricula.run(), "Matricula");
 
-    TUCodigo teste_codigo;
-    cout << setw(16) << left << setfill('.') << "Codigo" << resultado[teste_codigo.run()] << endl;
+    TUSenha teste_senha;
+    showResult(teste_senha.run(), "Senha");
+
+    TUTelefone teste_telefone;
+    showResult(teste_telefone.run(), "Telefone");
+
+    TUTexto teste_texto;
+    showResult(teste_texto.run(), "Texto");
 
     cout << "\nENTIDADES" << endl;
     TUDesenvolvedor teste_desenvolvedor;
-    cout << setw(16) << left << setfill('.') << "Desenvolvedor" << resultado[teste_desenvolvedor.run()] << endl;
+    showResult(teste_desenvolvedor.run(), "Desenvolvedor");
 
     return 0;
 }
