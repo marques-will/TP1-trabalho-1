@@ -4,43 +4,48 @@
 #include "entidades.h"
 
 using namespace std;
-class TUDesenvolvedor {
+
+class TU{
+    private:
+        virtual void setUp() = 0;
+        virtual void tearDown() = 0;
+        virtual void testarCenarioSucesso() = 0;
+    public:
+        const static int SUCESSO = 0;
+        const static int FALHA = 1;
+        int run();
+        int estado;
+};
+
+inline int TU::run(){
+    setUp();
+    testarCenarioSucesso();
+    tearDown();
+    return estado;
+}
+
+class TUDesenvolvedor: public TU {
    private:
     const static string VALOR_VALIDO_NOME;
     const static string VALOR_VALIDO_MATRICULA;
     const static string VALOR_VALIDO_SENHA;
     const static string VALOR_VALIDO_TELEFONE;
-
-    Desenvolvedor *desenvolvedor;
-    int estado;
-
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
-
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
+    Desenvolvedor *desenvolvedor;
 };
 
-class TUCasoDeTeste{
+class TUCasoDeTeste: public TU{
     private:
         const static string VALOR_VALIDO_NOME;
         const static string VALOR_VALIDO_DATA;
         const static string VALOR_VALIDO_ACAO;
         const static string VALOR_VALIDO_RESPOSTA;
         const static string VALOR_VALIDO_RESULTADO;
-        CasoDeTeste *casodeteste;
-        int estado;
-
         void setUp();
         void tearDown();
         void testarCenarioSucesso();
-
-    public:
-        const static int SUCESSO = 0;
-        const static int FALHA = 1;
-        int run();
+        CasoDeTeste *casodeteste;
 };
 #endif  // TESTES_ENTIDADES_H_INCLUDED
