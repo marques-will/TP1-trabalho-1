@@ -25,62 +25,61 @@ inline string Dominios::getValor() const {
     return valor;
 }
 
-// SUBCLASSE MATRICULA - 221006351
-class Matricula : public Dominios {
+// DOMINIO CLASSE - 221006389
+class Classe : public Dominios {
    private:
-    string matricula;
-    void validar(const string& matricula);
+    string classe;
+    void validar(const string& classe);
 };
 
-// SUBCLASSE SENHA - 221020940
-class Senha : public Dominios {
-   private:
-    string senha;
-    void validar(const string& senha);
-};
-
-// SUBCLASSE TELEFONE - 221006351
-class Telefone : public Dominios {
-   private:
-    string telefone;
-    void validar(const string& telefone);
-};
-
-// SUBCLASSE RESULTADO - 221006389
-
-class Resultado : public Dominios{
-   private:
-    string resultado;
-    void validar(const string& resultado);
-};
-
-// SUBCLASSE CODIGO - 221006351
+// DOMINIO CODIGO - 221006351
 class Codigo : public Dominios {
    private:
     string codigo;
     void validar(const string& codigo);
 };
 
-// SUBCLASSE TEXTO - 221020940
-class Texto : public Dominios {
-   private:
-    string texto;
-    void validar(const string& texto);
-};
-
-// SUBCLASSE CLASSE - 221006389
-class Classe : public Dominios{
-   private:
-    string classe;
-    void validar(const string& classe);
-};
-
-// SUBCLASSE DATA - 221020940
+// DOMINIO DATA - 221020940
 class Data : public Dominios {
    private:
     string data;
     vector<string> extrair_data(const string& data);
     void validar(const string& data);
+};
+
+// DOMINIO MATRICULA - 221006351
+class Matricula : public Dominios {
+   private:
+    string matricula;
+    void validar(const string& matricula);
+};
+
+// DOMINIO RESULTADO - 221006389
+class Resultado : public Dominios {
+   private:
+    string resultado;
+    void validar(const string& resultado);
+};
+
+// DOMINIO SENHA - 221020940
+class Senha : public Dominios {
+   private:
+    string senha;
+    void validar(const string& senha);
+};
+
+// DOMINIO TELEFONE - 221006351
+class Telefone : public Dominios {
+   private:
+    string telefone;
+    void validar(const string& telefone);
+};
+
+// DOMINIO TEXTO - 221020940
+class Texto : public Dominios {
+   private:
+    string texto;
+    void validar(const string& texto);
 };
 
 #endif  // DOMINIOS_H_INCLUDED

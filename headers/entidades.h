@@ -56,8 +56,15 @@ inline Telefone Desenvolvedor::getTelefone() const {
     return telefone;
 }
 
-class CasoDeTeste : public Entidade  // 221006351
-{
+// ENTIDADE TESTE - 221006389
+/// class Teste
+///{
+// private:
+// public:
+// };
+
+// ENTIDADE CASO DE TESTE
+class CasoDeTeste : public Entidade {
    private:
     Codigo codigo;
     Data data;
@@ -112,12 +119,5 @@ inline void CasoDeTeste::setResultado(const Resultado &resultado) {
 inline Resultado CasoDeTeste::getResultado() const {
     return resultado;
 }
-
-// ENTIDADE TESTE - 221006389
-/// class Teste
-///{
-// private:
-// public:
-// };
 
 #endif  // ENTIDADES_H_INCLUDED

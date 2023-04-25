@@ -45,7 +45,7 @@ int TUMatricula::run() {
 
 // IMPLEMENTAÇÃO DO TESTE DO CÓDIGO - 221006351
 const string TUCodigo::VALOR_VALIDO = "ABC123";
-const string TUCodigo::VALOR_INVALIDO = "AB1234";
+const string TUCodigo::VALOR_INVALIDO = "123ABC";
 
 void TUCodigo::setUp() {
     codigo = new Codigo();
@@ -205,7 +205,7 @@ int TUSenha::run() {
 }
 
 // IMPLEMENTAÇÃO DO TESTE DA TEXTO - 221020940
-const string TUTexto::VALOR_VALIDO = "o joao eh broxa";
+const string TUTexto::VALOR_VALIDO = "o joao eh aaa";
 const string TUTexto::VALOR_INVALIDO = "abc123";
 
 void TUTexto::setUp() {
