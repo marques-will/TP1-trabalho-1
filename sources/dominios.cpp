@@ -6,60 +6,18 @@
 #include <string>
 #include <vector>
 
-// VALIDAÇÃO DA MATRÍCULA - 221006351
-void Matricula::validar(const string& matricula) {
-    if (matricula.size() != 7) {
-        throw invalid_argument("A matrícula deve conter 7 dígitos");
-    }
-
-    int fator = 1, soma = 0, digito_encontrado;  // matricula tamanho impar, fator inicializado com 1
-    for (int i = 0; i < matricula.size() - 1; i++) {
-        int valor = matricula[i] - '0';  // converte o caractere para inteiro
-        soma += fator * valor;
-
-        if (i % 2 == 0)
-            fator = 2;
-        else
-            fator = 1;
-    }
-
-    soma = soma % 10;
-    if (soma != 0)
-        digito_encontrado = 10 - soma;
-    else
-        digito_encontrado = soma;
-
-    int digito_verificador = matricula[6] - '0';    // obtém o DV e converte em int
-    if (digito_verificador != digito_encontrado) {  // verifica se o digito calulado é igual ao DV
-        throw invalid_argument("Dígito verificador inválido.");
-    }
-}
-
-// VALIDAÇÃO DO TELEFONE - 221020940
-void Telefone::validar(const string& telefone) {
-    if (telefone.size() < 8 || telefone.size() > 16) {
-        throw invalid_argument("O telefone deve conter \"+\" seguido de 7 a 15 dígitos.");
-    }
-
-    for (int i = 0; i < telefone.size(); i++) {
-        if (i == 0) {
-            if (telefone[i] != '+')
-                throw invalid_argument("O primeiro caractere deve ser \"+\".");
-        } else {
-            if (!isdigit(telefone[i]))
-                throw invalid_argument("Número de telefone inválido.");
+// // VALIDAÇÃO DE CLASSE
+void Classe::validar(const string& classe) {
+    vector<string> classes = {"UNIDADE", "INTEGRACAO", "FUMACA", "SISTEMA", "REGRESSAO", "ACEITACAO"};
+    bool encontrou = false;
+    for (const auto& classe_valida : classes) {
+        if (classe == classe_valida) {
+            encontrou = true;
+            break;
         }
     }
-}
-
-// VALIDAÇÃO DA SENHA - 221020940
-void Senha::validar(const string& senha) {
-    if (senha.size() != 6)
-        throw invalid_argument("A senha deve conter 6 caracteres.");
-
-    for (auto ch : senha) {
-        if (count(senha.begin(), senha.end(), ch) > 1)
-            throw invalid_argument("A senha não pode conter caracteres repetidos.");
+    if (encontrou == false) {
+        throw invalid_argument("Classe(s) inválida(s).");
     }
 }
 
@@ -114,23 +72,85 @@ void Data::validar(const string& data) {
         mes = dia_mes_ano[1];
         ano = stoi(dia_mes_ano[2]);
     } catch (invalid_argument& ex) {
-        throw invalid_argument("Data Inválida.");  // caso não consiga converter dia ou ano para inteiro
+        throw invalid_argument("Data Inválida.");
     }
 
-    if (ano < 2000 || ano > 2999)  // verifica se o ano está entre 2000 e 2999
+    if (ano < 2000 || ano > 2999)
         throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
 
     int pos = distance(meses.begin(), find(meses.begin(), meses.end(), mes));
-    if (pos == 12)  // verifica se a sigla está no vetor
+    if (pos == 12)
         throw invalid_argument("Sigla do mês inválida.");
 
     if (mes == "FEV")
-        if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0))  // verifica se é ano bissexto
-            dias[1]++;                                           // adiciona 1 dia em fevereiro se for bissexto
+        if (ano % 4 == 0 && (ano % 100 != 0 || ano % 400 == 0))
+            dias[1]++;
 
-    if (dia < 1 || dia > dias[pos])  // verifica o total de dias no mês
+    if (dia < 1 || dia > dias[pos])
         throw invalid_argument("Dia do mês inválido.");
 };
+
+// VALIDAÇÃO DA MATRICULA - 221006351
+void Matricula::validar(const string& matricula) {
+    if (matricula.size() != 7) {
+        throw invalid_argument("A matrícula deve conter 7 dígitos");
+    }
+
+    int fator = 1, soma = 0, digito_encontrado;
+    for (int i = 0; i < matricula.size() - 1; i++) {
+        int valor = matricula[i] - '0';
+        soma += fator * valor;
+
+        if (i % 2 == 0)
+            fator = 2;
+        else
+            fator = 1;
+    }
+
+    soma = soma % 10;
+    if (soma != 0)
+        digito_encontrado = 10 - soma;
+    else
+        digito_encontrado = soma;
+
+    int digito_verificador = matricula[6] - '0';
+    if (digito_verificador != digito_encontrado) {
+        throw invalid_argument("Dígito verificador inválido.");
+    }
+}
+
+// VALIDAÇÃO DE RESULTADO
+void Resultado::validar(const string& resultado) {
+    vector<string> retornos = {"APROVADO", "REPROVADO"};
+}
+
+// VALIDAÇÃO DA SENHA - 221020940
+void Senha::validar(const string& senha) {
+    if (senha.size() != 6)
+        throw invalid_argument("A senha deve conter 6 caracteres.");
+
+    for (auto ch : senha) {
+        if (count(senha.begin(), senha.end(), ch) > 1)
+            throw invalid_argument("A senha não pode conter caracteres repetidos.");
+    }
+}
+
+// VALIDAÇÃO DO TELEFONE - 221020940
+void Telefone::validar(const string& telefone) {
+    if (telefone.size() < 8 || telefone.size() > 16) {
+        throw invalid_argument("O telefone deve conter \"+\" seguido de 7 a 15 dígitos.");
+    }
+
+    for (int i = 0; i < telefone.size(); i++) {
+        if (i == 0) {
+            if (telefone[i] != '+')
+                throw invalid_argument("O primeiro caractere deve ser \"+\".");
+        } else {
+            if (!isdigit(telefone[i]))
+                throw invalid_argument("Número de telefone inválido.");
+        }
+    }
+}
 
 // VALIDAÇÃO DO TEXTO - 221020940
 void Texto::validar(const string& texto) {
@@ -150,23 +170,3 @@ void Texto::validar(const string& texto) {
     if (texto.find("  ") != string::npos)
         throw invalid_argument("Texto contém espaços em branco em sequência.");
 }
-
-// VALIDAÇÃO DE RESULTADO
-void Resultado::validar(const string& resultado) {
-    vector<string> retornos = {"APROVADO", "REPROVADO"};
-}
-
-// // VALIDAÇÃO DE CLASSE
-// void Classe::validar(string& classe) {
-//     vector<string> classes = {};
-//     bool encontrou = false;
-//     for (const auto& classe : classes) {
-//         if (classe == classes) {
-//             encontrou = true;
-//             break;
-//         }
-//     }
-//     void if (encontrou == false) {
-//         throw invalid_argument("Classe(s) inválida(s).");
-//     }
-// }
