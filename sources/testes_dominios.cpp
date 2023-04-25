@@ -3,20 +3,6 @@
 using namespace std;
 
 //---------------------------------------------------------------------
-void TUDominios::showResult(int result, string nome_dominio) {
-    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
-    cout << setw(16) << left << setfill('.') << nome_dominio << resultado[result] << endl;
-}
-
-int TUDominios::run() {
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    tearDown();
-    return estado;
-}
-
-//---------------------------------------------------------------------
 // IMPLEMENTAÇÃO DO TESTE DA MATRÍCULA - 221006351
 
 const string TUMatricula::VALOR_VALIDO = "1234567";

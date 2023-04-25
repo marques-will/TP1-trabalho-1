@@ -37,10 +37,12 @@ int main() {
     TUTexto teste_texto;
     teste_texto.showResult(teste_texto.run(),"Texto");
 
-    // cout << "\nENTIDADES" << endl;
-    // TUDesenvolvedor teste_desenvolvedor;
+    cout << "\nENTIDADES" << endl;
+    TUDesenvolvedor teste_desenvolvedor;
+    teste_desenvolvedor.showResult(teste_desenvolvedor.run(),"Desenvolvedor");
 
-    // TUCasoDeTeste teste_casodeteste;
+    TUCasoDeTeste teste_casodeteste;
+    teste_casodeteste.showResult(teste_casodeteste.run(),"CasoDeTeste");
 
     return 0;
 }
