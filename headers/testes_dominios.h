@@ -6,124 +6,109 @@
 #include "dominios.h"
 
 using namespace std;
+class TUDominios{
+    private:
+        virtual void setUp() = 0;
+        virtual void tearDown() = 0;
+        virtual void testarCenarioSucesso() = 0;
+        virtual void testarCenarioFalha() = 0;
+     public:
+        const static int SUCESSO = 0;
+        const static int FALHA = 1;
+        int run();
+        int estado;
+};
+
+inline int TUDominios::run(){
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+};
 
 // Matrícula
-class TUMatricula {
+class TUMatricula: public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Matricula *matricula;
-    int estado;
     
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
-
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 
 // CÓDIGO - 221006351
-class TUCodigo {
+class TUCodigo: public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Codigo *codigo;
-    int estado;
-
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
 
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 // Telefone
-class TUTelefone {
+class TUTelefone: public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Telefone *telefone;
-    int estado;
-
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
-
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 
 // Data
-class TUData {
+class TUData: public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Data *data;
-    int estado;
-
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
 
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 
 // Senha
-class TUSenha {
+class TUSenha: public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Senha *senha;
-    int estado;
 
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
 
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 
 // Texto
-class TUTexto {
+class TUTexto: public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Texto *texto;
-    int estado;
 
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
 
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 
 #endif  // TESTES_DOMINIOS_H_INCLUDED
