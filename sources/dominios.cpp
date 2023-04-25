@@ -6,7 +6,8 @@
 #include <string>
 #include <vector>
 
-// // VALIDAÇÃO DE CLASSE
+//---------------------------------------------------------------------
+// VALIDAÇÃO DE CLASSE
 void Classe::validar(const string& classe) {
     vector<string> classes = {"UNIDADE", "INTEGRACAO", "FUMACA", "SISTEMA", "REGRESSAO", "ACEITACAO"};
     bool encontrou = false;
@@ -21,6 +22,7 @@ void Classe::validar(const string& classe) {
     }
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DO CÓDIGO - 221006351
 void Codigo::validar(const string& codigo) {
     if (codigo.size() != 6)
@@ -37,6 +39,7 @@ void Codigo::validar(const string& codigo) {
     }
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DA DATA - 221020940
 vector<string> Data::extrair_data(const string& data) {
     vector<string> dia_mes_ano;
@@ -90,6 +93,7 @@ void Data::validar(const string& data) {
         throw invalid_argument("Dia do mês inválido.");
 };
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DA MATRICULA - 221006351
 void Matricula::validar(const string& matricula) {
     if (matricula.size() != 7) {
@@ -119,11 +123,13 @@ void Matricula::validar(const string& matricula) {
     }
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DE RESULTADO
 void Resultado::validar(const string& resultado) {
     vector<string> retornos = {"APROVADO", "REPROVADO"};
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DA SENHA - 221020940
 void Senha::validar(const string& senha) {
     if (senha.size() != 6)
@@ -135,6 +141,7 @@ void Senha::validar(const string& senha) {
     }
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DO TELEFONE - 221020940
 void Telefone::validar(const string& telefone) {
     if (telefone.size() < 8 || telefone.size() > 16) {
@@ -152,6 +159,7 @@ void Telefone::validar(const string& telefone) {
     }
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DO TEXTO - 221020940
 void Texto::validar(const string& texto) {
     string digitos = "0123456789";

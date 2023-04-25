@@ -2,6 +2,8 @@
 #define ENTIDADES_H_INCLUDED
 
 #include "dominios.h"
+
+//---------------------------------------------------------------------
 // ENTIDADE ENTIDADE
 class Entidade {
    private:
@@ -20,6 +22,7 @@ inline Texto Entidade::getNome() const {
 }
 
 // ENTIDADE DESENVOLVEDOR - 221006351
+//---------------------------------------------------------------------
 class Desenvolvedor : public Entidade {
    private:
     Matricula matricula;
@@ -57,6 +60,7 @@ inline Telefone Desenvolvedor::getTelefone() const {
 }
 
 // ENTIDADE TESTE - 221006389
+//---------------------------------------------------------------------
 /// class Teste
 ///{
 // private:
@@ -64,6 +68,7 @@ inline Telefone Desenvolvedor::getTelefone() const {
 // };
 
 // ENTIDADE CASO DE TESTE
+//---------------------------------------------------------------------
 class CasoDeTeste : public Entidade {
    private:
     Codigo codigo;
@@ -121,3 +126,5 @@ inline Resultado CasoDeTeste::getResultado() const {
 }
 
 #endif  // ENTIDADES_H_INCLUDED
+
+//---------------------------------------------------------------------

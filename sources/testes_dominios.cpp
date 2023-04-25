@@ -2,7 +2,23 @@
 
 using namespace std;
 
+//---------------------------------------------------------------------
+void TUDominios::showResult(int result, string nome_dominio) {
+    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
+    cout << setw(16) << left << setfill('.') << nome_dominio << resultado[result] << endl;
+}
+
+int TUDominios::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+//---------------------------------------------------------------------
 // IMPLEMENTAÇÃO DO TESTE DA MATRÍCULA - 221006351
+
 const string TUMatricula::VALOR_VALIDO = "1234567";
 const string TUMatricula::VALOR_INVALIDO = "1234568";
 
@@ -35,8 +51,9 @@ void TUMatricula::testarCenarioFalha() {
     }
 }
 
-
+//---------------------------------------------------------------------
 // IMPLEMENTAÇÃO DO TESTE DO CÓDIGO - 221006351
+
 const string TUCodigo::VALOR_VALIDO = "ABC123";
 const string TUCodigo::VALOR_INVALIDO = "123ABC";
 
@@ -57,6 +74,7 @@ void TUCodigo::testarCenarioSucesso() {
         estado = FALHA;
     }
 }
+
 void TUCodigo::testarCenarioFalha() {
     try {
         codigo->setValor(VALOR_INVALIDO);
@@ -67,8 +85,9 @@ void TUCodigo::testarCenarioFalha() {
     }
 }
 
-
+//---------------------------------------------------------------------
 // IMPLEMENTAÇÃO DO TESTE DO TELEFONE - 221020940
+
 const string TUTelefone::VALOR_VALIDO = "+1234567";
 const string TUTelefone::VALOR_INVALIDO = "1234567";
 
@@ -101,9 +120,9 @@ void TUTelefone::testarCenarioFalha() {
     }
 }
 
-
-
+//---------------------------------------------------------------------
 // IMPLEMENTAÇÃO DO TESTE DO DATA - 221020940
+
 const string TUData::VALOR_VALIDO = "29/FEV/2020";
 const string TUData::VALOR_INVALIDO = "29/FEV/2021";
 
@@ -136,8 +155,9 @@ void TUData::testarCenarioFalha() {
     }
 }
 
-
+//---------------------------------------------------------------------
 // IMPLEMENTAÇÃO DO TESTE DA SENHA - 221020940
+
 const string TUSenha::VALOR_VALIDO = "w1Ly4n";
 const string TUSenha::VALOR_INVALIDO = "minhasenha123";
 
@@ -170,8 +190,9 @@ void TUSenha::testarCenarioFalha() {
     }
 }
 
-
+//---------------------------------------------------------------------
 // IMPLEMENTAÇÃO DO TESTE DA TEXTO - 221020940
+
 const string TUTexto::VALOR_VALIDO = "o joao eh aaa";
 const string TUTexto::VALOR_INVALIDO = "abc123";
 
@@ -203,4 +224,3 @@ void TUTexto::testarCenarioFalha() {
             estado = FALHA;
     }
 }
-

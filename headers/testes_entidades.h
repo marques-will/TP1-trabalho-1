@@ -24,6 +24,9 @@ inline int TUEntidades::run(){
     return estado;
 }
 
+//---------------------------------------------------------------------
+// Teste Unitário Desenvolvedor
+
 class TUDesenvolvedor: public TUEntidades {
    private:
     const static string VALOR_VALIDO_NOME;
@@ -35,6 +38,9 @@ class TUDesenvolvedor: public TUEntidades {
     void testarCenarioSucesso();
     Desenvolvedor *desenvolvedor;
 };
+
+//---------------------------------------------------------------------
+// Teste Unitário CadoDeTeste
 
 class TUCasoDeTeste: public TUEntidades{
     private:

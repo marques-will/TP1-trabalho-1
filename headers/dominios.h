@@ -6,6 +6,7 @@
 #include <vector>
 using namespace std;
 
+//---------------------------------------------------------------------
 // CLASSE DOMINIOS - 221020940
 class Dominios {
    private:
@@ -25,6 +26,7 @@ inline string Dominios::getValor() const {
     return valor;
 }
 
+//---------------------------------------------------------------------
 // DOMINIO CLASSE - 221006389
 class Classe : public Dominios {
    private:
@@ -32,6 +34,7 @@ class Classe : public Dominios {
     void validar(const string& classe);
 };
 
+//---------------------------------------------------------------------
 // DOMINIO CODIGO - 221006351
 class Codigo : public Dominios {
    private:
@@ -39,6 +42,7 @@ class Codigo : public Dominios {
     void validar(const string& codigo);
 };
 
+//---------------------------------------------------------------------
 // DOMINIO DATA - 221020940
 class Data : public Dominios {
    private:
@@ -47,6 +51,7 @@ class Data : public Dominios {
     void validar(const string& data);
 };
 
+//---------------------------------------------------------------------
 // DOMINIO MATRICULA - 221006351
 class Matricula : public Dominios {
    private:
@@ -54,6 +59,7 @@ class Matricula : public Dominios {
     void validar(const string& matricula);
 };
 
+//---------------------------------------------------------------------
 // DOMINIO RESULTADO - 221006389
 class Resultado : public Dominios {
    private:
@@ -61,6 +67,7 @@ class Resultado : public Dominios {
     void validar(const string& resultado);
 };
 
+//---------------------------------------------------------------------
 // DOMINIO SENHA - 221020940
 class Senha : public Dominios {
    private:
@@ -68,6 +75,7 @@ class Senha : public Dominios {
     void validar(const string& senha);
 };
 
+//---------------------------------------------------------------------
 // DOMINIO TELEFONE - 221006351
 class Telefone : public Dominios {
    private:
@@ -75,6 +83,7 @@ class Telefone : public Dominios {
     void validar(const string& telefone);
 };
 
+//---------------------------------------------------------------------
 // DOMINIO TEXTO - 221020940
 class Texto : public Dominios {
    private:
