@@ -52,7 +52,6 @@ class Resultado : public Dominios{
    private:
     string resultado;
     void validar(const string& resultado);
-    
 };
 
 // SUBCLASSE CODIGO - 221006351

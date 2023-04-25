@@ -97,9 +97,9 @@ void TUTelefone::tearDown() {
 void TUTelefone::testarCenarioSucesso() {
     try {
         telefone->setValor(VALOR_VALIDO);
-        if (telefone->getValor() != VALOR_VALIDO)  // verifica funcionamente do setter e do getter
+        if (telefone->getValor() != VALOR_VALIDO)
             estado = FALHA;
-    } catch (invalid_argument &excecao) {  // verifica se o validador identificou como valor como válido
+    } catch (invalid_argument &excecao) {
         estado = FALHA;
     }
 }
@@ -107,9 +107,9 @@ void TUTelefone::testarCenarioSucesso() {
 void TUTelefone::testarCenarioFalha() {
     try {
         telefone->setValor(VALOR_INVALIDO);
-        estado = FALHA;  // verifica se o validador setou valor inválido
+        estado = FALHA;
     } catch (invalid_argument &excecao) {
-        if (telefone->getValor() == VALOR_INVALIDO)  // verifica o setter
+        if (telefone->getValor() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
@@ -138,9 +138,9 @@ void TUData::tearDown() {
 void TUData::testarCenarioSucesso() {
     try {
         data->setValor(VALOR_VALIDO);
-        if (data->getValor() != VALOR_VALIDO)  // verifica funcionamente do setter e do getter
+        if (data->getValor() != VALOR_VALIDO)
             estado = FALHA;
-    } catch (invalid_argument &excecao) {  // verifica se o validador identificou como valor como válido
+    } catch (invalid_argument &excecao) {
         estado = FALHA;
     }
 }
@@ -148,9 +148,9 @@ void TUData::testarCenarioSucesso() {
 void TUData::testarCenarioFalha() {
     try {
         data->setValor(VALOR_INVALIDO);
-        estado = FALHA;  // verifica se o validador setou valor inválido
+        estado = FALHA;
     } catch (invalid_argument &excecao) {
-        if (data->getValor() == VALOR_INVALIDO)  // verifica o setter
+        if (data->getValor() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
@@ -179,9 +179,9 @@ void TUSenha::tearDown() {
 void TUSenha::testarCenarioSucesso() {
     try {
         senha->setValor(VALOR_VALIDO);
-        if (senha->getValor() != VALOR_VALIDO)  // verifica funcionamente do setter e do getter
+        if (senha->getValor() != VALOR_VALIDO)
             estado = FALHA;
-    } catch (invalid_argument &excecao) {  // verifica se o validador identificou como valor como válido
+    } catch (invalid_argument &excecao) {
         estado = FALHA;
     }
 }
@@ -189,9 +189,9 @@ void TUSenha::testarCenarioSucesso() {
 void TUSenha::testarCenarioFalha() {
     try {
         senha->setValor(VALOR_INVALIDO);
-        estado = FALHA;  // verifica se o validador setou valor inválido
+        estado = FALHA;
     } catch (invalid_argument &excecao) {
-        if (senha->getValor() == VALOR_INVALIDO)  // verifica o setter
+        if (senha->getValor() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
@@ -220,9 +220,9 @@ void TUTexto::tearDown() {
 void TUTexto::testarCenarioSucesso() {
     try {
         texto->setValor(VALOR_VALIDO);
-        if (texto->getValor() != VALOR_VALIDO)  // verifica funcionamente do setter e do getter
+        if (texto->getValor() != VALOR_VALIDO)
             estado = FALHA;
-    } catch (invalid_argument &excecao) {  // verifica se o validador identificou como valor como válido
+    } catch (invalid_argument &excecao) {
         estado = FALHA;
     }
 }
@@ -230,9 +230,9 @@ void TUTexto::testarCenarioSucesso() {
 void TUTexto::testarCenarioFalha() {
     try {
         texto->setValor(VALOR_INVALIDO);
-        estado = FALHA;  // verifica se o validador setou valor inválido
+        estado = FALHA;
     } catch (invalid_argument &excecao) {
-        if (texto->getValor() == VALOR_INVALIDO)  // verifica o setter
+        if (texto->getValor() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
