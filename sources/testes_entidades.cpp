@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 // TESTE DESENVOLVEDOR
 const string TUDesenvolvedor::VALOR_VALIDO_NOME = "joaozinho123";
 const string TUDesenvolvedor::VALOR_VALIDO_MATRICULA = "1234567";
@@ -43,12 +44,7 @@ void TUDesenvolvedor::testarCenarioSucesso() {
         estado = FALHA;
 }
 
-int TUDesenvolvedor::run() {
-    setUp();
-    testarCenarioSucesso();
-    tearDown();
-    return estado;
-}
+
 
 // Teste CasoDeTeste
 const string TUCasoDeTeste::VALOR_VALIDO_NOME = "mariazinha1";
@@ -96,11 +92,4 @@ void TUCasoDeTeste::testarCenarioSucesso() {
     casodeteste->setResultado(resultado);
     if (casodeteste->getResultado().getValor() != VALOR_VALIDO_RESULTADO)
         estado = FALHA;
-}
-
-int TUCasoDeTeste::run() {
-    setUp();
-    testarCenarioSucesso();
-    tearDown();
-    return estado;
 }
