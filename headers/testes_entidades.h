@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class TU{
+class TUEntidades{
     private:
         virtual void setUp() = 0;
         virtual void tearDown() = 0;
@@ -17,14 +17,14 @@ class TU{
         int estado;
 };
 
-inline int TU::run(){
+inline int TUEntidades::run(){
     setUp();
     testarCenarioSucesso();
     tearDown();
     return estado;
 }
 
-class TUDesenvolvedor: public TU {
+class TUDesenvolvedor: public TUEntidades {
    private:
     const static string VALOR_VALIDO_NOME;
     const static string VALOR_VALIDO_MATRICULA;
@@ -36,7 +36,7 @@ class TUDesenvolvedor: public TU {
     Desenvolvedor *desenvolvedor;
 };
 
-class TUCasoDeTeste: public TU{
+class TUCasoDeTeste: public TUEntidades{
     private:
         const static string VALOR_VALIDO_NOME;
         const static string VALOR_VALIDO_DATA;

@@ -35,13 +35,6 @@ void TUMatricula::testarCenarioFalha() {
     }
 }
 
-int TUMatricula::run() {
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    tearDown();
-    return estado;
-}
 
 // IMPLEMENTAÇÃO DO TESTE DO CÓDIGO - 221006351
 const string TUCodigo::VALOR_VALIDO = "ABC123";
@@ -73,13 +66,7 @@ void TUCodigo::testarCenarioFalha() {
             estado = FALHA;
     }
 }
-int TUCodigo::run() {
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    tearDown();
-    return estado;
-}
+
 
 // IMPLEMENTAÇÃO DO TESTE DO TELEFONE - 221020940
 const string TUTelefone::VALOR_VALIDO = "+1234567";
@@ -114,13 +101,7 @@ void TUTelefone::testarCenarioFalha() {
     }
 }
 
-int TUTelefone::run() {
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    tearDown();
-    return estado;
-}
+
 
 // IMPLEMENTAÇÃO DO TESTE DO DATA - 221020940
 const string TUData::VALOR_VALIDO = "29/FEV/2020";
@@ -155,13 +136,6 @@ void TUData::testarCenarioFalha() {
     }
 }
 
-int TUData::run() {
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    tearDown();
-    return estado;
-}
 
 // IMPLEMENTAÇÃO DO TESTE DA SENHA - 221020940
 const string TUSenha::VALOR_VALIDO = "w1Ly4n";
@@ -196,13 +170,6 @@ void TUSenha::testarCenarioFalha() {
     }
 }
 
-int TUSenha::run() {
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    tearDown();
-    return estado;
-}
 
 // IMPLEMENTAÇÃO DO TESTE DA TEXTO - 221020940
 const string TUTexto::VALOR_VALIDO = "o joao eh aaa";
@@ -237,10 +204,3 @@ void TUTexto::testarCenarioFalha() {
     }
 }
 
-int TUTexto::run() {
-    setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
-    tearDown();
-    return estado;
-}
