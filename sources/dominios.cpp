@@ -79,7 +79,7 @@ void Data::validar(const string& data) {
         throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
 
     int pos = distance(meses.begin(), find(meses.begin(), meses.end(), mes));
-    if (pos == 12)  // verifica se a sigla está no vetor
+    if (pos == 12)
         throw invalid_argument("Sigla do mês inválida.");
 
     if (mes == "FEV")
