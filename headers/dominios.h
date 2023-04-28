@@ -10,7 +10,7 @@ using namespace std;
 class Dominios {
    private:
     string valor;
-    virtual void validar(const string& valor) = 0;  // método abstrado
+    virtual void validar(const string& valor) = 0;  // método abstrato
 
    public:
     void setValor(string valor);
@@ -33,9 +33,31 @@ class Classe : public Dominios {
 };
 
 // DOMINIO CODIGO - 221006351
+/**
+ * @brief Padrão para representação da classe Código.
+ * 
+ * Herda no modo public a classe Dominios.
+ * 
+ * Regras de formato:
+ * 
+ * - Strings de 6 caracteres.
+ * - Os 3 primeiros caracteres são letras (maiúsculas ou minúsculas).
+ * - Os 3 últimos caracteres são dígitos (de 0 a 9).
+ * 
+ * Por 221006351
+ */
 class Codigo : public Dominios {
    private:
+   /**
+    * @brief O atributo do tipo string armazenado na classe.
+    * 
+    */
     string codigo;
+    /**
+     * @brief O método que valida se o parâmetro está no formato válido para a classe.
+     * 
+     * @param codigo 
+     */
     void validar(const string& codigo);
 };
 
@@ -48,9 +70,30 @@ class Data : public Dominios {
 };
 
 // DOMINIO MATRICULA - 221006351
+/**
+ * @brief Padrão para representação para a classe Matricula.
+ * 
+ * Herda no modo public da Classe Dominios.
+ * 
+ * Regras de formato:
+ * 
+ * -Strings de 7 caracteres.
+ * -Os caracteres são números inteiros de 0 a 9
+ * -O último dígito da string é o dígito verificador de módulo 10.
+ * -O dígito verificador define se a string é válida ou não.
+ */
 class Matricula : public Dominios {
    private:
+   /**
+    * @brief Atributo do tipo string armazenado na classe.
+    * 
+    */
     string matricula;
+    /**
+     * @brief Método que verifica se o parâmetro é válido para a classe ou não.
+     * 
+     * @param matricula.
+     */
     void validar(const string& matricula);
 };
 
@@ -68,10 +111,35 @@ class Senha : public Dominios {
     void validar(const string& senha);
 };
 
+/**
+ * @brief Padrão para representação da Classe Telefone.
+ * 
+ * Herda no modo public da Classe Dominios.
+ * 
+ * Regras de formato:
+ * 
+ * -Strings de 8 a 16 caracteres.
+ * -O primeiro caractere sempre é "+".
+ * -Os demais caracteres são dígitos.
+ * -Podem haver de 7 a 15 dígitos.
+ * -Cada dígito é um número inteiro de 0 a 9.
+ * 
+ * Por: 221006351.
+ * 
+ */
 // DOMINIO TELEFONE - 221006351
 class Telefone : public Dominios {
    private:
+   /**
+    * @brief Atributo do tipo string armazenado na classe.
+    * 
+    */
     string telefone;
+    /**
+     * @brief Método que verifica se o parâmetro para a classe é válido ou não.
+     * 
+     * @param telefone.
+     */
     void validar(const string& telefone);
 };
 
