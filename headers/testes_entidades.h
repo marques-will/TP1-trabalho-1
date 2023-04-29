@@ -1,8 +1,10 @@
 #ifndef TESTES_ENTIDADES_H_INCLUDED
 #define TESTES_ENTIDADES_H_INCLUDED
 
-#include "entidades.h"
+#include <iomanip>
+#include <iostream>
 
+#include "entidades.h"
 using namespace std;
 
 class TUEntidades {
