@@ -127,6 +127,17 @@ void Matricula::validar(const string& matricula) {
 // VALIDAÇÃO DE RESULTADO
 void Resultado::validar(const string& resultado) {
     vector<string> retornos = {"APROVADO", "REPROVADO"};
+    bool encontrou = false;
+    for (const auto& resultado_valido : resultado) {
+        if (resultado ==resultado_valiido) {
+            encontrou = true;
+            break;
+        }
+    }
+    if (encontrou == false) {
+        throw invalid_argument("Resultado inválido.");
+    }
+}
 }
 
 //---------------------------------------------------------------------
