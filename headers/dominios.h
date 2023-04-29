@@ -140,10 +140,6 @@ class Data : public Dominios {
      *
      * @param data String passada por referência que contém a data a ser validada.
      *
-     * @throw invalid_argument se data informada estiver em formato inválido.
-     * @throw invalid_argument se ano informado for valor inválido.
-     * @throw invalid_argument se mês informado for sigla inválida.
-     * @throw invalid_argument se dia do mês informado for valor inválido.
      */
     void validar(const string& data);
 };
@@ -213,9 +209,6 @@ class Senha : public Dominios {
      *
      * @param senha String passada por referência que contém a senha a ser validada.
      *
-     * @throw invalid_argument se a senha não conter 6 caracteres.
-     * @throw invalid_argument se a senha conter caracteres repetidos.
-     * @throw invalid_argument se a senha contem caracteres inválidos.
      */
     void validar(const string& senha);
 };
@@ -282,9 +275,6 @@ class Texto : public Dominios {
      *
      * @param texto String passada por referência que contém o texto a ser validado.
      *
-     * @throw invalid_argument se texto não contem de 10 a 20 caracteres.
-     * @throw invalid_argument se texto conter caracteres inválidos.
-     * @throw invalid_argument se texto contém espaços em branco seguidos.
      */
     void validar(const string& texto);
 };
