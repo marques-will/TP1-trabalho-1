@@ -10,7 +10,7 @@ using namespace std;
 // CLASSE DOMINIOS
 
 /**
- * @brief Superclasses de classes domínios.
+ * @brief Padrão para representação da superclasse Dominios.
  * A classe Dominios é usada para representar um domínio genérico, definida por uma string 'valor'.
  * As classes derivadas devem implementar o método de validação de acordo com as regras de formato específicas do domínio.
  * Implementado por: 221020940.
@@ -19,14 +19,12 @@ class Dominios {
    private:
     /**
      * @brief Valor do domínio.
-     *
      * Atributo privado do tipo string que armazena o valor do domínio,
      */
     string valor;
 
     /**
      * @brief Método para validação do valor a ser definido para o domínio.
-     *
      * Método do tipo abstrato puro que deve ser implementado por classes derivadas seguindo-se as regras de formato destas.
      * Se um valor não for válido, método deve lançar exceção.
      *
@@ -37,7 +35,6 @@ class Dominios {
    public:
     /**
      * @brief Define o valor do domínio.
-     *
      * Este método define o valor do domínio e valida-o usando o método 'validar'.
      * Se o valor não for válido, uma exceção é lançada.
      *
@@ -47,7 +44,6 @@ class Dominios {
 
     /**
      * @brief Retorna o valor do domínio.
-     *
      * Este método retorna o valor do domínio atualmente armazenado na classe.
      *
      * @return Valor atual do domínio.
@@ -109,29 +105,26 @@ class Codigo : public Dominios {
 // DOMINIO DATA
 
 /**
- *@brief Classe que representa uma data.
- *
+ * @brief Padrão para representação da Data .
  * A classe Data é derivada da classe abstrata Dominios no modo public e é usada para representar uma data no formato DD/MMM/AAAA.
  * DD é um dia válido do mês, MMM é a sigla do mês (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ), AAAA é o ano.
  * A validação do valor da data é realizada pelo método 'validar', que verifica se a data informada segue o formato correto.
- *
  * Implementado por: 221020940.
  */
 class Data : public Dominios {
    private:
     /**
      * @brief Valor da data.
-     *
      * Atributo privado do tipo string que armazena o valor de uma data no formato DD/MMM/AAAA.
      */
     string data;
 
     /**
      * @brief Extrai dia, mês e ano da string de data informada.
-     *
      * Método privado utilizado na validação para extrair os valores da string de data no formato DD/MMM/AAAA.
      *
      * @param data String passada por referência contendo valores a serem extraídos da data.
+     *
      * @return Vetor que contém as strings correspondentes ao dia (DD), à sigla do mês (MMM) e ao ano (AAAA), respectivamente.
      */
     vector<string> extrair_data(const string& data);
@@ -140,12 +133,12 @@ class Data : public Dominios {
      * @brief Método para validação do valor de uma data.
      *
      * Regras de formato:
-     * Data deve ter seguir o formato DD/MMM/AAAA;
-     * Ano (AAAA) deve ser valor entre 2000 e 2999;
-     * Mês (MMM) deve ser uma sigla válida (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ);
-     * Dia (DD) deve ser valor válido para o mês considerando-se anos bissextos.
+     * - Data deve ter seguir o formato DD/MMM/AAAA;
+     * - Ano (AAAA) deve ser valor entre 2000 e 2999;
+     * - Mês (MMM) deve ser uma sigla válida (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ);
+     * - Dia (DD) deve ser valor válido para o mês considerando-se anos bissextos.
      *
-     * @param data String do tipo const que passa por referência a data a ser validada.
+     * @param data String passada por referência que contém a data a ser validada.
      *
      * @throw invalid_argument se data informada estiver em formato inválido.
      * @throw invalid_argument se ano informado for valor inválido.
@@ -165,10 +158,10 @@ class Data : public Dominios {
  *
  * Regras de formato:
  *
- * -Strings de 7 caracteres.
- * -Os caracteres são números inteiros de 0 a 9
- * -O último dígito da string é o dígito verificador de módulo 10.
- * -O dígito verificador define se a string é válida ou não.
+ * - Strings de 7 caracteres.
+ * - Os caracteres são números inteiros de 0 a 9
+ * - O último dígito da string é o dígito verificador de módulo 10.
+ * - O dígito verificador define se a string é válida ou não.
  */
 class Matricula : public Dominios {
    private:
@@ -198,25 +191,25 @@ class Resultado : public Dominios {
 // DOMINIO SENHA
 
 /**
- * @brief Classe que representa uma senha.
+ * @brief Padrão para representação da classe Senha.
  * A classe Senha é derivada da classe abstrata Dominios e é usada para representar uma senha no formato XXXXXX.
  * A validação do valor da senha é realizada pelo método 'validar', que verifica se X é caractere válido não repetido.
- * Implementado por: 221020940..
+ * Implementado por: 221020940.
  */
 class Senha : public Dominios {
    private:
     /**
      * @brief Valor da senha.
-     * Atributo privado do tipo string que armazena o valor de uma senha no formato XXXXXX.
+     * Atributo privado que armazena o valor de uma senha no formato XXXXXX.
      */
     string senha;
 
     /**
      * @brief Método para validação do valor de uma senha.
      * Regras de formato:
-     * Senha deve possuir 6 caracteres;
-     * Caracteres válidos são letras (A - Z, a - z), dígitos (0 - 9), @ , #, $ , % ou &;
-     * Não deve haver repetição de caracteres válidos.
+     * - Senha deve possuir 6 caracteres;
+     * - Caracteres válidos são letras (A - Z, a - z), dígitos (0 - 9), @ , #, $ , % ou &;
+     * - Não deve haver repetição de caracteres válidos.
      *
      * @param senha String passada por referência que contém a senha a ser validada.
      *
@@ -237,11 +230,11 @@ class Senha : public Dominios {
  *
  * Regras de formato:
  *
- * Strings de 8 a 16 caracteres;
- * O primeiro caractere sempre é "+";
- * Os demais caracteres são dígitos;
- * Podem haver de 7 a 15 dígitos;
- * Cada dígito é um número inteiro de 0 a 9.
+ * - Valor do telefone deve possui de 8 a 16 caracteres;
+ * - O primeiro caractere sempre é "+";
+ * - Os demais caracteres são dígitos;
+ * - Podem haver de 7 a 15 dígitos;
+ * - Cada dígito é um número inteiro de 0 a 9.
  *
  * Implementado por: 221006351.
  *
@@ -266,20 +259,32 @@ class Telefone : public Dominios {
 // DOMINIO TEXTO
 
 /**
- * @brief
- *
+ * @brief Padrão para representação da classe Texto.
+ * A classe Texto é derivada da classe abstrata Dominios e é usada para representar strings de texto em formato padronizado.
+ * Valores de texto devem ser strings de 10 a 20 caracteres válidos que não contém acentuação ou espaço em brancos consecutivos.
+ * Implementado por: 221020940.
  */
 class Texto : public Dominios {
    private:
     /**
-     * @brief
-     *
+     * @brief Valor do texto.
+     * Atributo privado que armazena o valor de uma string de texto com formato válido.
      */
     string texto;
+
     /**
-     * @brief
+     * @brief Método para validação do valor de um texto.
+     *Regras de formato:
+     * - Stringo de texto deve conter de 10 a 20 caracteres;
+     * - Cada caractere X é letra (A - Z, a - z), dígito (0-9), sinal de pontuação ( . , ; ? ! : - ), @ , #, $ , % ou &;
+     * - Não há espaços em brancos consecutivos;
+     * - Não há letras acentuadas;
      *
-     * @param texto
+     * @param texto String passada por referência que contém o texto a ser validado.
+     *
+     * @throw invalid_argument se texto não contem de 10 a 20 caracteres.
+     * @throw invalid_argument se texto conter caracteres inválidos.
+     * @throw invalid_argument se texto contém espaços em branco seguidos.
      */
     void validar(const string& texto);
 };
