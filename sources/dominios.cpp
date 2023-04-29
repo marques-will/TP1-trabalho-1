@@ -132,12 +132,22 @@ void Resultado::validar(const string& resultado) {
 //---------------------------------------------------------------------
 // VALIDAÇÃO DA SENHA - 221020940
 void Senha::validar(const string& senha) {
+    string digitos = "0123456789";
+    string letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string pontuacao = "@#$%&";
+    string caracteres_validos = letras + digitos + pontuacao;
+
     if (senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
 
     for (auto ch : senha) {
         if (count(senha.begin(), senha.end(), ch) > 1)
             throw invalid_argument("A senha não pode conter caracteres repetidos.");
+    }
+
+    for (auto ch : senha) {
+        if (find(caracteres_validos.begin(), caracteres_validos.end(), ch) == caracteres_validos.end())
+            throw invalid_argument("Senha contém caractere(s) inválido(s).");
     }
 }
 
