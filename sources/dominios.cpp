@@ -1,3 +1,4 @@
+//---------------------------------------------------------------------
 // BIBLIOTECAS
 #include "../headers/dominios.h"
 
@@ -6,7 +7,8 @@
 #include <string>
 #include <vector>
 
-// // VALIDAÇÃO DE CLASSE
+//---------------------------------------------------------------------
+// VALIDAÇÃO DE CLASSE
 void Classe::validar(const string& classe) {
     vector<string> classes = {"UNIDADE", "INTEGRACAO", "FUMACA", "SISTEMA", "REGRESSAO", "ACEITACAO"};
     bool encontrou = false;
@@ -21,6 +23,7 @@ void Classe::validar(const string& classe) {
     }
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DO CÓDIGO - 221006351
 void Codigo::validar(const string& codigo) {
     if (codigo.size() != 6)
@@ -37,6 +40,7 @@ void Codigo::validar(const string& codigo) {
     }
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DA DATA - 221020940
 vector<string> Data::extrair_data(const string& data) {
     vector<string> dia_mes_ano;
@@ -76,7 +80,7 @@ void Data::validar(const string& data) {
     }
 
     if (ano < 2000 || ano > 2999)
-        throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
+        throw invalid_argument("Ano da data informada deve estar entre 2000 e 2999.");
 
     int pos = distance(meses.begin(), find(meses.begin(), meses.end(), mes));
     if (pos == 12)
@@ -90,6 +94,7 @@ void Data::validar(const string& data) {
         throw invalid_argument("Dia do mês inválido.");
 };
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DA MATRICULA - 221006351
 void Matricula::validar(const string& matricula) {
     if (matricula.size() != 7) {
@@ -119,13 +124,30 @@ void Matricula::validar(const string& matricula) {
     }
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DE RESULTADO
 void Resultado::validar(const string& resultado) {
-    vector<string> retornos = {"APROVADO", "REPROVADO"};
+    vector<string> resultados = {"APROVADO", "REPROVADO"};
+    bool encontrou = false;
+    for (const auto& resultado_valido : resultados) {
+        if (resultado == resultado_valido) {
+            encontrou = true;
+            break;
+        }
+    }
+    if (encontrou == false) {
+        throw invalid_argument("Resultado inválido.");
+    }
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DA SENHA - 221020940
 void Senha::validar(const string& senha) {
+    string digitos = "0123456789";
+    string letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    string pontuacao = "@#$%&";
+    string caracteres_validos = letras + digitos + pontuacao;
+
     if (senha.size() != 6)
         throw invalid_argument("A senha deve conter 6 caracteres.");
 
@@ -133,9 +155,15 @@ void Senha::validar(const string& senha) {
         if (count(senha.begin(), senha.end(), ch) > 1)
             throw invalid_argument("A senha não pode conter caracteres repetidos.");
     }
+
+    for (auto ch : senha) {
+        if (find(caracteres_validos.begin(), caracteres_validos.end(), ch) == caracteres_validos.end())
+            throw invalid_argument("Senha contém caractere(s) inválido(s).");
+    }
 }
 
-// VALIDAÇÃO DO TELEFONE - 221020940
+//---------------------------------------------------------------------
+// VALIDAÇÃO DO TELEFONE - 221006351
 void Telefone::validar(const string& telefone) {
     if (telefone.size() < 8 || telefone.size() > 16) {
         throw invalid_argument("O telefone deve conter \"+\" seguido de 7 a 15 dígitos.");
@@ -152,6 +180,7 @@ void Telefone::validar(const string& telefone) {
     }
 }
 
+//---------------------------------------------------------------------
 // VALIDAÇÃO DO TEXTO - 221020940
 void Texto::validar(const string& texto) {
     string digitos = "0123456789";
