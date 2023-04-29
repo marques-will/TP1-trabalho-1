@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//---------------------------------------------------------------------
 class TUDominios {
    private:
     const static string VALOR_VALIDO;
@@ -144,6 +145,7 @@ class TUResultado : public TUDominios {
     void testarCenarioSucesso();
     void testarCenarioFalha();
 };
+
 //---------------------------------------------------------------------
 // Teste Unitário  Classe
 class TUClasse : public TUDominios {
@@ -158,4 +160,5 @@ class TUClasse : public TUDominios {
     void testarCenarioSucesso();
     void testarCenarioFalha();
 };
+
 #endif  // TESTES_DOMINIOS_H_INCLUDED

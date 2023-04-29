@@ -1,3 +1,4 @@
+//---------------------------------------------------------------------
 // BIBLIOTECAS
 #include "../headers/dominios.h"
 
@@ -79,7 +80,7 @@ void Data::validar(const string& data) {
     }
 
     if (ano < 2000 || ano > 2999)
-        throw invalid_argument("Data informada deve estar entre 2000 e 2999.");
+        throw invalid_argument("Ano da data informada deve estar entre 2000 e 2999.");
 
     int pos = distance(meses.begin(), find(meses.begin(), meses.end(), mes));
     if (pos == 12)
@@ -126,10 +127,10 @@ void Matricula::validar(const string& matricula) {
 //---------------------------------------------------------------------
 // VALIDAÇÃO DE RESULTADO
 void Resultado::validar(const string& resultado) {
-    vector<string> retornos = {"APROVADO", "REPROVADO"};
+    vector<string> resultados = {"APROVADO", "REPROVADO"};
     bool encontrou = false;
-    for (const auto& resultado_valido : resultado) {
-        if (resultado ==resultado_valiido) {
+    for (const auto& resultado_valido : resultados) {
+        if (resultado == resultado_valido) {
             encontrou = true;
             break;
         }
@@ -137,7 +138,6 @@ void Resultado::validar(const string& resultado) {
     if (encontrou == false) {
         throw invalid_argument("Resultado inválido.");
     }
-}
 }
 
 //---------------------------------------------------------------------
@@ -163,7 +163,7 @@ void Senha::validar(const string& senha) {
 }
 
 //---------------------------------------------------------------------
-// VALIDAÇÃO DO TELEFONE - 221020940
+// VALIDAÇÃO DO TELEFONE - 221006351
 void Telefone::validar(const string& telefone) {
     if (telefone.size() < 8 || telefone.size() > 16) {
         throw invalid_argument("O telefone deve conter \"+\" seguido de 7 a 15 dígitos.");
