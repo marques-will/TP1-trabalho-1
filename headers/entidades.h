@@ -2,6 +2,8 @@
 #define ENTIDADES_H_INCLUDED
 
 #include "dominios.h"
+
+//---------------------------------------------------------------------
 // ENTIDADE ENTIDADE
 /**
  * @brief Padrão de representação para a superclasse Entidade.
@@ -47,6 +49,7 @@ inline Texto Entidade::getNome() const {
     return nome;
 }
 
+//---------------------------------------------------------------------
 // ENTIDADE DESENVOLVEDOR - 221006351
 /**
  * @brief Padrão de representação para a classe Desenvolvedor.
@@ -156,12 +159,14 @@ inline Telefone Desenvolvedor::getTelefone() const {
 }
 
 // ENTIDADE TESTE - 221006389
+//---------------------------------------------------------------------
 /// class Teste
 ///{
 // private:
 // public:
 // };
 
+//---------------------------------------------------------------------
 // ENTIDADE CASO DE TESTE
 /**
  * @brief Padrão para representação da classe CasoDeTeste.
@@ -335,3 +340,5 @@ inline Resultado CasoDeTeste::getResultado() const {
 }
 
 #endif  // ENTIDADES_H_INCLUDED
+
+//---------------------------------------------------------------------

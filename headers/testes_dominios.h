@@ -7,123 +7,127 @@
 
 using namespace std;
 
-// Matrícula
-class TUMatricula {
+class TUDominios {
+   private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+
+   protected:
+    int estado;
+
+    virtual void setUp() = 0;
+    virtual void tearDown() = 0;
+    virtual void testarCenarioSucesso() = 0;
+    virtual void testarCenarioFalha() = 0;
+
+   public:
+    const static int SUCESSO = 0;
+    const static int FALHA = 1;
+    int run();
+    void showResult(int result, string nome_dominio);
+};
+
+inline int TUDominios::run() {
+    setUp();
+    testarCenarioSucesso();
+    testarCenarioFalha();
+    tearDown();
+    return estado;
+}
+
+inline void TUDominios::showResult(int result, string nome_dominio) {
+    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
+    cout << setw(16) << left << setfill('.') << nome_dominio << resultado[result] << endl;
+}
+
+//---------------------------------------------------------------------
+// Teste Unitário Matricula
+class TUMatricula : public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Matricula *matricula;
-    int estado;
-    
+
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
-
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 
-// CÓDIGO - 221006351
-class TUCodigo {
+//---------------------------------------------------------------------
+// Teste Unitário Codigo - 221006351
+class TUCodigo : public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Codigo *codigo;
-    int estado;
 
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
-
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
-// Telefone
-class TUTelefone {
+
+//---------------------------------------------------------------------};
+// Teste Unitário Telefone
+class TUTelefone : public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Telefone *telefone;
-    int estado;
 
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
-
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 
-// Data
-class TUData {
+//---------------------------------------------------------------------
+// Teste Unitário Data
+class TUData : public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Data *data;
-    int estado;
 
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
-
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 
-// Senha
-class TUSenha {
+//---------------------------------------------------------------------
+// Teste Unitário Senha
+class TUSenha : public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Senha *senha;
-    int estado;
 
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
-
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 
-// Texto
-class TUTexto {
+//---------------------------------------------------------------------
+// Teste Unitário  Texto
+class TUTexto : public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
     Texto *texto;
-    int estado;
 
     void setUp();
     void tearDown();
     void testarCenarioSucesso();
     void testarCenarioFalha();
-
-   public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
 };
 
 #endif  // TESTES_DOMINIOS_H_INCLUDED
