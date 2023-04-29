@@ -1,0 +1,118 @@
+\hypertarget{entidades_8h_source}{}\doxysection{entidades.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENTIDADES\_H\_INCLUDED}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENTIDADES\_H\_INCLUDED}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}dominios.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ ENTIDADE\ ENTIDADE}}
+\DoxyCodeLine{00009\ \textcolor{comment}{}\textcolor{keyword}{class\ }\mbox{\hyperlink{class_entidade}{Entidade}}\ \{}
+\DoxyCodeLine{00010\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{class_texto}{Texto}}\ nome;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entidade_addbfb55c75e014e7b384bf0ea0336861}{setNome}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texto}{Texto}}\ \&);}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_texto}{Texto}}\ \mbox{\hyperlink{class_entidade_a697bc184b87d5ce01fe57e1aa317625f}{getNome}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entidade_addbfb55c75e014e7b384bf0ea0336861}{Entidade::setNome}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texto}{Texto}}\ \&nome)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ this-\/>nome\ =\ nome;}
+\DoxyCodeLine{00040\ \}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_texto}{Texto}}\ \mbox{\hyperlink{class_entidade_a697bc184b87d5ce01fe57e1aa317625f}{Entidade::getNome}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ nome;}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ ENTIDADE\ DESENVOLVEDOR\ -\/\ 221006351}}
+\DoxyCodeLine{00056\ \textcolor{comment}{}\textcolor{keyword}{class\ }\mbox{\hyperlink{class_desenvolvedor}{Desenvolvedor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_entidade}{Entidade}}\ \{}
+\DoxyCodeLine{00057\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_matricula}{Matricula}}\ matricula;}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_senha}{Senha}}\ senha;}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_telefone}{Telefone}}\ telefone;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_desenvolvedor_a6a46e07a48c609df1b477d9b3789b15d}{setMatricula}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_matricula}{Matricula}}\ \&);}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_matricula}{Matricula}}\ \mbox{\hyperlink{class_desenvolvedor_ae591c12a4bbd91d1c25f88cb06a147e8}{getMatricula}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_desenvolvedor_a92aec60284d9a133f9465f2d39dda42b}{setSenha}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_senha}{Senha}}\ \&);}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_senha}{Senha}}\ \mbox{\hyperlink{class_desenvolvedor_aa6841a9369baf7440ae621f88c1fa5ad}{getSenha}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_desenvolvedor_a4700b541a9d616c53826c938b8fa0c89}{setTelefone}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_telefone}{Telefone}}\ \&);}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{class_telefone}{Telefone}}\ \mbox{\hyperlink{class_desenvolvedor_a2c86429c9422fb1c281e4ff7ed3e4fe8}{getTelefone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ \};}
+\DoxyCodeLine{00114\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_desenvolvedor_a6a46e07a48c609df1b477d9b3789b15d}{Desenvolvedor::setMatricula}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_matricula}{Matricula}}\ \&matricula)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ this-\/>matricula\ =\ matricula;}
+\DoxyCodeLine{00116\ \}}
+\DoxyCodeLine{00122\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_matricula}{Matricula}}\ \mbox{\hyperlink{class_desenvolvedor_ae591c12a4bbd91d1c25f88cb06a147e8}{Desenvolvedor::getMatricula}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{return}\ matricula;}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_desenvolvedor_a92aec60284d9a133f9465f2d39dda42b}{Desenvolvedor::setSenha}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_senha}{Senha}}\ \&senha)\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ this-\/>senha\ =\ senha;}
+\DoxyCodeLine{00132\ \}}
+\DoxyCodeLine{00138\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_senha}{Senha}}\ \mbox{\hyperlink{class_desenvolvedor_aa6841a9369baf7440ae621f88c1fa5ad}{Desenvolvedor::getSenha}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{return}\ senha;}
+\DoxyCodeLine{00140\ \}}
+\DoxyCodeLine{00146\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_desenvolvedor_a4700b541a9d616c53826c938b8fa0c89}{Desenvolvedor::setTelefone}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_telefone}{Telefone}}\ \&telefone)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ this-\/>telefone\ =\ telefone;}
+\DoxyCodeLine{00148\ \}}
+\DoxyCodeLine{00154\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_telefone}{Telefone}}\ \mbox{\hyperlink{class_desenvolvedor_a2c86429c9422fb1c281e4ff7ed3e4fe8}{Desenvolvedor::getTelefone}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{return}\ telefone;}
+\DoxyCodeLine{00156\ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{comment}{//\ ENTIDADE\ TESTE\ -\/\ 221006389}}
+\DoxyCodeLine{00161\ \textcolor{comment}{}\textcolor{comment}{//\ private:}}
+\DoxyCodeLine{00162\ \textcolor{comment}{//\ public:}}
+\DoxyCodeLine{00163\ \textcolor{comment}{//\ \};}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{comment}{//\ ENTIDADE\ CASO\ DE\ TESTE}}
+\DoxyCodeLine{00171\ \textcolor{comment}{}\textcolor{keyword}{class\ }\mbox{\hyperlink{class_caso_de_teste}{CasoDeTeste}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_entidade}{Entidade}}\ \{}
+\DoxyCodeLine{00172\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{class_codigo}{Codigo}}\ codigo;}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{class_data}{Data}}\ data;}
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{class_texto}{Texto}}\ acao;}
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{class_texto}{Texto}}\ resposta;}
+\DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{class_resultado}{Resultado}}\ resultado;}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_caso_de_teste_a7e3e3b369886dcac5d4c1101c53f5a61}{setCodigo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_codigo}{Codigo}}\ \&);}
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{class_codigo}{Codigo}}\ \mbox{\hyperlink{class_caso_de_teste_a68775e83df5383fbf47615a4f7f6728c}{getCodigo}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_caso_de_teste_af484337e787e79f353719da3e47b5a1e}{setData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_data}{Data}}\ \&);}
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{class_data}{Data}}\ \mbox{\hyperlink{class_caso_de_teste_a8d0ee22f5ee7825a570f14ff5a079751}{getData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_caso_de_teste_ac570a465cf7ea94a9ed1cc0343e7e78d}{setAcao}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texto}{Texto}}\ \&);}
+\DoxyCodeLine{00232\ \ \ \ \ \mbox{\hyperlink{class_texto}{Texto}}\ \mbox{\hyperlink{class_caso_de_teste_a04eb097ddba174c9db57b236592f7fe6}{getAcao}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_caso_de_teste_a3022335609d9d18a34c1ed1cf615cbca}{setResposta}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texto}{Texto}}\ \&);}
+\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{class_texto}{Texto}}\ \mbox{\hyperlink{class_caso_de_teste_ac5d56ab43c281f8b335f1c3be49f32a8}{getResposta}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_caso_de_teste_acd51fad7439437c6642cdfa364cc1344}{setResultado}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_resultado}{Resultado}}\ \&);}
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{class_resultado}{Resultado}}\ \mbox{\hyperlink{class_caso_de_teste_a43a464ac3101441ad19de4c47a21c89d}{getResultado}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00255\ \};}
+\DoxyCodeLine{00261\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_caso_de_teste_a7e3e3b369886dcac5d4c1101c53f5a61}{CasoDeTeste::setCodigo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_codigo}{Codigo}}\ \&codigo)\ \{}
+\DoxyCodeLine{00262\ \ \ \ \ this-\/>codigo\ =\ codigo;}
+\DoxyCodeLine{00263\ \}}
+\DoxyCodeLine{00269\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_codigo}{Codigo}}\ \mbox{\hyperlink{class_caso_de_teste_a68775e83df5383fbf47615a4f7f6728c}{CasoDeTeste::getCodigo}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordflow}{return}\ codigo;}
+\DoxyCodeLine{00271\ \}}
+\DoxyCodeLine{00277\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_caso_de_teste_af484337e787e79f353719da3e47b5a1e}{CasoDeTeste::setData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_data}{Data}}\ \&data)\ \{}
+\DoxyCodeLine{00278\ \ \ \ \ this-\/>data\ =\ data;}
+\DoxyCodeLine{00279\ \}}
+\DoxyCodeLine{00285\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_data}{Data}}\ \mbox{\hyperlink{class_caso_de_teste_a8d0ee22f5ee7825a570f14ff5a079751}{CasoDeTeste::getData}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordflow}{return}\ data;}
+\DoxyCodeLine{00287\ \}}
+\DoxyCodeLine{00293\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_caso_de_teste_ac570a465cf7ea94a9ed1cc0343e7e78d}{CasoDeTeste::setAcao}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texto}{Texto}}\ \&acao)\ \{}
+\DoxyCodeLine{00294\ \ \ \ \ this-\/>acao\ =\ acao;}
+\DoxyCodeLine{00295\ \}}
+\DoxyCodeLine{00301\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_texto}{Texto}}\ \mbox{\hyperlink{class_caso_de_teste_a04eb097ddba174c9db57b236592f7fe6}{CasoDeTeste::getAcao}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordflow}{return}\ acao;}
+\DoxyCodeLine{00303\ \}}
+\DoxyCodeLine{00309\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_caso_de_teste_a3022335609d9d18a34c1ed1cf615cbca}{CasoDeTeste::setResposta}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_texto}{Texto}}\ \&resposta)\ \{}
+\DoxyCodeLine{00310\ \ \ \ \ this-\/>resposta\ =\ resposta;}
+\DoxyCodeLine{00311\ \}}
+\DoxyCodeLine{00317\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_texto}{Texto}}\ \mbox{\hyperlink{class_caso_de_teste_ac5d56ab43c281f8b335f1c3be49f32a8}{CasoDeTeste::getResposta}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordflow}{return}\ resposta;}
+\DoxyCodeLine{00319\ \}}
+\DoxyCodeLine{00325\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_caso_de_teste_acd51fad7439437c6642cdfa364cc1344}{CasoDeTeste::setResultado}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_resultado}{Resultado}}\ \&resultado)\ \{}
+\DoxyCodeLine{00326\ \ \ \ \ this-\/>resultado\ =\ resultado;}
+\DoxyCodeLine{00327\ \}}
+\DoxyCodeLine{00333\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_resultado}{Resultado}}\ \mbox{\hyperlink{class_caso_de_teste_a43a464ac3101441ad19de4c47a21c89d}{CasoDeTeste::getResultado}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00334\ \ \ \ \ \textcolor{keywordflow}{return}\ resultado;}
+\DoxyCodeLine{00335\ \}}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ ENTIDADES\_H\_INCLUDED}}
+
+\end{DoxyCode}

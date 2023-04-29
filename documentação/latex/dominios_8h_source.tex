@@ -1,0 +1,90 @@
+\hypertarget{dominios_8h_source}{}\doxysection{dominios.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DOMINIOS\_H\_INCLUDED}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DOMINIOS\_H\_INCLUDED}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ CLASSE\ DOMINIOS\ -\/\ 221020940}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dominios}{Dominios}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{string}\ valor;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ validar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ valor)\ =\ 0;\ \ \textcolor{comment}{//\ método\ abstrato}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ setValor(\textcolor{keywordtype}{string}\ valor);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{string}\ getValor()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ Dominios::setValor(\textcolor{keywordtype}{string}\ valor)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ validar(valor);}
+\DoxyCodeLine{00022\ \ \ \ \ this-\/>valor\ =\ valor;}
+\DoxyCodeLine{00023\ \}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{string}\ Dominios::getValor()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordflow}{return}\ valor;}
+\DoxyCodeLine{00026\ \}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{//\ DOMINIO\ CLASSE\ -\/\ 221006389}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_classe}{Classe}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dominios}{Dominios}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{string}\ classe;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ validar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ classe);}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ DOMINIO\ CODIGO\ -\/\ 221006351}}
+\DoxyCodeLine{00049\ \textcolor{comment}{}\textcolor{keyword}{class\ }\mbox{\hyperlink{class_codigo}{Codigo}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dominios}{Dominios}}\ \{}
+\DoxyCodeLine{00050\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{string}\ codigo;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ validar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ codigo);}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ DOMINIO\ DATA\ -\/\ 221020940}}
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_data}{Data}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dominios}{Dominios}}\ \{}
+\DoxyCodeLine{00066\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{string}\ data;}
+\DoxyCodeLine{00068\ \ \ \ \ vector<string>\ extrair\_data(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ data);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ validar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ data);}
+\DoxyCodeLine{00070\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ DOMINIO\ MATRICULA\ -\/\ 221006351}}
+\DoxyCodeLine{00085\ \textcolor{comment}{}\textcolor{keyword}{class\ }\mbox{\hyperlink{class_matricula}{Matricula}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dominios}{Dominios}}\ \{}
+\DoxyCodeLine{00086\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{string}\ matricula;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ validar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ matricula);}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ DOMINIO\ RESULTADO\ -\/\ 221006389}}
+\DoxyCodeLine{00101\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_resultado}{Resultado}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dominios}{Dominios}}\ \{}
+\DoxyCodeLine{00102\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{string}\ resultado;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ validar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ resultado);}
+\DoxyCodeLine{00105\ \};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ DOMINIO\ SENHA\ -\/\ 221020940}}
+\DoxyCodeLine{00108\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_senha}{Senha}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dominios}{Dominios}}\ \{}
+\DoxyCodeLine{00109\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{string}\ senha;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ validar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ senha);}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00130\ \textcolor{comment}{//\ DOMINIO\ TELEFONE\ -\/\ 221006351}}
+\DoxyCodeLine{00131\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_telefone}{Telefone}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dominios}{Dominios}}\ \{}
+\DoxyCodeLine{00132\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{string}\ telefone;}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ validar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ telefone);}
+\DoxyCodeLine{00144\ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{comment}{//\ DOMINIO\ TEXTO\ -\/\ 221020940}}
+\DoxyCodeLine{00147\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_texto}{Texto}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dominios}{Dominios}}\ \{}
+\DoxyCodeLine{00148\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{string}\ texto;}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ validar(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ texto);}
+\DoxyCodeLine{00151\ \};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ DOMINIOS\_H\_INCLUDED}}
+
+\end{DoxyCode}
