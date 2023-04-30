@@ -1,0 +1,5 @@
+<map id="Representação gráfica da hiearquia da classe" name="Representação gráfica da hiearquia da classe">
+<area shape="rect" id="node1" href="$class_entidade.html" title="Padrão de representação para a superclasse Entidade." alt="" coords="5,31,79,56"/>
+<area shape="rect" id="node2" href="$class_caso_de_teste.html" title="Padrão para representação da classe CasoDeTeste." alt="" coords="129,5,229,31"/>
+<area shape="rect" id="node3" href="$class_desenvolvedor.html" title="Padrão de representação para a classe Desenvolvedor." alt="" coords="127,55,231,80"/>
+</map>

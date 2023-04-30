@@ -1,0 +1,4 @@
+<map id="Texto" name="Texto">
+<area shape="rect" id="node1" title="Classe que representa texto padronizado." alt="" coords="16,79,71,104"/>
+<area shape="rect" id="node2" href="$class_dominios.html" title="Classe abstrata que representa um domínio genérico." alt="" coords="5,5,81,31"/>
+</map>

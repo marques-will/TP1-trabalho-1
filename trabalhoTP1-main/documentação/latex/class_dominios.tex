@@ -1,0 +1,123 @@
+\hypertarget{class_dominios}{}\doxysection{Referência à classe Dominios}
+\label{class_dominios}\index{Dominios@{Dominios}}
+
+
+\mbox{\hyperlink{class_classe}{Classe}} abstrata que representa um domínio genérico.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+
+
+Diagrama de heranças da classe Dominios
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dominios__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Membros públicos}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dominios_ac50f72c7293e9f869b1e0e22f13970ca}{set\+Valor}} (string valor)
+\begin{DoxyCompactList}\small\item\em Define o valor do domínio. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_dominios_ac86d0cf047c11d1693d421ffc62480a6}{get\+Valor}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o valor do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Membros protegidos}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_dominios_aaf14c90fbf97c6fdf8a661d7d853e73f}{validar}} (const string \&valor)=0
+\begin{DoxyCompactList}\small\item\em Método para validação do valor a ser definido para o domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+\mbox{\hyperlink{class_classe}{Classe}} abstrata que representa um domínio genérico. 
+
+Essa classe é usada como padrão para representar um domínio genérico, definido por uma string \textquotesingle{}valor\textquotesingle{}. As classes derivadas devem implementar o método de validação de acordo com as regras de formato específicas do domínio.
+
+Implementado por\+: 221020940. 
+
+\doxysubsection{Documentação das funções}
+\mbox{\Hypertarget{class_dominios_ac86d0cf047c11d1693d421ffc62480a6}\label{class_dominios_ac86d0cf047c11d1693d421ffc62480a6}} 
+\index{Dominios@{Dominios}!getValor@{getValor}}
+\index{getValor@{getValor}!Dominios@{Dominios}}
+\doxysubsubsection{\texorpdfstring{getValor()}{getValor()}}
+{\footnotesize\ttfamily string Dominios\+::get\+Valor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna o valor do domínio. 
+
+Este método retorna o valor do domínio atualmente armazenado na classe.
+
+\begin{DoxyReturn}{Retorna}
+Valor atual do domínio. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dominios_ac50f72c7293e9f869b1e0e22f13970ca}\label{class_dominios_ac50f72c7293e9f869b1e0e22f13970ca}} 
+\index{Dominios@{Dominios}!setValor@{setValor}}
+\index{setValor@{setValor}!Dominios@{Dominios}}
+\doxysubsubsection{\texorpdfstring{setValor()}{setValor()}}
+{\footnotesize\ttfamily void Dominios\+::set\+Valor (\begin{DoxyParamCaption}\item[{string}]{valor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define o valor do domínio. 
+
+Este método define o valor do domínio armazenado na classe, caso o mesmo seja válido.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & Valor a ser definido para o domínio.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepções}
+{\em invalid\+\_\+argument} & Caso o valor informado seja inválido. \\
+\hline
+\end{DoxyExceptions}
+Grafo de chamadas desta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_dominios_ac50f72c7293e9f869b1e0e22f13970ca_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_dominios_aaf14c90fbf97c6fdf8a661d7d853e73f}\label{class_dominios_aaf14c90fbf97c6fdf8a661d7d853e73f}} 
+\index{Dominios@{Dominios}!validar@{validar}}
+\index{validar@{validar}!Dominios@{Dominios}}
+\doxysubsubsection{\texorpdfstring{validar()}{validar()}}
+{\footnotesize\ttfamily virtual void Dominios\+::validar (\begin{DoxyParamCaption}\item[{const string \&}]{valor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Método para validação do valor a ser definido para o domínio. 
+
+Este é um método abstrato puro que deve ser implementado pelas classes derivadas seguindo-\/se as regras de formato específicas do domínio.
+
+
+\begin{DoxyParams}{Parâmetros}
+{\em valor} & Valor a ser validado.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Excepções}
+{\em invalid\+\_\+argument} & Caso o valor informado seja inválido. \\
+\hline
+\end{DoxyExceptions}
+Este é o diagrama das funções que utilizam esta função\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_dominios_aaf14c90fbf97c6fdf8a661d7d853e73f_icgraph}
+\end{center}
+\end{figure}
+
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+dominios.\+h\end{DoxyCompactItemize}

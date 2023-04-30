@@ -1,0 +1,26 @@
+digraph "Representação gráfica da hiearquia da classe"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [label="Dominios",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_dominios.html",tooltip="Classe abstrata que representa um domínio genérico."];
+  Node0 -> Node1 [dir="back",color="steelblue1",style="solid"];
+  Node1 [label="Classe",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_classe.html",tooltip=" "];
+  Node0 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="Codigo",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_codigo.html",tooltip="Padrão para representação da classe Codigo."];
+  Node0 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="Data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_data.html",tooltip="Classe que representa uma data padronizada."];
+  Node0 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="Matricula",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_matricula.html",tooltip="Padrão para representação para a classe Matricula."];
+  Node0 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="Resultado",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_resultado.html",tooltip=" "];
+  Node0 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="Senha",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_senha.html",tooltip="Classe que representa uma senha."];
+  Node0 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="Telefone",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_telefone.html",tooltip="Padrão para representação da Classe Telefone."];
+  Node0 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="Texto",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_texto.html",tooltip="Classe que representa texto padronizado."];
+}

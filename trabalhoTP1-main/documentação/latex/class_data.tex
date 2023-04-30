@@ -1,0 +1,63 @@
+\hypertarget{class_data}{}\doxysection{Referência à classe Data}
+\label{class_data}\index{Data@{Data}}
+
+
+\mbox{\hyperlink{class_classe}{Classe}} que representa uma data padronizada.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+
+
+Diagrama de heranças da classe Data
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{class_data__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para Data\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{class_data__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Outros membros herdados}
+\doxysubsubsection*{Membros públicos herdados de \mbox{\hyperlink{class_dominios}{Dominios}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dominios_ac50f72c7293e9f869b1e0e22f13970ca}{set\+Valor}} (string valor)
+\begin{DoxyCompactList}\small\item\em Define o valor do domínio. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_dominios_ac86d0cf047c11d1693d421ffc62480a6}{get\+Valor}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o valor do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_dominios_aaf14c90fbf97c6fdf8a661d7d853e73f}{validar}} (const string \&valor)=0
+\begin{DoxyCompactList}\small\item\em Método para validação do valor a ser definido para o domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+\mbox{\hyperlink{class_classe}{Classe}} que representa uma data padronizada. 
+
+Padrão para representação de uma data\+:
+\begin{DoxyItemize}
+\item Formato\+: DD/\+MMM/\+AAAA.
+\item DD é um valor inteiro entre 1 e 31 (depende do mês e do ano).
+\item MMM é uma string correspondente à sigla do mês (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ).
+\item AAAA é um valor inteiro entre 2000 e 2999 correspondente ao ano.
+\end{DoxyItemize}
+
+A validação do valor da data é realizada pelo método herdado \textquotesingle{}validar\textquotesingle{}.
+
+Implementado por\+: 221020940. 
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+dominios.\+h\end{DoxyCompactItemize}

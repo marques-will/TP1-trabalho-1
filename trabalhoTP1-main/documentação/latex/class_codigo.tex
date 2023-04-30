@@ -1,0 +1,64 @@
+\hypertarget{class_codigo}{}\doxysection{Referência à classe Codigo}
+\label{class_codigo}\index{Codigo@{Codigo}}
+
+
+Padrão para representação da classe \mbox{\hyperlink{class_codigo}{Codigo}}.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+
+
+Diagrama de heranças da classe Codigo
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{class_codigo__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para Codigo\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{class_codigo__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Outros membros herdados}
+\doxysubsubsection*{Membros públicos herdados de \mbox{\hyperlink{class_dominios}{Dominios}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dominios_ac50f72c7293e9f869b1e0e22f13970ca}{set\+Valor}} (string valor)
+\begin{DoxyCompactList}\small\item\em Define o valor do domínio. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_dominios_ac86d0cf047c11d1693d421ffc62480a6}{get\+Valor}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o valor do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_dominios_aaf14c90fbf97c6fdf8a661d7d853e73f}{validar}} (const string \&valor)=0
+\begin{DoxyCompactList}\small\item\em Método para validação do valor a ser definido para o domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Padrão para representação da classe \mbox{\hyperlink{class_codigo}{Codigo}}. 
+
+Herda no modo public a classe \mbox{\hyperlink{class_dominios}{Dominios}}.
+
+Regras de formato\+:
+
+
+\begin{DoxyItemize}
+\item Strings de 6 caracteres.
+\item Os 3 primeiros caracteres são letras (maiúsculas ou minúsculas).
+\item Os 3 últimos caracteres são dígitos (de 0 a 9).
+\end{DoxyItemize}
+
+Por 221006351 
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+dominios.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,25 @@
+digraph "TUDominios"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [label="TUDominios",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="TUClasse",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_t_u_classe.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="TUCodigo",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_t_u_codigo.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="TUData",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_t_u_data.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="TUMatricula",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_t_u_matricula.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="TUResultado",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_t_u_resultado.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="TUSenha",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_t_u_senha.html",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="steelblue1",style="solid"];
+  Node8 [label="TUTelefone",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_t_u_telefone.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="steelblue1",style="solid"];
+  Node9 [label="TUTexto",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",URL="$class_t_u_texto.html",tooltip=" "];
+}

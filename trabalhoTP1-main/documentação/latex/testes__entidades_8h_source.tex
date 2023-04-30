@@ -1,0 +1,73 @@
+\hypertarget{testes__entidades_8h_source}{}\doxysection{testes\+\_\+entidades.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TESTES\_ENTIDADES\_H\_INCLUDED}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TESTES\_ENTIDADES\_H\_INCLUDED}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}entidades.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_u_entidades}{TUEntidades}}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setUp()\ =\ 0;}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ tearDown()\ =\ 0;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ testarCenarioSucesso()\ =\ 0;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ estado;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ SUCESSO\ =\ 0;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ FALHA\ =\ 1;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{int}\ run();}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ showResult(\textcolor{keywordtype}{int}\ result,\ \textcolor{keywordtype}{string}\ nome\_entidade);}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ TUEntidades::run()\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ setUp();}
+\DoxyCodeLine{00028\ \ \ \ \ testarCenarioSucesso();}
+\DoxyCodeLine{00029\ \ \ \ \ tearDown();}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{return}\ estado;}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ TUEntidades::showResult(\textcolor{keywordtype}{int}\ result,\ \textcolor{keywordtype}{string}\ nome\_dominio)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{string}\ resultado[]\ =\ \{\textcolor{stringliteral}{"{}\(\backslash\)033[32mSUCESSO\(\backslash\)033[0m"{}},\ \textcolor{stringliteral}{"{}\(\backslash\)033[31mFALHA\(\backslash\)033[0m"{}}\};}
+\DoxyCodeLine{00035\ \ \ \ \ cout\ <<\ setw(16)\ <<\ left\ <<\ setfill(\textcolor{charliteral}{'.'})\ <<\ nome\_dominio\ <<\ resultado[result]\ <<\ endl;}
+\DoxyCodeLine{00036\ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ Teste\ Unitário\ Desenvolvedor}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_u_desenvolvedor}{TUDesenvolvedor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_t_u_entidades}{TUEntidades}}\ \{}
+\DoxyCodeLine{00042\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ VALOR\_VALIDO\_NOME;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ VALOR\_VALIDO\_MATRICULA;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ VALOR\_VALIDO\_SENHA;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ VALOR\_VALIDO\_TELEFONE;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ setUp();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ tearDown();}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ testarCenarioSucesso();}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_desenvolvedor}{Desenvolvedor}}\ *desenvolvedor;}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ Teste\ Unitário\ CadoDeTeste}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_u_caso_de_teste}{TUCasoDeTeste}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_t_u_entidades}{TUEntidades}}\ \{}
+\DoxyCodeLine{00057\ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ VALOR\_VALIDO\_NOME;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ VALOR\_VALIDO\_DATA;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ VALOR\_VALIDO\_ACAO;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ VALOR\_VALIDO\_RESPOSTA;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{string}\ VALOR\_VALIDO\_RESULTADO;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ setUp();}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ tearDown();}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ testarCenarioSucesso();}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_caso_de_teste}{CasoDeTeste}}\ *casodeteste;}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{//\ TESTES\_ENTIDADES\_H\_INCLUDED}}
+
+\end{DoxyCode}

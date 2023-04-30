@@ -1,0 +1,66 @@
+\hypertarget{class_telefone}{}\doxysection{Referência à classe Telefone}
+\label{class_telefone}\index{Telefone@{Telefone}}
+
+
+Padrão para representação da \mbox{\hyperlink{class_classe}{Classe}} \mbox{\hyperlink{class_telefone}{Telefone}}.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+h$>$}
+
+
+
+Diagrama de heranças da classe Telefone
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{class_telefone__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Diagrama de colaboração para Telefone\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=137pt]{class_telefone__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Outros membros herdados}
+\doxysubsubsection*{Membros públicos herdados de \mbox{\hyperlink{class_dominios}{Dominios}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dominios_ac50f72c7293e9f869b1e0e22f13970ca}{set\+Valor}} (string valor)
+\begin{DoxyCompactList}\small\item\em Define o valor do domínio. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_dominios_ac86d0cf047c11d1693d421ffc62480a6}{get\+Valor}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o valor do domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_dominios_aaf14c90fbf97c6fdf8a661d7d853e73f}{validar}} (const string \&valor)=0
+\begin{DoxyCompactList}\small\item\em Método para validação do valor a ser definido para o domínio. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Descrição detalhada}
+Padrão para representação da \mbox{\hyperlink{class_classe}{Classe}} \mbox{\hyperlink{class_telefone}{Telefone}}. 
+
+Herda no modo public da \mbox{\hyperlink{class_classe}{Classe}} \mbox{\hyperlink{class_dominios}{Dominios}}.
+
+Regras de formato\+:
+
+
+\begin{DoxyItemize}
+\item Valor do telefone deve possui de 8 a 16 caracteres;
+\item O primeiro caractere sempre é \char`\"{}+\char`\"{};
+\item Os demais caracteres são dígitos;
+\item Podem haver de 7 a 15 dígitos;
+\item Cada dígito é um número inteiro de 0 a 9.
+\end{DoxyItemize}
+
+Implementado por\+: 221006351. 
+
+A documentação para esta classe foi gerada a partir do seguinte ficheiro\+:\begin{DoxyCompactItemize}
+\item 
+dominios.\+h\end{DoxyCompactItemize}

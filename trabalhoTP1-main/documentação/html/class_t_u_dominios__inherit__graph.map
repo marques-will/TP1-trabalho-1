@@ -1,0 +1,11 @@
+<map id="TUDominios" name="TUDominios">
+<area shape="rect" id="node1" title=" " alt="" coords="359,5,451,31"/>
+<area shape="rect" id="node2" href="$class_t_u_classe.html" title=" " alt="" coords="5,79,84,104"/>
+<area shape="rect" id="node3" href="$class_t_u_codigo.html" title=" " alt="" coords="108,79,187,104"/>
+<area shape="rect" id="node4" href="$class_t_u_data.html" title=" " alt="" coords="211,79,276,104"/>
+<area shape="rect" id="node5" href="$class_t_u_matricula.html" title=" " alt="" coords="301,79,391,104"/>
+<area shape="rect" id="node6" href="$class_t_u_resultado.html" title=" " alt="" coords="415,79,511,104"/>
+<area shape="rect" id="node7" href="$class_t_u_senha.html" title=" " alt="" coords="535,79,610,104"/>
+<area shape="rect" id="node8" href="$class_t_u_telefone.html" title=" " alt="" coords="635,79,721,104"/>
+<area shape="rect" id="node9" href="$class_t_u_texto.html" title=" " alt="" coords="745,79,816,104"/>
+</map>

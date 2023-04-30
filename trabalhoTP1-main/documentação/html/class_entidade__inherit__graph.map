@@ -1,0 +1,5 @@
+<map id="Entidade" name="Entidade">
+<area shape="rect" id="node1" title="Padrão de representação para a superclasse Entidade." alt="" coords="81,5,155,31"/>
+<area shape="rect" id="node2" href="$class_caso_de_teste.html" title="Padrão para representação da classe CasoDeTeste." alt="" coords="5,79,105,104"/>
+<area shape="rect" id="node3" href="$class_desenvolvedor.html" title="Padrão de representação para a classe Desenvolvedor." alt="" coords="130,79,234,104"/>
+</map>

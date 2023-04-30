@@ -1,0 +1,11 @@
+<map id="Dominios" name="Dominios">
+<area shape="rect" id="node1" title="Classe abstrata que representa um domínio genérico." alt="" coords="303,5,379,31"/>
+<area shape="rect" id="node2" href="$class_classe.html" title=" " alt="" coords="5,79,68,104"/>
+<area shape="rect" id="node3" href="$class_codigo.html" title="Padrão para representação da classe Codigo." alt="" coords="92,79,155,104"/>
+<area shape="rect" id="node4" href="$class_data.html" title="Classe que representa uma data padronizada." alt="" coords="179,79,228,104"/>
+<area shape="rect" id="node5" href="$class_matricula.html" title="Padrão para representação para a classe Matricula." alt="" coords="253,79,327,104"/>
+<area shape="rect" id="node6" href="$class_resultado.html" title=" " alt="" coords="351,79,431,104"/>
+<area shape="rect" id="node7" href="$class_senha.html" title="Classe que representa uma senha." alt="" coords="455,79,514,104"/>
+<area shape="rect" id="node8" href="$class_telefone.html" title="Padrão para representação da Classe Telefone." alt="" coords="539,79,609,104"/>
+<area shape="rect" id="node9" href="$class_texto.html" title="Classe que representa texto padronizado." alt="" coords="633,79,688,104"/>
+</map>
