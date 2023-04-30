@@ -7,6 +7,10 @@
 // ENTIDADE ENTIDADE
 /**
  * @brief Padrão de representação para a superclasse Entidade.
+ * 
+ * Essa classe é usada como padrão para representar uma entidade genérica.
+ * 
+ *  As classes derivadas devem implementar o método de validação de acordo com suas respectivas regras de formato.
  */
 class Entidade {
    private:
@@ -21,7 +25,7 @@ class Entidade {
     /**
      * @brief Armazena objeto da classe Texto.
      *
-     * @return  0.
+     * @return 
      */
 
     /**
