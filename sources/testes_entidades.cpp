@@ -92,4 +92,23 @@ void TUCasoDeTeste::testarCenarioSucesso() {
     casodeteste->setResultado(resultado);
     if (casodeteste->getResultado().getValor() != VALOR_VALIDO_RESULTADO)
         estado = FALHA;
+    
+    
+//TESTE DE TESTE
+const string TUTeste::VALOR_VALIDO_CÓDIGO = "VSC021";
+const string TUTeste::VALOR_VALIDO_NOME = "Alexandre2";
+const string TUTeste::VALOR_VALIDO_CLASSE = "FUMACA";
+ 
+    
+void TUTeste::setUp() {
+    desenvolvedor = new Desenvolvedor();
+    estado = SUCESSO;
+}
+
+void TUTeste::tearDown() {
+    delete desenvolvedor;
+}
+
+    
+    
 }
