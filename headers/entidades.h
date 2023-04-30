@@ -160,11 +160,27 @@ inline Telefone Desenvolvedor::getTelefone() const {
 
 // ENTIDADE TESTE - 221006389
 //---------------------------------------------------------------------
-/// class Teste
-///{
-// private:
-// public:
-// };
+class Teste : public Entidade {
+private:
+   Codigo codigo;
+   Texto nome;
+   Classe classe;
+public:
+   void setCodigo(const Codigo &);
+   
+	Codigo getCodigo() const;
+   
+   
+   void setNome(const Texto &);
+   
+	Codigo getNome() const;
+   
+   
+   void setlClasse(const Classe &);
+   
+	Codigo getClasse() const;
+   
+void};
 
 //---------------------------------------------------------------------
 // ENTIDADE CASO DE TESTE
