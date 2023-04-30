@@ -12,7 +12,9 @@ using namespace std;
 /**
  * @brief Classe abstrata que representa um domínio genérico.
 
- * Essa classe é usada como padrão para representar um domínio genérico, definido por uma string 'valor'. As classes derivadas devem implementar o método de validação de acordo com as regras de formato específicas do domínio.
+ * Essa classe é usada como padrão para representar um domínio genérico. 
+ 
+ As classes derivadas devem implementar o método de validação de acordo com as regras de formato específicas do domínio.
  *
  *  Implementado por: 221020940.
  */
@@ -59,21 +61,60 @@ class Dominios {
     string getValor() const;
 };
 
+/**
+ * @brief Implementação de método inline para setValor.
+ * 
+ * @param valor 
+ */
 inline void Dominios::setValor(string valor) {
     validar(valor);
     this->valor = valor;
 }
-
+/**
+ * @brief Implementação de método inline para getValor.
+ * 
+ * @return string 
+ */
 inline string Dominios::getValor() const {
     return valor;
 }
 
 //---------------------------------------------------------------------
 // DOMINIO CLASSE
-
+/**
+ * @brief Padrão para representação da classe Classe;
+ * 
+ * Herda no modo public a classe Dominios.
+ * 
+ * Regras de formato:
+ * -Strings com seis formatos possíveis.
+ * -1° opção: UNIDADE.
+ * -2° opção: INTEGRACAO.
+ * -3° opção: FUMACA.
+ * -4° opção: SISTEMA.
+ * -5° opção: REGRESSAO.
+ * -6° opção: ACEITACAO.
+ * 
+ * Implementado por 221006389.
+ * 
+ */
 class Classe : public Dominios {
    private:
+   /**
+    * @brief Atributo do tipo string armazenado na classe.
+    * 
+    */
     string classe;
+    /**
+     * @brief Método para validação do valor de classe.
+     * 
+     * Validações executadas:
+     * -Verifica se classe é um dos formatos válidos.
+     * 
+     * @param classe 
+     * 
+     * @throw invalid_argument se o formato for inválido.
+     */
     void validar(const string& classe);
 };
 
@@ -86,13 +127,13 @@ class Classe : public Dominios {
  * Herda no modo public a classe Dominios.
  *
  * Regras de formato:
- *
  * - Strings de 6 caracteres.
  * - Os 3 primeiros caracteres são letras (maiúsculas ou minúsculas).
  * - Os 3 últimos caracteres são dígitos (de 0 a 9).
  *
  * Por 221006351
  */
+
 class Codigo : public Dominios {
    private:
     /**
@@ -102,9 +143,16 @@ class Codigo : public Dominios {
     string codigo;
 
     /**
-     * @brief Método que valida se o parâmetro está no formato válido para a classe.
+     * @brief Método que verifica se o parâmetro é válido para a classe ou não.
      *
+     * Validações executadas:
+     * -Verificar se o parâmetro é uma string de 6 caracteres.
+     * -Verificar se os 3 primeiros caracteres são letras.
+     * -Verififcar se os 3 últimos caracteres são dígitos.
+     * 
      * @param codigo
+     * 
+     * @throw invalid_argument se o parâmetro for inválido.
      */
     void validar(const string& codigo);
 };
@@ -120,8 +168,6 @@ class Codigo : public Dominios {
  * - DD é um valor inteiro entre 1 e 31 (depende do mês e do ano).
  * - MMM é uma string correspondente à sigla do mês (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ).
  * - AAAA é um valor inteiro entre 2000 e 2999 correspondente ao ano.
- *
- * A validação do valor da data é realizada pelo método herdado 'validar'.
  *
  * Implementado por: 221020940.
  */
@@ -148,11 +194,11 @@ class Data : public Dominios {
     /**
      * @brief Método para validação do valor de uma data.
      *
-     * Validações feitas:
-     * - Data segue formato DD/MMM/AAAA;
-     * - Dia (DD) é inteiro de 1 a 31 e é válido, considerando-se ano bissexto.;
-     * - Mês (MMM) é sigla válida (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ;
-     * - Ano (AAAA) é inteiro de 2000 a 2999;
+     * Validações executadas:
+     * - Verificar se data segue formato DD/MMM/AAAA;
+     * - Verificar se Dia (DD) é inteiro de 1 a 31 e é válido, considerando-se ano bissexto.;
+     * - Verificar se Mês (MMM) é sigla válida (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ;
+     * - Verificar se Ano (AAAA) é inteiro de 2000 a 2999;
      *
      * @param data Valor de data a ser validado.
      *
@@ -170,7 +216,6 @@ class Data : public Dominios {
  * Herda no modo public da Classe Dominios.
  *
  * Regras de formato:
- *
  * - Strings de 7 caracteres.
  * - Os caracteres são números inteiros de 0 a 9
  * - O último dígito da string é o dígito verificador de módulo 10.
@@ -184,19 +229,51 @@ class Matricula : public Dominios {
      */
     string matricula;
     /**
-     * @brief Método que o parâmetro é válido para a classe ou não.
-     *
+     * @brief Método que verifica se o parâmetro é válido para a classe ou não.
+     * 
+     * Validações executadas:
+     * -Verificar se o parâmetro é uma string de 7 caracteres.
+     * -Verificar se todos os caracteres da string são números inteiros de 0 a 9.
+     * -Verificar se o último caractere da string é o dígito verificador correto.
+     * 
      * @param matricula.
+     * 
+     * @throw invalid_argument se a matrícula for inválida.
      */
     void validar(const string& matricula);
 };
 
 //---------------------------------------------------------------------
 // DOMINIO RESULTADO
-
+/**
+ * @brief Padrão de representação para a classe Resultado.
+ * 
+ * Herda no modo public a classe Dominios.
+ * 
+ * Regras de formato:
+ * -String com dois formatos possíveis.
+ * -1° opção: APROVADO.
+ * -2° opção: REPROVADO.
+ * 
+ * Implementado por 221006389.
+ */
 class Resultado : public Dominios {
    private:
+   /**
+    * @brief Atributo do tipo string armazenado na classe.
+    * 
+    */
     string resultado;
+    /**
+     * @brief Método para validação do valor de um resultado.
+     * 
+     * Validações executadas:
+     * -Verifica se o parâmetro é 'APROVADO' ou 'REPROVADO'.
+     * 
+     * @param resultado 
+     * 
+     * @throw invalid_argument se o resultado for inválido.
+     */
     void validar(const string& resultado);
 };
 
@@ -204,11 +281,11 @@ class Resultado : public Dominios {
 // DOMINIO SENHA
 
 /**
- * @brief Classe que representa uma senha.
+ * @brief Padrão de representação para a classe.
  *
  * Classe derivada da classe abstrata Dominios usada para representar uma senha de formato válido.
  *
- * Padrão de formatação de uma senha:
+ * Regras de formato:
  * - Formato: XXXXX.
  * - X é um caractere válido que não se repete (vide validar).
  *
@@ -226,7 +303,7 @@ class Senha : public Dominios {
     /**
      * @brief Método para validação do valor de uma senha.
      *
-     * Validações feitas:
+     * Validações executadas:
      * - Senha possui 6 caracteres;
      * - Caracteres válidos são letras (A - Z, a - z), dígitos (0 - 9), @ , #, $ , % ou &;
      * - Não deve haver repetição de caracteres válidos.
@@ -266,9 +343,15 @@ class Telefone : public Dominios {
 
     string telefone;
     /**
-     * @brief Método que o parâmetro para a classe é válido ou não.
-     *
+     * @brief Método que verifica se o parâmetro é válido ou não para ser um objeto da classe.
+     * 
+     * Validações executadas:
+     * -'+' está na posição telefone[0].
+     * -Todas as posições, com exceção de telefone[0], devem ser dígitos.
+     * - O telefone deve conter de 7 a 15 dígitos.
      * @param telefone.
+     * 
+     * @throw caso o parâmetro telefone seja inválido.
      */
     void validar(const string& telefone);
 };
@@ -300,7 +383,7 @@ class Texto : public Dominios {
     /**
      * @brief Método para validação do valor de um texto.
      *
-     * Validações feitas:
+     * Validações executadas:
      * - String de texto contém de 10 a 20 caracteres;
      * - Cada caractere X é letra (A - Z, a - z), dígito (0-9), sinal de pontuação ( . , ; ? ! : - ), @ , #, $ , % ou &;
      * - Não há acentuação;
