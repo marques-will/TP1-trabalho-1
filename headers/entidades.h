@@ -7,6 +7,10 @@
 // ENTIDADE ENTIDADE
 /**
  * @brief Padrão de representação para a superclasse Entidade.
+ * 
+ * Essa classe é usada como padrão para representar uma entidade genérica.
+ * 
+ *  As classes derivadas devem implementar o método de validação de acordo com suas respectivas regras de formato.
  */
 class Entidade {
    private:
@@ -21,7 +25,7 @@ class Entidade {
     /**
      * @brief Armazena objeto da classe Texto.
      *
-     * @return  0.
+     * @return 
      */
 
     /**
@@ -160,11 +164,27 @@ inline Telefone Desenvolvedor::getTelefone() const {
 
 // ENTIDADE TESTE - 221006389
 //---------------------------------------------------------------------
-/// class Teste
-///{
-// private:
-// public:
-// };
+class Teste : public Entidade {
+private:
+   Codigo codigo;
+   Texto nome;
+   Classe classe;
+public:
+   void setCodigo(const Codigo &);
+   
+	Codigo getCodigo() const;
+   
+   
+   void setNome(const Texto &);
+   
+	Codigo getNome() const;
+   
+   
+   void setlClasse(const Classe &);
+   
+	Codigo getClasse() const;
+   
+void};
 
 //---------------------------------------------------------------------
 // ENTIDADE CASO DE TESTE
