@@ -180,67 +180,67 @@ inline Telefone Desenvolvedor::getTelefone() const {
 // ENTIDADE TESTE - 221006389
 /**
  * @brief Padrão para representação da classe Teste.
- * 
+ *
  * Herda no modo public da classe Entidade.
- * 
+ *
  */
 class Teste : public Entidade {
    private:
-   /**
-    * @brief Atributo que é instância da classe Codigo.
-    * 
-    */
+    /**
+     * @brief Atributo que é instância da classe Codigo.
+     *
+     */
     Codigo codigo;
     /**
      * @brief Atributo que é instância da classe Nome.
-     * 
+     *
      */
     Texto nome;
     /**
      * @brief Atributo que é instância da classe Classe.
-     * 
+     *
      */
     Classe classe;
 
    public:
-   /**
-    * @brief Método que armazena objeto da classe Codigo.
-    * 
-    */
+    /**
+     * @brief Método que armazena objeto da classe Codigo.
+     *
+     */
     void setCodigo(const Codigo &);
     /**
      * @brief Método que retorna objeto da classe Codigo.
-     * 
-     * @return Codigo 
+     *
+     * @return Codigo
      */
     Codigo getCodigo() const;
     /**
      * @brief Método que armazena objeto "nome" da classe Texto.
-     * 
+     *
      */
     void setNome(const Texto &);
     /**
      * @brief Método que retorna objeto "nome" da classe Texto.
-     * 
-     * @return Texto 
+     *
+     * @return Texto
      */
     Texto getNome() const;
     /**
      * @brief Método que armazena objeto da classe Classe.
-     * 
+     *
      */
     void setClasse(const Classe &);
     /**
      * @brief Método que retorna objeto da classe Classe.
-     * 
-     * @return Classe 
+     *
+     * @return Classe
      */
     Classe getClasse() const;
 };
 /**
  * @brief Implementação de método inline para setCodigo.
- * 
- * @param codigo 
+ *
+ * @param codigo
  */
 inline void Teste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;

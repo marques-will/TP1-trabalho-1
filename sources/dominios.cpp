@@ -75,7 +75,7 @@ void Data::validar(const string& data) {
         dia = stoi(dia_mes_ano[0]);
         mes = dia_mes_ano[1];
         ano = stoi(dia_mes_ano[2]);
-    } catch (invalid_argument& ex) {
+    } catch (invalid_argument& excecao) {
         throw invalid_argument("Data Inválida.");
     }
 
