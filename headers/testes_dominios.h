@@ -18,6 +18,8 @@ class TUDominios {
    protected:
     int estado;
 
+    Dominios *dominios;
+
     virtual void setUp() = 0;
     virtual void tearDown() = 0;
     virtual void testarCenarioSucesso() = 0;
