@@ -20,7 +20,7 @@ class TUEntidades {
     const static int SUCESSO = 0;
     const static int FALHA = 1;
     int run();
-    void showResult(int result, string nome_entidade);
+    void showResult(int, string);
 };
 
 inline int TUEntidades::run() {
@@ -52,15 +52,15 @@ class TUDesenvolvedor : public TUEntidades {
 
 //---------------------------------------------------------------------
 // Teste Unitário Teste
-class TUTeste: public TUEntidades{
-    private:
-        const static string VALOR_VALIDO_CODIGO;
-        const static string VALOR_VALIDO_NOME;
-        const static string VALOR_VALIDO_CLASSE;
-        void setUp();
-        void tearDown();
-        void testarCenarioSucesso();
-        Teste *teste;
+class TUTeste : public TUEntidades {
+   private:
+    const static string VALOR_VALIDO_CODIGO;
+    const static string VALOR_VALIDO_NOME;
+    const static string VALOR_VALIDO_CLASSE;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    Teste *teste;
 };
 //---------------------------------------------------------------------
 // Teste Unitário CasoDeTeste

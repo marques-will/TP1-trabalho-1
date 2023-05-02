@@ -191,11 +191,8 @@ class Teste : public Entidade {
      *
      */
     Codigo codigo;
-    /**
-     * @brief Atributo que é instância da classe Nome.
-     *
-     */
-    Texto nome;
+
+
     /**
      * @brief Atributo que é instância da classe Classe.
      *
@@ -208,28 +205,20 @@ class Teste : public Entidade {
      *
      */
     void setCodigo(const Codigo &);
+
     /**
      * @brief Método que retorna objeto da classe Codigo.
      *
      * @return Codigo
      */
     Codigo getCodigo() const;
-    /**
-     * @brief Método que armazena objeto "nome" da classe Texto.
-     *
-     */
-    void setNome(const Texto &);
-    /**
-     * @brief Método que retorna objeto "nome" da classe Texto.
-     *
-     * @return Texto
-     */
-    Texto getNome() const;
+
     /**
      * @brief Método que armazena objeto da classe Classe.
      *
      */
     void setClasse(const Classe &);
+    
     /**
      * @brief Método que retorna objeto da classe Classe.
      *
@@ -246,6 +235,22 @@ inline void Teste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;
 }
 
+inline Codigo Teste::getCodigo() const {
+    return codigo;
+}
+
+/**
+ * @brief Implementação de método inline para setClasse.
+ *
+ * @param classe
+ */
+inline void Teste::setClasse(const Classe &classe) {
+    this->classe = classe;
+}
+
+inline Classe Teste::getClasse() const {
+    return classe;
+}
 //---------------------------------------------------------------------
 // ENTIDADE CASO DE TESTE
 /**
