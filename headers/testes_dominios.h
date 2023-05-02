@@ -29,7 +29,7 @@ class TUDominios {
     const static int SUCESSO = 0;
     const static int FALHA = 1;
     int run();
-    void showResult(int result, string nome_dominio);
+    void showResult(int, string);
 };
 
 inline int TUDominios::run() {
