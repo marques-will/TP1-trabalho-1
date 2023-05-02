@@ -103,6 +103,9 @@ void Matricula::validar(const string& matricula) {
 
     int fator = 1, soma = 0, digito_encontrado;
     for (int i = 0; i < matricula.size() - 1; i++) {
+        if (!isdigit(matricula[i]))
+            throw invalid_argument("Matrícula deve conter apenas dígitos");
+
         int valor = matricula[i] - '0';
         soma += fator * valor;
 

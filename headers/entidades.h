@@ -44,6 +44,7 @@ class Entidade {
 inline void Entidade::setNome(const Texto &nome) {
     this->nome = nome;
 }
+
 /**
  * @brief Implementação de Método inline para getNome.
  *
@@ -67,11 +68,13 @@ class Desenvolvedor : public Entidade {
      *
      */
     Matricula matricula;
+
     /**
      * @brief Atributo que é instância da classe Senha.
      *
      */
     Senha senha;
+
     /**
      * @brief Atributo que é instância da classe Telefone.
      *
@@ -84,28 +87,33 @@ class Desenvolvedor : public Entidade {
      *
      */
     void setMatricula(const Matricula &);
+
     /**
      * @brief Método que retorna objeto da classe Matricula.
      *
      * @return Matricula.
      */
     Matricula getMatricula() const;
+
     /**
      * @brief Método que armazena objeto da classe Senha.
      *
      */
     void setSenha(const Senha &);
+
     /**
      * @brief Retorna objeto da classe Senha.
      *
      * @return Senha
      */
     Senha getSenha() const;
+
     /**
      * @brief Método que armazena objeto da classe Telefone.
      *
      */
     void setTelefone(const Telefone &);
+
     /**
      * @brief Retorna objeto da classe Telefone.
      *
@@ -113,6 +121,7 @@ class Desenvolvedor : public Entidade {
      */
     Telefone getTelefone() const;
 };
+
 /**
  * @brief Implementação de Método inline para setMatricula.
  *
@@ -121,6 +130,7 @@ class Desenvolvedor : public Entidade {
 inline void Desenvolvedor::setMatricula(const Matricula &matricula) {
     this->matricula = matricula;
 }
+
 /**
  * @brief Implementação de Método inline para getMatricula.
  *
@@ -129,6 +139,7 @@ inline void Desenvolvedor::setMatricula(const Matricula &matricula) {
 inline Matricula Desenvolvedor::getMatricula() const {
     return matricula;
 }
+
 /**
  * @brief Implementação de Método inline para setSenha.
  *
@@ -137,6 +148,7 @@ inline Matricula Desenvolvedor::getMatricula() const {
 inline void Desenvolvedor::setSenha(const Senha &senha) {
     this->senha = senha;
 }
+
 /**
  * @brief Implementação de Método inline para getSenha.
  *
@@ -145,6 +157,7 @@ inline void Desenvolvedor::setSenha(const Senha &senha) {
 inline Senha Desenvolvedor::getSenha() const {
     return senha;
 }
+
 /**
  * @brief Implementação de Método inline para setTelefone.
  *
@@ -153,6 +166,7 @@ inline Senha Desenvolvedor::getSenha() const {
 inline void Desenvolvedor::setTelefone(const Telefone &telefone) {
     this->telefone = telefone;
 }
+
 /**
  * @brief Implementação de Método inline para getTelefone.
  *
@@ -162,8 +176,8 @@ inline Telefone Desenvolvedor::getTelefone() const {
     return telefone;
 }
 
-// ENTIDADE TESTE - 221006389
 //---------------------------------------------------------------------
+// ENTIDADE TESTE - 221006389
 class Teste : public Entidade {
    private:
     Codigo codigo;
@@ -197,21 +211,25 @@ class CasoDeTeste : public Entidade {
      *
      */
     Codigo codigo;
+
     /**
      * @brief Atributo que é instância da classe Data.
      *
      */
     Data data;
+
     /**
      * @brief Atributo que é instância da classe Texto.
      *
      */
     Texto acao;
+
     /**
      * @brief Atributo que é instância da classe Texto.
      *
      */
     Texto resposta;
+
     /**
      * @brief Atributo que é instância da classe Resultado.
      *
@@ -224,50 +242,59 @@ class CasoDeTeste : public Entidade {
      *
      */
     void setCodigo(const Codigo &);
+
     /**
      * @brief Método que retorna objeto da classe Codigo.
      *
      * @return Codigo.
      */
     Codigo getCodigo() const;
+
     /**
      * @brief Método que armazena objeto da classe Data.
      *
      */
     void setData(const Data &);
+
     /**
      * @brief Método que retorna objeto da classe Data.
      *
      * @return Data.
      */
     Data getData() const;
+
     /**
      * @brief Método que armazena objeto acao da classe Texto.
      *
      */
     void setAcao(const Texto &);
+
     /**
      * @brief Retorna o objeto acao da calsse Texto.
      *
      * @return Texto.
      */
     Texto getAcao() const;
+
     /**
      * @brief Método que armazena objeto resposta da classe Texto.
      *
      */
     void setResposta(const Texto &);
+
     /**
      * @brief Método que retorna objeto resposta da classe Texto.
      *
      * @return Texto.
      */
     Texto getResposta() const;
+
     /**
      * @brief Método que armazena objeto da classe Resultado.
      *
      */
     void setResultado(const Resultado &);
+
     /**
      * @brief Método que retorna objeto da classe Resultado.
      *
@@ -275,6 +302,7 @@ class CasoDeTeste : public Entidade {
      */
     Resultado getResultado() const;
 };
+
 /**
  * @brief Implementação de Método inline para setCodigo.
  *
@@ -283,6 +311,7 @@ class CasoDeTeste : public Entidade {
 inline void CasoDeTeste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;
 }
+
 /**
  * @brief Implementação de Método inline para getCodigo.
  *
@@ -291,6 +320,7 @@ inline void CasoDeTeste::setCodigo(const Codigo &codigo) {
 inline Codigo CasoDeTeste::getCodigo() const {
     return codigo;
 }
+
 /**
  * @brief Implementação de Método inline para setData.
  *
@@ -299,6 +329,7 @@ inline Codigo CasoDeTeste::getCodigo() const {
 inline void CasoDeTeste::setData(const Data &data) {
     this->data = data;
 }
+
 /**
  * @brief Implementação de Método inline para getData.
  *
@@ -307,6 +338,7 @@ inline void CasoDeTeste::setData(const Data &data) {
 inline Data CasoDeTeste::getData() const {
     return data;
 }
+
 /**
  * @brief Implementação de Método inline para setAcao.
  *
@@ -315,6 +347,7 @@ inline Data CasoDeTeste::getData() const {
 inline void CasoDeTeste::setAcao(const Texto &acao) {
     this->acao = acao;
 }
+
 /**
  * @brief Implementação de Método inline para getAcao.
  *
@@ -323,6 +356,7 @@ inline void CasoDeTeste::setAcao(const Texto &acao) {
 inline Texto CasoDeTeste::getAcao() const {
     return acao;
 }
+
 /**
  * @brief Implementação de Método inline para setResposta.
  *
@@ -331,6 +365,7 @@ inline Texto CasoDeTeste::getAcao() const {
 inline void CasoDeTeste::setResposta(const Texto &resposta) {
     this->resposta = resposta;
 }
+
 /**
  * @brief Implementação de Método inline para getResposta.
  *
@@ -339,6 +374,7 @@ inline void CasoDeTeste::setResposta(const Texto &resposta) {
 inline Texto CasoDeTeste::getResposta() const {
     return resposta;
 }
+
 /**
  * @brief Implementação de Método inline para setResultado.
  *
@@ -347,6 +383,7 @@ inline Texto CasoDeTeste::getResposta() const {
 inline void CasoDeTeste::setResultado(const Resultado &resultado) {
     this->resultado = resultado;
 }
+
 /**
  * @brief Implementação de Método inline para getResultado.
  *

@@ -3,36 +3,36 @@
 using namespace std;
 
 //---------------------------------------------------------------------
-// IMPLEMENTAÇÃO DO TESTE DA MATRÍCULA - 221006351
+// IMPLEMENTAÇÃO DO TESTE DE CLASSE - 221006389
 
-const string TUMatricula::VALOR_VALIDO = "1234567";
-const string TUMatricula::VALOR_INVALIDO = "1234568";
+const string TUClasse::VALOR_VALIDO = "FUMACA";
+const string TUClasse::VALOR_INVALIDO = "fumaca";
 
-void TUMatricula::setUp() {
-    matricula = new Matricula();
+void TUClasse::setUp() {
+    classe = new Classe();
     estado = SUCESSO;
 }
 
-void TUMatricula::tearDown() {
-    delete matricula;
+void TUClasse::tearDown() {
+    delete classe;
 }
 
-void TUMatricula::testarCenarioSucesso() {
+void TUClasse::testarCenarioSucesso() {
     try {
-        matricula->setValor(VALOR_VALIDO);
-        if (matricula->getValor() != VALOR_VALIDO)
+        classe->setValor(VALOR_VALIDO);
+        if (classe->getValor() != VALOR_VALIDO)
             estado = FALHA;
     } catch (invalid_argument &excecao) {
         estado = FALHA;
     }
 }
 
-void TUMatricula::testarCenarioFalha() {
+void TUClasse::testarCenarioFalha() {
     try {
-        matricula->setValor(VALOR_INVALIDO);
+        classe->setValor(VALOR_INVALIDO);
         estado = FALHA;
     } catch (invalid_argument &excecao) {
-        if (matricula->getValor() == VALOR_INVALIDO)
+        if (classe->getValor() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
@@ -40,7 +40,7 @@ void TUMatricula::testarCenarioFalha() {
 //---------------------------------------------------------------------
 // IMPLEMENTAÇÃO DO TESTE DO CÓDIGO - 221006351
 
-const string TUCodigo::VALOR_VALIDO = "ABC123";
+const string TUCodigo::VALOR_VALIDO = "UnB231";
 const string TUCodigo::VALOR_INVALIDO = "123ABC";
 
 void TUCodigo::setUp() {
@@ -67,41 +67,6 @@ void TUCodigo::testarCenarioFalha() {
         estado = FALHA;
     } catch (invalid_argument &excecao) {
         if (codigo->getValor() == VALOR_INVALIDO)
-            estado = FALHA;
-    }
-}
-
-//---------------------------------------------------------------------
-// IMPLEMENTAÇÃO DO TESTE DO TELEFONE - 221020940
-
-const string TUTelefone::VALOR_VALIDO = "+1234567";
-const string TUTelefone::VALOR_INVALIDO = "1234567";
-
-void TUTelefone::setUp() {
-    telefone = new Telefone();
-    estado = SUCESSO;
-}
-
-void TUTelefone::tearDown() {
-    delete telefone;
-}
-
-void TUTelefone::testarCenarioSucesso() {
-    try {
-        telefone->setValor(VALOR_VALIDO);
-        if (telefone->getValor() != VALOR_VALIDO)
-            estado = FALHA;
-    } catch (invalid_argument &excecao) {
-        estado = FALHA;
-    }
-}
-
-void TUTelefone::testarCenarioFalha() {
-    try {
-        telefone->setValor(VALOR_INVALIDO);
-        estado = FALHA;
-    } catch (invalid_argument &excecao) {
-        if (telefone->getValor() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
@@ -142,71 +107,36 @@ void TUData::testarCenarioFalha() {
 }
 
 //---------------------------------------------------------------------
-// IMPLEMENTAÇÃO DO TESTE DA SENHA - 221020940
+// IMPLEMENTAÇÃO DO TESTE DA MATRÍCULA - 221006351
 
-const string TUSenha::VALOR_VALIDO = "w1Ly4n";
-const string TUSenha::VALOR_INVALIDO = "minhasenha123";
+const string TUMatricula::VALOR_VALIDO = "1234567";
+const string TUMatricula::VALOR_INVALIDO = "1234568";
 
-void TUSenha::setUp() {
-    senha = new Senha();
+void TUMatricula::setUp() {
+    matricula = new Matricula();
     estado = SUCESSO;
 }
 
-void TUSenha::tearDown() {
-    delete senha;
+void TUMatricula::tearDown() {
+    delete matricula;
 }
 
-void TUSenha::testarCenarioSucesso() {
+void TUMatricula::testarCenarioSucesso() {
     try {
-        senha->setValor(VALOR_VALIDO);
-        if (senha->getValor() != VALOR_VALIDO)
+        matricula->setValor(VALOR_VALIDO);
+        if (matricula->getValor() != VALOR_VALIDO)
             estado = FALHA;
     } catch (invalid_argument &excecao) {
         estado = FALHA;
     }
 }
 
-void TUSenha::testarCenarioFalha() {
+void TUMatricula::testarCenarioFalha() {
     try {
-        senha->setValor(VALOR_INVALIDO);
+        matricula->setValor(VALOR_INVALIDO);
         estado = FALHA;
     } catch (invalid_argument &excecao) {
-        if (senha->getValor() == VALOR_INVALIDO)
-            estado = FALHA;
-    }
-}
-
-//---------------------------------------------------------------------
-// IMPLEMENTAÇÃO DO TESTE DE TEXTO - 221020940
-
-const string TUTexto::VALOR_VALIDO = "o joao eh aaa";
-const string TUTexto::VALOR_INVALIDO = "abc123";
-
-void TUTexto::setUp() {
-    texto = new Texto();
-    estado = SUCESSO;
-}
-
-void TUTexto::tearDown() {
-    delete texto;
-}
-
-void TUTexto::testarCenarioSucesso() {
-    try {
-        texto->setValor(VALOR_VALIDO);
-        if (texto->getValor() != VALOR_VALIDO)
-            estado = FALHA;
-    } catch (invalid_argument &excecao) {
-        estado = FALHA;
-    }
-}
-
-void TUTexto::testarCenarioFalha() {
-    try {
-        texto->setValor(VALOR_INVALIDO);
-        estado = FALHA;
-    } catch (invalid_argument &excecao) {
-        if (texto->getValor() == VALOR_INVALIDO)
+        if (matricula->getValor() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
@@ -247,36 +177,106 @@ void TUResultado::testarCenarioFalha() {
 }
 
 //---------------------------------------------------------------------
-// IMPLEMENTAÇÃO DO TESTE DE CLASSE - 221006389
+// IMPLEMENTAÇÃO DO TESTE DA SENHA - 221020940
 
-const string TUClasse::VALOR_VALIDO = "FUMACA";
-const string TUClasse::VALOR_INVALIDO = "fumaca";
+const string TUSenha::VALOR_VALIDO = "w1Ly4n";
+const string TUSenha::VALOR_INVALIDO = "minhasenha123";
 
-void TUClasse::setUp() {
-    classe = new Classe();
+void TUSenha::setUp() {
+    senha = new Senha();
     estado = SUCESSO;
 }
 
-void TUClasse::tearDown() {
-    delete classe;
+void TUSenha::tearDown() {
+    delete senha;
 }
 
-void TUClasse::testarCenarioSucesso() {
+void TUSenha::testarCenarioSucesso() {
     try {
-        classe->setValor(VALOR_VALIDO);
-        if (classe->getValor() != VALOR_VALIDO)
+        senha->setValor(VALOR_VALIDO);
+        if (senha->getValor() != VALOR_VALIDO)
             estado = FALHA;
     } catch (invalid_argument &excecao) {
         estado = FALHA;
     }
 }
 
-void TUClasse::testarCenarioFalha() {
+void TUSenha::testarCenarioFalha() {
     try {
-        classe->setValor(VALOR_INVALIDO);
+        senha->setValor(VALOR_INVALIDO);
         estado = FALHA;
     } catch (invalid_argument &excecao) {
-        if (classe->getValor() == VALOR_INVALIDO)
+        if (senha->getValor() == VALOR_INVALIDO)
+            estado = FALHA;
+    }
+}
+
+//---------------------------------------------------------------------
+// IMPLEMENTAÇÃO DO TESTE DO TELEFONE - 221020940
+
+const string TUTelefone::VALOR_VALIDO = "+123456789012345";
+const string TUTelefone::VALOR_INVALIDO = "1234567";
+
+void TUTelefone::setUp() {
+    telefone = new Telefone();
+    estado = SUCESSO;
+}
+
+void TUTelefone::tearDown() {
+    delete telefone;
+}
+
+void TUTelefone::testarCenarioSucesso() {
+    try {
+        telefone->setValor(VALOR_VALIDO);
+        if (telefone->getValor() != VALOR_VALIDO)
+            estado = FALHA;
+    } catch (invalid_argument &excecao) {
+        estado = FALHA;
+    }
+}
+
+void TUTelefone::testarCenarioFalha() {
+    try {
+        telefone->setValor(VALOR_INVALIDO);
+        estado = FALHA;
+    } catch (invalid_argument &excecao) {
+        if (telefone->getValor() == VALOR_INVALIDO)
+            estado = FALHA;
+    }
+}
+
+//---------------------------------------------------------------------
+// IMPLEMENTAÇÃO DO TESTE DE TEXTO - 221020940
+
+const string TUTexto::VALOR_VALIDO = "TP1 - JLW 2023";
+const string TUTexto::VALOR_INVALIDO = "abc123";
+
+void TUTexto::setUp() {
+    texto = new Texto();
+    estado = SUCESSO;
+}
+
+void TUTexto::tearDown() {
+    delete texto;
+}
+
+void TUTexto::testarCenarioSucesso() {
+    try {
+        texto->setValor(VALOR_VALIDO);
+        if (texto->getValor() != VALOR_VALIDO)
+            estado = FALHA;
+    } catch (invalid_argument &excecao) {
+        estado = FALHA;
+    }
+}
+
+void TUTexto::testarCenarioFalha() {
+    try {
+        texto->setValor(VALOR_INVALIDO);
+        estado = FALHA;
+    } catch (invalid_argument &excecao) {
+        if (texto->getValor() == VALOR_INVALIDO)
             estado = FALHA;
     }
 }
