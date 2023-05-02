@@ -12,8 +12,8 @@ using namespace std;
 /**
  * @brief Classe abstrata que representa um domínio genérico.
 
- * Essa classe é usada como padrão para representar um domínio genérico. 
- 
+ * Essa classe é usada como padrão para representar um domínio genérico.
+
  As classes derivadas devem implementar o método de validação de acordo com as regras de formato específicas do domínio.
  *
  *  Implementado por: 221020940.
@@ -37,7 +37,7 @@ class Dominios {
      *
      * @throw invalid_argument Caso o valor informado seja inválido.
      */
-    virtual void validar(const string& valor) = 0;
+    virtual void validar(const string&) = 0;
 
    public:
     /**
@@ -49,7 +49,7 @@ class Dominios {
      *
      * @throw invalid_argument Caso o valor informado seja inválido.
      */
-    void setValor(string valor);
+    void setValor(string);
 
     /**
      * @brief Retorna o valor do domínio.
@@ -63,8 +63,8 @@ class Dominios {
 
 /**
  * @brief Implementação de método inline para setValor.
- * 
- * @param valor 
+ *
+ * @param valor
  */
 inline void Dominios::setValor(string valor) {
     validar(valor);
@@ -72,8 +72,8 @@ inline void Dominios::setValor(string valor) {
 }
 /**
  * @brief Implementação de método inline para getValor.
- * 
- * @return string 
+ *
+ * @return string
  */
 inline string Dominios::getValor() const {
     return valor;
@@ -83,39 +83,39 @@ inline string Dominios::getValor() const {
 // DOMINIO CLASSE
 /**
  * @brief Padrão para representação da classe Classe;
- * 
+ *
  * Herda no modo public a classe Dominios.
- * 
+ *
  * Regras de formato:
- * -Strings com seis formatos possíveis.
- * -1° opção: UNIDADE.
- * -2° opção: INTEGRACAO.
- * -3° opção: FUMACA.
- * -4° opção: SISTEMA.
- * -5° opção: REGRESSAO.
- * -6° opção: ACEITACAO.
- * 
+ * Strings com seis formatos possíveis.
+ * - 1ª opção: UNIDADE.
+ * - 2ª opção: INTEGRACAO.
+ * - 3ª opção: FUMACA.
+ * - 4ª opção: SISTEMA.
+ * - 5ª opção: REGRESSAO.
+ * - 6ª opção: ACEITACAO.
+ *
  * Implementado por 221006389.
- * 
+ *
  */
 class Classe : public Dominios {
    private:
-   /**
-    * @brief Atributo do tipo string armazenado na classe.
-    * 
-    */
+    /**
+     * @brief Atributo do tipo string armazenado na classe.
+     *
+     */
     string classe;
     /**
      * @brief Método para validação do valor de classe.
-     * 
+     *
      * Validações executadas:
      * -Verifica se classe é um dos formatos válidos.
-     * 
-     * @param classe 
-     * 
+     *
+     * @param classe
+     *
      * @throw invalid_argument se o formato for inválido.
      */
-    void validar(const string& classe);
+    void validar(const string&);
 };
 
 //---------------------------------------------------------------------
@@ -149,12 +149,12 @@ class Codigo : public Dominios {
      * -Verificar se o parâmetro é uma string de 6 caracteres.
      * -Verificar se os 3 primeiros caracteres são letras.
      * -Verififcar se os 3 últimos caracteres são dígitos.
-     * 
+     *
      * @param codigo
-     * 
+     *
      * @throw invalid_argument se o parâmetro for inválido.
      */
-    void validar(const string& codigo);
+    void validar(const string&);
 };
 
 //---------------------------------------------------------------------
@@ -204,7 +204,7 @@ class Data : public Dominios {
      *
      * @throw invalid_argument Caso valor de data possua formato inválido.
      */
-    void validar(const string& data);
+    void validar(const string&);
 };
 
 //---------------------------------------------------------------------
@@ -230,51 +230,51 @@ class Matricula : public Dominios {
     string matricula;
     /**
      * @brief Método que verifica se o parâmetro é válido para a classe ou não.
-     * 
+     *
      * Validações executadas:
      * -Verificar se o parâmetro é uma string de 7 caracteres.
      * -Verificar se todos os caracteres da string são números inteiros de 0 a 9.
      * -Verificar se o último caractere da string é o dígito verificador correto.
-     * 
+     *
      * @param matricula.
-     * 
+     *
      * @throw invalid_argument se a matrícula for inválida.
      */
-    void validar(const string& matricula);
+    void validar(const string&);
 };
 
 //---------------------------------------------------------------------
 // DOMINIO RESULTADO
 /**
  * @brief Padrão de representação para a classe Resultado.
- * 
+ *
  * Herda no modo public a classe Dominios.
- * 
+ *
  * Regras de formato:
  * -String com dois formatos possíveis.
  * -1° opção: APROVADO.
  * -2° opção: REPROVADO.
- * 
+ *
  * Implementado por 221006389.
  */
 class Resultado : public Dominios {
    private:
-   /**
-    * @brief Atributo do tipo string armazenado na classe.
-    * 
-    */
+    /**
+     * @brief Atributo do tipo string armazenado na classe.
+     *
+     */
     string resultado;
     /**
      * @brief Método para validação do valor de um resultado.
-     * 
+     *
      * Validações executadas:
      * -Verifica se o parâmetro é 'APROVADO' ou 'REPROVADO'.
-     * 
-     * @param resultado 
-     * 
+     *
+     * @param resultado
+     *
      * @throw invalid_argument se o resultado for inválido.
      */
-    void validar(const string& resultado);
+    void validar(const string&);
 };
 
 //---------------------------------------------------------------------
@@ -312,7 +312,7 @@ class Senha : public Dominios {
      *
      * @throw Caso valor de senha possua formato inválido.
      */
-    void validar(const string& senha);
+    void validar(const string&);
 };
 
 //---------------------------------------------------------------------
@@ -344,16 +344,16 @@ class Telefone : public Dominios {
     string telefone;
     /**
      * @brief Método que verifica se o parâmetro é válido ou não para ser um objeto da classe.
-     * 
+     *
      * Validações executadas:
      * -'+' está na posição telefone[0].
      * -Todas as posições, com exceção de telefone[0], devem ser dígitos.
      * - O telefone deve conter de 7 a 15 dígitos.
      * @param telefone.
-     * 
+     *
      * @throw caso o parâmetro telefone seja inválido.
      */
-    void validar(const string& telefone);
+    void validar(const string&);
 };
 
 //---------------------------------------------------------------------
@@ -394,7 +394,7 @@ class Texto : public Dominios {
      * @throw invalid_argument Caso valor de texto possua formato inválido.
      *
      */
-    void validar(const string& texto);
+    void validar(const string&);
 };
 
 #endif  // DOMINIOS_H_INCLUDED

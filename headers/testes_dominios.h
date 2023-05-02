@@ -44,13 +44,13 @@ inline void TUDominios::showResult(int result, string nome_dominio) {
 }
 
 //---------------------------------------------------------------------
-// Teste Unitário Matricula
-class TUMatricula : public TUDominios {
+// Teste Unitário  Classe
+class TUClasse : public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
-    Matricula *matricula;
+    Classe *classe;
 
     void setUp();
     void tearDown();
@@ -66,21 +66,6 @@ class TUCodigo : public TUDominios {
     const static string VALOR_INVALIDO;
 
     Codigo *codigo;
-
-    void setUp();
-    void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
-};
-
-//---------------------------------------------------------------------};
-// Teste Unitário Telefone
-class TUTelefone : public TUDominios {
-   private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO;
-
-    Telefone *telefone;
 
     void setUp();
     void tearDown();
@@ -104,28 +89,13 @@ class TUData : public TUDominios {
 };
 
 //---------------------------------------------------------------------
-// Teste Unitário Senha
-class TUSenha : public TUDominios {
+// Teste Unitário Matricula
+class TUMatricula : public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
-    Senha *senha;
-
-    void setUp();
-    void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
-};
-
-//---------------------------------------------------------------------
-// Teste Unitário  Texto
-class TUTexto : public TUDominios {
-   private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO;
-
-    Texto *texto;
+    Matricula *matricula;
 
     void setUp();
     void tearDown();
@@ -149,13 +119,43 @@ class TUResultado : public TUDominios {
 };
 
 //---------------------------------------------------------------------
-// Teste Unitário  Classe
-class TUClasse : public TUDominios {
+// Teste Unitário Senha
+class TUSenha : public TUDominios {
    private:
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
-    Classe *classe;
+    Senha *senha;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+};
+
+//---------------------------------------------------------------------};
+// Teste Unitário Telefone
+class TUTelefone : public TUDominios {
+   private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+
+    Telefone *telefone;
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+};
+
+//---------------------------------------------------------------------
+// Teste Unitário  Texto
+class TUTexto : public TUDominios {
+   private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+
+    Texto *texto;
 
     void setUp();
     void tearDown();
