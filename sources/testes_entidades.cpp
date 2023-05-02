@@ -25,7 +25,7 @@ void TUDesenvolvedor::testarCenarioSucesso() {
         estado = FALHA;
 
     Texto nome;
-    nome.setValor(TUDesenvolvedor::VALOR_VALIDO_NOME);
+    nome.setValor(VALOR_VALIDO_NOME);
     desenvolvedor->setNome(nome);
     if (desenvolvedor->getNome().getValor() != TUDesenvolvedor::VALOR_VALIDO_NOME)
         estado = FALHA;
@@ -91,16 +91,36 @@ void TUCasoDeTeste::testarCenarioSucesso() {
         estado = FALHA;
 }
 
-// TESTE DE TESTE
-// const string TUTeste::VALOR_VALIDO_CODIGO = "VSC021";
-// const string TUTeste::VALOR_VALIDO_NOME = "Alexandre2";
-// const string TUTeste::VALOR_VALIDO_CLASSE = "FUMACA";
+// TESTE de Teste
+const string TUTeste::VALOR_VALIDO_CODIGO = "VSC021";
+const string TUTeste::VALOR_VALIDO_NOME = "Alexandre2";
+const string TUTeste::VALOR_VALIDO_CLASSE = "FUMACA";
 
-// void TUTeste::setUp() {
-//     teste = new TUTeste();
-//     estado = SUCESSO;
-// }
+void TUTeste::setUp() {
+    teste = new Teste();
+     estado = SUCESSO;
+ }
 
-// void TUTeste::tearDown() {
-//     delete teste;
-// }
+void TUTeste::tearDown() {
+     delete teste;
+ }
+
+ void TUTeste::testarCenarioSucesso(){
+    Codigo codigo;
+    codigo.setValor(VALOR_VALIDO_CODIGO);
+    teste-> setCodigo(codigo);
+    if(teste->getCodigo().getValor()!= VALOR_VALIDO_CODIGO)
+        estado = FALHA;
+
+    Texto nome;
+    nome.setValor(VALOR_VALIDO_NOME);
+    teste->setNome(nome);
+    if(teste->getNome().getValor()!= VALOR_VALIDO_NOME)
+        estado = FALHA;
+
+    Classe classe;
+    classe.setValor(VALOR_VALIDO_CLASSE);
+    teste->setClasse(classe);
+    if(teste->getClasse().getValor()!= VALOR_VALIDO_CLASSE)
+        estado = FALHA;
+ }

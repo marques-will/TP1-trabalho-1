@@ -46,6 +46,9 @@ int main() {
     TUDesenvolvedor teste_desenvolvedor;
     teste_desenvolvedor.showResult(teste_desenvolvedor.run(), "Desenvolvedor");
 
+    TUTeste teste_teste;
+    teste_teste.showResult(teste_teste.run(), "Teste");
+
     TUCasoDeTeste teste_casodeteste;
     teste_casodeteste.showResult(teste_casodeteste.run(), "CasoDeTeste");
 
