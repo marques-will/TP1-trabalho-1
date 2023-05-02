@@ -51,7 +51,19 @@ class TUDesenvolvedor : public TUEntidades {
 };
 
 //---------------------------------------------------------------------
-// Teste Unitário CadoDeTeste
+// Teste Unitário Teste
+class TUTeste: public TUEntidades{
+    private:
+        const static string VALOR_VALIDO_CODIGO;
+        const static string VALOR_VALIDO_NOME;
+        const static string VALOR_VALIDO_CLASSE;
+        void setUp();
+        void tearDown();
+        void testarCenarioSucesso();
+        Teste *teste;
+};
+//---------------------------------------------------------------------
+// Teste Unitário CasoDeTeste
 
 class TUCasoDeTeste : public TUEntidades {
    private:

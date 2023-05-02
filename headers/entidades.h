@@ -164,21 +164,70 @@ inline Telefone Desenvolvedor::getTelefone() const {
 
 // ENTIDADE TESTE - 221006389
 //---------------------------------------------------------------------
+/**
+ * @brief Padrão para representação da classe Teste.
+ * 
+ * Herda no modo public da classe Entidade.
+ * 
+ */
 class Teste : public Entidade {
    private:
+   /**
+    * @brief Atributo que é instância da classe Codigo.
+    * 
+    */
     Codigo codigo;
+    /**
+     * @brief Atributo que é instância da classe Nome.
+     * 
+     */
     Texto nome;
+    /**
+     * @brief Atributo que é instância da classe Classe.
+     * 
+     */
     Classe classe;
 
    public:
+   /**
+    * @brief Método que armazena objeto da classe Codigo.
+    * 
+    */
     void setCodigo(const Codigo &);
+    /**
+     * @brief Método que retorna objeto da classe Codigo.
+     * 
+     * @return Codigo 
+     */
     Codigo getCodigo() const;
+    /**
+     * @brief Método que armazena objeto "nome" da classe Texto.
+     * 
+     */
     void setNome(const Texto &);
-    Codigo getNome() const;
-    void setlClasse(const Classe &);
-    Codigo getClasse() const;
+    /**
+     * @brief Método que retorna objeto "nome" da classe Texto.
+     * 
+     * @return Texto 
+     */
+    Texto getNome() const;
+    /**
+     * @brief Método que armazena objeto da classe Classe.
+     * 
+     */
+    void setClasse(const Classe &);
+    /**
+     * @brief Método que retorna objeto da classe Classe.
+     * 
+     * @return Classe 
+     */
+    Classe getClasse() const;
 };
-
+/**
+ * @brief Implementação de método inline para setCodigo.
+ * 
+ * @param codigo 
+ */
 inline void Teste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;
 }
@@ -242,23 +291,23 @@ class CasoDeTeste : public Entidade {
      */
     Data getData() const;
     /**
-     * @brief Método que armazena objeto acao da classe Texto.
+     * @brief Método que armazena objeto "acao" da classe Texto.
      *
      */
     void setAcao(const Texto &);
     /**
-     * @brief Retorna o objeto acao da calsse Texto.
+     * @brief Retorna o objeto "acao" da classe Texto.
      *
      * @return Texto.
      */
     Texto getAcao() const;
     /**
-     * @brief Método que armazena objeto resposta da classe Texto.
+     * @brief Método que armazena objeto "resposta" da classe Texto.
      *
      */
     void setResposta(const Texto &);
     /**
-     * @brief Método que retorna objeto resposta da classe Texto.
+     * @brief Método que retorna objeto "resposta" da classe Texto.
      *
      * @return Texto.
      */
