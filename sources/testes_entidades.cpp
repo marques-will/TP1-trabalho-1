@@ -2,7 +2,6 @@
 
 using namespace std;
 
-
 // TESTE DESENVOLVEDOR
 const string TUDesenvolvedor::VALOR_VALIDO_NOME = "joaozinho123";
 const string TUDesenvolvedor::VALOR_VALIDO_MATRICULA = "1234567";
@@ -43,8 +42,6 @@ void TUDesenvolvedor::testarCenarioSucesso() {
     if (desenvolvedor->getTelefone().getValor() != VALOR_VALIDO_TELEFONE)
         estado = FALHA;
 }
-
-
 
 // Teste CasoDeTeste
 const string TUCasoDeTeste::VALOR_VALIDO_NOME = "mariazinha1";
@@ -92,23 +89,18 @@ void TUCasoDeTeste::testarCenarioSucesso() {
     casodeteste->setResultado(resultado);
     if (casodeteste->getResultado().getValor() != VALOR_VALIDO_RESULTADO)
         estado = FALHA;
-    
-    
-//TESTE DE TESTE
-const string TUTeste::VALOR_VALIDO_CÓDIGO = "VSC021";
-const string TUTeste::VALOR_VALIDO_NOME = "Alexandre2";
-const string TUTeste::VALOR_VALIDO_CLASSE = "FUMACA";
- 
-    
-void TUTeste::setUp() {
-    desenvolvedor = new Desenvolvedor();
-    estado = SUCESSO;
 }
 
-void TUTeste::tearDown() {
-    delete desenvolvedor;
-}
+// TESTE DE TESTE
+// const string TUTeste::VALOR_VALIDO_CODIGO = "VSC021";
+// const string TUTeste::VALOR_VALIDO_NOME = "Alexandre2";
+// const string TUTeste::VALOR_VALIDO_CLASSE = "FUMACA";
 
-    
-    
-}
+// void TUTeste::setUp() {
+//     teste = new TUTeste();
+//     estado = SUCESSO;
+// }
+
+// void TUTeste::tearDown() {
+//     delete teste;
+// }
