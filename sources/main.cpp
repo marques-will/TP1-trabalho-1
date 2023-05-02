@@ -15,7 +15,6 @@
 using namespace std;
 
 int main() {
-    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
     setlocale(LC_ALL, "Portuguese");
 
     cout << "DOMINIOS" << endl;
