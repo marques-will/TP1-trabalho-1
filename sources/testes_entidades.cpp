@@ -17,7 +17,7 @@ void TUDesenvolvedor::tearDown() {
     delete desenvolvedor;
 }
 
-void TUDesenvolvedor::testarCenarioSucesso() {
+void TUDesenvolvedor::testarValorValido() {
     Matricula matricula;
     matricula.setValor(VALOR_VALIDO_MATRICULA);
     desenvolvedor->setMatricula(matricula);
@@ -63,7 +63,7 @@ void TUCasoDeTeste::tearDown() {
     delete casodeteste;
 }
 
-void TUCasoDeTeste::testarCenarioSucesso() {
+void TUCasoDeTeste::testarValorValido() {
     Texto nome;
     nome.setValor(VALOR_VALIDO_NOME);
     casodeteste->setNome(nome);
@@ -114,7 +114,7 @@ void TUTeste::tearDown() {
     delete teste;
 }
 
-void TUTeste::testarCenarioSucesso() {
+void TUTeste::testarValorValido() {
     Codigo codigo;
     codigo.setValor(VALOR_VALIDO_CODIGO);
     teste->setCodigo(codigo);

@@ -16,33 +16,33 @@ class TUDominios {
     const static string VALOR_INVALIDO;
 
    protected:
-    int estado;
+    bool estado;
 
     Dominios *dominios;
 
     virtual void setUp() = 0;
     virtual void tearDown() = 0;
-    virtual void testarCenarioSucesso() = 0;
-    virtual void testarCenarioFalha() = 0;
+    virtual void testarValorValido() = 0;
+    virtual void testarValorInvalido() = 0;
 
    public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
-    void showResult(int, string);
+    const static bool SUCESSO = true;
+    const static bool FALHA = false;
+    bool run();
+    void showResult(bool, string);
 };
 
-inline int TUDominios::run() {
+inline bool TUDominios::run() {
     setUp();
-    testarCenarioSucesso();
-    testarCenarioFalha();
+    testarValorValido();
+    testarValorInvalido();
     tearDown();
     return estado;
 }
 
-inline void TUDominios::showResult(int result, string nome_dominio) {
-    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
-    cout << setw(16) << left << setfill('.') << nome_dominio << resultado[result] << endl;
+inline void TUDominios::showResult(bool result, string nome_dominio) {
+    string resultado = result ? "\033[32mSUCESSO\033[0m" : "\033[31mFALHA\033[0m";
+    cout << setw(16) << left << setfill('.') << nome_dominio << resultado << endl;
 }
 
 //---------------------------------------------------------------------
@@ -56,8 +56,8 @@ class TUClasse : public TUDominios {
 
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
+    void testarValorValido();
+    void testarValorInvalido();
 };
 
 //---------------------------------------------------------------------
@@ -71,8 +71,8 @@ class TUCodigo : public TUDominios {
 
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
+    void testarValorValido();
+    void testarValorInvalido();
 };
 
 //---------------------------------------------------------------------
@@ -86,8 +86,8 @@ class TUData : public TUDominios {
 
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
+    void testarValorValido();
+    void testarValorInvalido();
 };
 
 //---------------------------------------------------------------------
@@ -101,8 +101,8 @@ class TUMatricula : public TUDominios {
 
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
+    void testarValorValido();
+    void testarValorInvalido();
 };
 
 //---------------------------------------------------------------------
@@ -116,8 +116,8 @@ class TUResultado : public TUDominios {
 
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
+    void testarValorValido();
+    void testarValorInvalido();
 };
 
 //---------------------------------------------------------------------
@@ -131,8 +131,8 @@ class TUSenha : public TUDominios {
 
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
+    void testarValorValido();
+    void testarValorInvalido();
 };
 
 //---------------------------------------------------------------------};
@@ -146,8 +146,8 @@ class TUTelefone : public TUDominios {
 
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
+    void testarValorValido();
+    void testarValorInvalido();
 };
 
 //---------------------------------------------------------------------
@@ -161,8 +161,8 @@ class TUTexto : public TUDominios {
 
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
-    void testarCenarioFalha();
+    void testarValorValido();
+    void testarValorInvalido();
 };
 
 #endif  // TESTES_DOMINIOS_H_INCLUDED

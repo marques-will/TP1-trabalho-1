@@ -11,28 +11,28 @@ class TUEntidades {
    private:
     virtual void setUp() = 0;
     virtual void tearDown() = 0;
-    virtual void testarCenarioSucesso() = 0;
+    virtual void testarValorValido() = 0;
 
    protected:
     int estado;
 
    public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
-    void showResult(int, string);
+    const static int SUCESSO = true;
+    const static int FALHA = false;
+    bool run();
+    void showResult(bool, string);
 };
 
-inline int TUEntidades::run() {
+inline bool TUEntidades::run() {
     setUp();
-    testarCenarioSucesso();
+    testarValorValido();
     tearDown();
     return estado;
 }
 
-inline void TUEntidades::showResult(int result, string nome_dominio) {
-    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
-    cout << setw(16) << left << setfill('.') << nome_dominio << resultado[result] << endl;
+inline void TUEntidades::showResult(bool result, string nome_dominio) {
+    string resultado = result ? "\033[32mSUCESSO\033[0m" : "\033[31mFALHA\033[0m";
+    cout << setw(16) << left << setfill('.') << nome_dominio << resultado << endl;
 }
 
 //---------------------------------------------------------------------
@@ -46,7 +46,7 @@ class TUDesenvolvedor : public TUEntidades {
     const static string VALOR_VALIDO_TELEFONE;
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
+    void testarValorValido();
     Desenvolvedor *desenvolvedor;
 };
 
@@ -59,7 +59,7 @@ class TUTeste : public TUEntidades {
     const static string VALOR_VALIDO_CLASSE;
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
+    void testarValorValido();
     Teste *teste;
 };
 //---------------------------------------------------------------------
@@ -74,7 +74,7 @@ class TUCasoDeTeste : public TUEntidades {
     const static string VALOR_VALIDO_RESULTADO;
     void setUp();
     void tearDown();
-    void testarCenarioSucesso();
+    void testarValorValido();
     CasoDeTeste *casodeteste;
 };
 #endif  // TESTES_ENTIDADES_H_INCLUDED

@@ -17,7 +17,7 @@ void TUClasse::tearDown() {
     delete classe;
 }
 
-void TUClasse::testarCenarioSucesso() {
+void TUClasse::testarValorValido() {
     try {
         classe->setValor(VALOR_VALIDO);
         if (classe->getValor() != VALOR_VALIDO) {
@@ -28,7 +28,7 @@ void TUClasse::testarCenarioSucesso() {
     }
 }
 
-void TUClasse::testarCenarioFalha() {
+void TUClasse::testarValorInvalido() {
     try {
         classe->setValor(VALOR_INVALIDO);
         estado = FALHA;
@@ -53,7 +53,7 @@ void TUCodigo::tearDown() {
     delete codigo;
 }
 
-void TUCodigo::testarCenarioSucesso() {
+void TUCodigo::testarValorValido() {
     try {
         codigo->setValor(VALOR_VALIDO);
         if (codigo->getValor() != VALOR_VALIDO) {
@@ -64,7 +64,7 @@ void TUCodigo::testarCenarioSucesso() {
     }
 }
 
-void TUCodigo::testarCenarioFalha() {
+void TUCodigo::testarValorInvalido() {
     try {
         codigo->setValor(VALOR_INVALIDO);
         estado = FALHA;
@@ -90,7 +90,7 @@ void TUData::tearDown() {
     delete data;
 }
 
-void TUData::testarCenarioSucesso() {
+void TUData::testarValorValido() {
     try {
         data->setValor(VALOR_VALIDO);
         if (data->getValor() != VALOR_VALIDO) {
@@ -101,7 +101,7 @@ void TUData::testarCenarioSucesso() {
     }
 }
 
-void TUData::testarCenarioFalha() {
+void TUData::testarValorInvalido() {
     try {
         data->setValor(VALOR_INVALIDO);
         estado = FALHA;
@@ -127,7 +127,7 @@ void TUMatricula::tearDown() {
     delete matricula;
 }
 
-void TUMatricula::testarCenarioSucesso() {
+void TUMatricula::testarValorValido() {
     try {
         matricula->setValor(VALOR_VALIDO);
         if (matricula->getValor() != VALOR_VALIDO) {
@@ -138,7 +138,7 @@ void TUMatricula::testarCenarioSucesso() {
     }
 }
 
-void TUMatricula::testarCenarioFalha() {
+void TUMatricula::testarValorInvalido() {
     try {
         matricula->setValor(VALOR_INVALIDO);
         estado = FALHA;
@@ -164,7 +164,7 @@ void TUResultado::tearDown() {
     delete resultado;
 }
 
-void TUResultado::testarCenarioSucesso() {
+void TUResultado::testarValorValido() {
     try {
         resultado->setValor(VALOR_VALIDO);
         if (resultado->getValor() != VALOR_VALIDO) {
@@ -175,7 +175,7 @@ void TUResultado::testarCenarioSucesso() {
     }
 }
 
-void TUResultado::testarCenarioFalha() {
+void TUResultado::testarValorInvalido() {
     try {
         resultado->setValor(VALOR_INVALIDO);
         estado = FALHA;
@@ -201,7 +201,7 @@ void TUSenha::tearDown() {
     delete senha;
 }
 
-void TUSenha::testarCenarioSucesso() {
+void TUSenha::testarValorValido() {
     try {
         senha->setValor(VALOR_VALIDO);
         if (senha->getValor() != VALOR_VALIDO) {
@@ -212,7 +212,7 @@ void TUSenha::testarCenarioSucesso() {
     }
 }
 
-void TUSenha::testarCenarioFalha() {
+void TUSenha::testarValorInvalido() {
     try {
         senha->setValor(VALOR_INVALIDO);
         estado = FALHA;
@@ -238,7 +238,7 @@ void TUTelefone::tearDown() {
     delete telefone;
 }
 
-void TUTelefone::testarCenarioSucesso() {
+void TUTelefone::testarValorValido() {
     try {
         telefone->setValor(VALOR_VALIDO);
         if (telefone->getValor() != VALOR_VALIDO) {
@@ -249,7 +249,7 @@ void TUTelefone::testarCenarioSucesso() {
     }
 }
 
-void TUTelefone::testarCenarioFalha() {
+void TUTelefone::testarValorInvalido() {
     try {
         telefone->setValor(VALOR_INVALIDO);
         estado = FALHA;
@@ -275,7 +275,7 @@ void TUTexto::tearDown() {
     delete texto;
 }
 
-void TUTexto::testarCenarioSucesso() {
+void TUTexto::testarValorValido() {
     try {
         texto->setValor(VALOR_VALIDO);
         if (texto->getValor() != VALOR_VALIDO) {
@@ -286,7 +286,7 @@ void TUTexto::testarCenarioSucesso() {
     }
 }
 
-void TUTexto::testarCenarioFalha() {
+void TUTexto::testarValorInvalido() {
     try {
         texto->setValor(VALOR_INVALIDO);
         estado = FALHA;
