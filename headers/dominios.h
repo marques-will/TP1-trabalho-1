@@ -20,23 +20,9 @@ using namespace std;
  */
 class Dominios {
    private:
-    /**
-     * @brief Valor do domínio.
-     *
-     * Atributo privado do tipo string que armazena o valor do domínio,
-     */
     string valor;
 
    protected:
-    /**
-     * @brief Método para validação do valor a ser definido para o domínio.
-     *
-     * Este é um método abstrato puro que deve ser implementado pelas classes derivadas seguindo-se as regras de formato específicas do domínio.
-     *
-     * @param valor Valor a ser validado.
-     *
-     * @throw invalid_argument Caso o valor informado seja inválido.
-     */
     virtual void validar(const string&) = 0;
 
    public:
@@ -100,21 +86,7 @@ inline string Dominios::getValor() const {
  */
 class Classe : public Dominios {
    private:
-    /**
-     * @brief Atributo do tipo string armazenado na classe.
-     *
-     */
     string classe;
-    /**
-     * @brief Método para validação do valor de classe.
-     *
-     * Validações executadas:
-     * -Verifica se classe é um dos formatos válidos.
-     *
-     * @param classe
-     *
-     * @throw invalid_argument se o formato for inválido.
-     */
     void validar(const string&);
 };
 
@@ -136,24 +108,7 @@ class Classe : public Dominios {
 
 class Codigo : public Dominios {
    private:
-    /**
-     * @brief Atributo do tipo string armazenado na classe.
-     *
-     */
     string codigo;
-
-    /**
-     * @brief Método que verifica se o parâmetro é válido para a classe ou não.
-     *
-     * Validações executadas:
-     * -Verificar se o parâmetro é uma string de 6 caracteres.
-     * -Verificar se os 3 primeiros caracteres são letras.
-     * -Verififcar se os 3 últimos caracteres são dígitos.
-     *
-     * @param codigo
-     *
-     * @throw invalid_argument se o parâmetro for inválido.
-     */
     void validar(const string&);
 };
 
@@ -173,37 +128,8 @@ class Codigo : public Dominios {
  */
 class Data : public Dominios {
    private:
-    /**
-     * @brief Valor da data.
-     *
-     * Atributo privado que armazena o valor de uma data válida  (vide método validar).
-     */
     string data;
-
-    /**
-     * @brief Extrai dia, mês e ano da string de data informada.
-     *
-     * Método privado utilizado na validação para extrair os valores da string de data no formato DD/MMM/AAAA.
-     *
-     * @param data Valor de data cujo valores serão extraídos.
-     *
-     * @return Vetor que contém as strings correspondentes ao dia, à sigla do mês e ao ano, respectivamente.
-     */
     vector<string> extrair_data(const string& data);
-
-    /**
-     * @brief Método para validação do valor de uma data.
-     *
-     * Validações executadas:
-     * - Verificar se data segue formato DD/MMM/AAAA;
-     * - Verificar se Dia (DD) é inteiro de 1 a 31 e é válido, considerando-se ano bissexto.;
-     * - Verificar se Mês (MMM) é sigla válida (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ;
-     * - Verificar se Ano (AAAA) é inteiro de 2000 a 2999;
-     *
-     * @param data Valor de data a ser validado.
-     *
-     * @throw invalid_argument Caso valor de data possua formato inválido.
-     */
     void validar(const string&);
 };
 
@@ -259,21 +185,7 @@ class Matricula : public Dominios {
  */
 class Resultado : public Dominios {
    private:
-    /**
-     * @brief Atributo do tipo string armazenado na classe.
-     *
-     */
     string resultado;
-    /**
-     * @brief Método para validação do valor de um resultado.
-     *
-     * Validações executadas:
-     * -Verifica se o parâmetro é 'APROVADO' ou 'REPROVADO'.
-     *
-     * @param resultado
-     *
-     * @throw invalid_argument se o resultado for inválido.
-     */
     void validar(const string&);
 };
 
@@ -293,25 +205,7 @@ class Resultado : public Dominios {
  */
 class Senha : public Dominios {
    private:
-    /**
-     * @brief Valor da senha.
-     *
-     * Atributo privado que armazena o valor de uma senha válida (vide método validar).
-     */
     string senha;
-
-    /**
-     * @brief Método para validação do valor de uma senha.
-     *
-     * Validações executadas:
-     * - Senha possui 6 caracteres;
-     * - Caracteres válidos são letras (A - Z, a - z), dígitos (0 - 9), @ , #, $ , % ou &;
-     * - Não deve haver repetição de caracteres válidos.
-     *
-     * @param senha Valor de senha a ser validado.
-     *
-     * @throw Caso valor de senha possua formato inválido.
-     */
     void validar(const string&);
 };
 
@@ -336,23 +230,7 @@ class Senha : public Dominios {
  */
 class Telefone : public Dominios {
    private:
-    /**
-     * @brief Atributo do tipo string armazenado na classe.
-     *
-     */
-
     string telefone;
-    /**
-     * @brief Método que verifica se o parâmetro é válido ou não para ser um objeto da classe.
-     *
-     * Validações executadas:
-     * -'+' está na posição telefone[0].
-     * -Todas as posições, com exceção de telefone[0], devem ser dígitos.
-     * - O telefone deve conter de 7 a 15 dígitos.
-     * @param telefone.
-     *
-     * @throw caso o parâmetro telefone seja inválido.
-     */
     void validar(const string&);
 };
 
@@ -373,27 +251,7 @@ class Telefone : public Dominios {
  */
 class Texto : public Dominios {
    private:
-    /**
-     * @brief Valor do texto.
-     *
-     * Atributo privado que armazena o valor de um texto válido (vide métdo validar).
-     */
     string texto;
-
-    /**
-     * @brief Método para validação do valor de um texto.
-     *
-     * Validações executadas:
-     * - String de texto contém de 10 a 20 caracteres;
-     * - Cada caractere X é letra (A - Z, a - z), dígito (0-9), sinal de pontuação ( . , ; ? ! : - ), @ , #, $ , % ou &;
-     * - Não há acentuação;
-     * - Não há espaços em brancos consecutivos.
-     *
-     * @param texto Valor de texto a ser validado.
-     *
-     * @throw invalid_argument Caso valor de texto possua formato inválido.
-     *
-     */
     void validar(const string&);
 };
 

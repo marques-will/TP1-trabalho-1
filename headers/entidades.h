@@ -14,10 +14,6 @@
  */
 class Entidade {
    private:
-    /**
-     * @brief Atributo da classe Texto armazenado na classe.
-     *
-     */
     Texto nome;
 
    public:
@@ -63,22 +59,8 @@ inline Texto Entidade::getNome() const {
  */
 class Desenvolvedor : public Entidade {
    private:
-    /**
-     * @brief Atributo que é instância da classe Matricula.
-     *
-     */
     Matricula matricula;
-
-    /**
-     * @brief Atributo que é instância da classe Senha.
-     *
-     */
     Senha senha;
-
-    /**
-     * @brief Atributo que é instância da classe Telefone.
-     *
-     */
     Telefone telefone;
 
    public:
@@ -186,17 +168,7 @@ inline Telefone Desenvolvedor::getTelefone() const {
  */
 class Teste : public Entidade {
    private:
-    /**
-     * @brief Atributo que é instância da classe Codigo.
-     *
-     */
     Codigo codigo;
-
-
-    /**
-     * @brief Atributo que é instância da classe Classe.
-     *
-     */
     Classe classe;
 
    public:
@@ -218,7 +190,7 @@ class Teste : public Entidade {
      *
      */
     void setClasse(const Classe &);
-    
+
     /**
      * @brief Método que retorna objeto da classe Classe.
      *
