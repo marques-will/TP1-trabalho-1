@@ -17,22 +17,22 @@ class TUEntidades {
     int estado;
 
    public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
-    void showResult(int, string);
+    const static int SUCESSO = true;
+    const static int FALHA = false;
+    bool run();
+    void showResult(bool, string);
 };
 
-inline int TUEntidades::run() {
+inline bool TUEntidades::run() {
     setUp();
     testarCenarioSucesso();
     tearDown();
     return estado;
 }
 
-inline void TUEntidades::showResult(int result, string nome_dominio) {
-    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
-    cout << setw(16) << left << setfill('.') << nome_dominio << resultado[result] << endl;
+inline void TUEntidades::showResult(bool result, string nome_dominio) {
+    string resultado = result ? "\033[32mSUCESSO\033[0m" : "\033[31mFALHA\033[0m";
+    cout << setw(16) << left << setfill('.') << nome_dominio << resultado << endl;
 }
 
 //---------------------------------------------------------------------

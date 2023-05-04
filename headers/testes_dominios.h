@@ -16,7 +16,7 @@ class TUDominios {
     const static string VALOR_INVALIDO;
 
    protected:
-    int estado;
+    bool estado;
 
     Dominios *dominios;
 
@@ -26,13 +26,13 @@ class TUDominios {
     virtual void testarCenarioFalha() = 0;
 
    public:
-    const static int SUCESSO = 0;
-    const static int FALHA = 1;
-    int run();
-    void showResult(int, string);
+    const static bool SUCESSO = true;
+    const static bool FALHA = false;
+    bool run();
+    void showResult(bool, string);
 };
 
-inline int TUDominios::run() {
+inline bool TUDominios::run() {
     setUp();
     testarCenarioSucesso();
     testarCenarioFalha();
@@ -40,9 +40,9 @@ inline int TUDominios::run() {
     return estado;
 }
 
-inline void TUDominios::showResult(int result, string nome_dominio) {
-    string resultado[] = {"\033[32mSUCESSO\033[0m", "\033[31mFALHA\033[0m"};
-    cout << setw(16) << left << setfill('.') << nome_dominio << resultado[result] << endl;
+inline void TUDominios::showResult(bool result, string nome_dominio) {
+    string resultado = result ? "\033[32mSUCESSO\033[0m" : "\033[31mFALHA\033[0m";
+    cout << setw(16) << left << setfill('.') << nome_dominio << resultado << endl;
 }
 
 //---------------------------------------------------------------------
