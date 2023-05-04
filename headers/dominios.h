@@ -47,20 +47,12 @@ class Dominios {
     string getValor() const;
 };
 
-/**
- * @brief Implementação de método inline para setValor.
- *
- * @param valor
- */
+
 inline void Dominios::setValor(string valor) {
     validar(valor);
     this->valor = valor;
 }
-/**
- * @brief Implementação de método inline para getValor.
- *
- * @return string
- */
+
 inline string Dominios::getValor() const {
     return valor;
 }

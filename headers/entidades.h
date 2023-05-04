@@ -32,20 +32,12 @@ class Entidade {
     Texto getNome() const;
 };
 
-/**
- * @brief Implementação de Método inline para setNome.
- *
- * @param nome
- */
+
 inline void Entidade::setNome(const Texto &nome) {
     this->nome = nome;
 }
 
-/**
- * @brief Implementação de Método inline para getNome.
- *
- * @return nome
- */
+
 inline Texto Entidade::getNome() const {
     return nome;
 }
@@ -198,11 +190,7 @@ class Teste : public Entidade {
      */
     Classe getClasse() const;
 };
-/**
- * @brief Implementação de método inline para setCodigo.
- *
- * @param codigo
- */
+
 inline void Teste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;
 }
@@ -211,11 +199,7 @@ inline Codigo Teste::getCodigo() const {
     return codigo;
 }
 
-/**
- * @brief Implementação de método inline para setClasse.
- *
- * @param classe
- */
+
 inline void Teste::setClasse(const Classe &classe) {
     this->classe = classe;
 }
@@ -329,92 +313,52 @@ class CasoDeTeste : public Entidade {
     Resultado getResultado() const;
 };
 
-/**
- * @brief Implementação de Método inline para setCodigo.
- *
- * @param codigo.
- */
+
 inline void CasoDeTeste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;
 }
 
-/**
- * @brief Implementação de Método inline para getCodigo.
- *
- * @return Codigo.
- */
+
 inline Codigo CasoDeTeste::getCodigo() const {
     return codigo;
 }
 
-/**
- * @brief Implementação de Método inline para setData.
- *
- * @param data
- */
+
 inline void CasoDeTeste::setData(const Data &data) {
     this->data = data;
 }
 
-/**
- * @brief Implementação de Método inline para getData.
- *
- * @return Data.
- */
+
 inline Data CasoDeTeste::getData() const {
     return data;
 }
 
-/**
- * @brief Implementação de Método inline para setAcao.
- *
- * @param acao.
- */
+
 inline void CasoDeTeste::setAcao(const Texto &acao) {
     this->acao = acao;
 }
 
-/**
- * @brief Implementação de Método inline para getAcao.
- *
- * @return acao.
- */
+
 inline Texto CasoDeTeste::getAcao() const {
     return acao;
 }
 
-/**
- * @brief Implementação de Método inline para setResposta.
- *
- * @param resposta.
- */
+
 inline void CasoDeTeste::setResposta(const Texto &resposta) {
     this->resposta = resposta;
 }
 
-/**
- * @brief Implementação de Método inline para getResposta.
- *
- * @return resposta.
- */
+
 inline Texto CasoDeTeste::getResposta() const {
     return resposta;
 }
 
-/**
- * @brief Implementação de Método inline para setResultado.
- *
- * @param resultado.
- */
+
 inline void CasoDeTeste::setResultado(const Resultado &resultado) {
     this->resultado = resultado;
 }
 
-/**
- * @brief Implementação de Método inline para getResultado.
- *
- * @return Resultado.
- */
+
 inline Resultado CasoDeTeste::getResultado() const {
     return resultado;
 }
