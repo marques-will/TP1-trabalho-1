@@ -129,7 +129,7 @@ class Codigo : public Dominios {
 class Data : public Dominios {
    private:
     string data;
-    vector<string> extrair_data(const string& data);
+    vector<string> extrairData(const string& data);
     void validar(const string&);
 };
 

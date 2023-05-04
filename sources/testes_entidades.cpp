@@ -21,26 +21,30 @@ void TUDesenvolvedor::testarCenarioSucesso() {
     Matricula matricula;
     matricula.setValor(VALOR_VALIDO_MATRICULA);
     desenvolvedor->setMatricula(matricula);
-    if (desenvolvedor->getMatricula().getValor() != VALOR_VALIDO_MATRICULA)
+    if (desenvolvedor->getMatricula().getValor() != VALOR_VALIDO_MATRICULA) {
         estado = FALHA;
+    }
 
     Texto nome;
     nome.setValor(VALOR_VALIDO_NOME);
     desenvolvedor->setNome(nome);
-    if (desenvolvedor->getNome().getValor() != TUDesenvolvedor::VALOR_VALIDO_NOME)
+    if (desenvolvedor->getNome().getValor() != TUDesenvolvedor::VALOR_VALIDO_NOME) {
         estado = FALHA;
+    }
 
     Senha senha;
     senha.setValor(VALOR_VALIDO_SENHA);
     desenvolvedor->setSenha(senha);
-    if (desenvolvedor->getSenha().getValor() != VALOR_VALIDO_SENHA)
+    if (desenvolvedor->getSenha().getValor() != VALOR_VALIDO_SENHA) {
         estado = FALHA;
+    }
 
     Telefone telefone;
     telefone.setValor(VALOR_VALIDO_TELEFONE);
     desenvolvedor->setTelefone(telefone);
-    if (desenvolvedor->getTelefone().getValor() != VALOR_VALIDO_TELEFONE)
+    if (desenvolvedor->getTelefone().getValor() != VALOR_VALIDO_TELEFONE) {
         estado = FALHA;
+    }
 }
 
 // Teste CasoDeTeste
@@ -63,32 +67,37 @@ void TUCasoDeTeste::testarCenarioSucesso() {
     Texto nome;
     nome.setValor(VALOR_VALIDO_NOME);
     casodeteste->setNome(nome);
-    if (casodeteste->getNome().getValor() != VALOR_VALIDO_NOME)
+    if (casodeteste->getNome().getValor() != VALOR_VALIDO_NOME) {
         estado = FALHA;
+    }
 
     Data data;
     data.setValor(VALOR_VALIDO_DATA);
     casodeteste->setData(data);
-    if (casodeteste->getData().getValor() != VALOR_VALIDO_DATA)
+    if (casodeteste->getData().getValor() != VALOR_VALIDO_DATA) {
         estado = FALHA;
+    }
 
     Texto acao;
     acao.setValor(VALOR_VALIDO_ACAO);
     casodeteste->setAcao(acao);
-    if (casodeteste->getAcao().getValor() != VALOR_VALIDO_ACAO)
+    if (casodeteste->getAcao().getValor() != VALOR_VALIDO_ACAO) {
         estado = FALHA;
+    }
 
     Texto resposta;
     resposta.setValor(VALOR_VALIDO_RESPOSTA);
     casodeteste->setResposta(resposta);
-    if (casodeteste->getResposta().getValor() != VALOR_VALIDO_RESPOSTA)
+    if (casodeteste->getResposta().getValor() != VALOR_VALIDO_RESPOSTA) {
         estado = FALHA;
+    }
 
     Resultado resultado;
     resultado.setValor(VALOR_VALIDO_RESULTADO);
     casodeteste->setResultado(resultado);
-    if (casodeteste->getResultado().getValor() != VALOR_VALIDO_RESULTADO)
+    if (casodeteste->getResultado().getValor() != VALOR_VALIDO_RESULTADO) {
         estado = FALHA;
+    }
 }
 
 // Teste de Teste
@@ -109,18 +118,21 @@ void TUTeste::testarCenarioSucesso() {
     Codigo codigo;
     codigo.setValor(VALOR_VALIDO_CODIGO);
     teste->setCodigo(codigo);
-    if (teste->getCodigo().getValor() != VALOR_VALIDO_CODIGO)
+    if (teste->getCodigo().getValor() != VALOR_VALIDO_CODIGO) {
         estado = FALHA;
+    }
 
     Texto nome;
     nome.setValor(VALOR_VALIDO_NOME);
     teste->setNome(nome);
-    if (teste->getNome().getValor() != VALOR_VALIDO_NOME)
+    if (teste->getNome().getValor() != VALOR_VALIDO_NOME) {
         estado = FALHA;
+    }
 
     Classe classe;
     classe.setValor(VALOR_VALIDO_CLASSE);
     teste->setClasse(classe);
-    if (teste->getClasse().getValor() != VALOR_VALIDO_CLASSE)
+    if (teste->getClasse().getValor() != VALOR_VALIDO_CLASSE) {
         estado = FALHA;
+    }
 }
