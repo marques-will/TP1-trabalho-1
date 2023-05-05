@@ -10,13 +10,22 @@ using namespace std;
 // CLASSE DOMINIOS
 
 /**
- * @brief Classe abstrata que representa um domínio genérico.
-
- * Essa classe é usada como padrão para representar um domínio genérico.
-
- As classes derivadas devem implementar o método de validação de acordo com as regras de formato específicas do domínio.
+ * @brief  Padrão de representação para a superclasse Dominios.
+ * 
+ * Essa classe é usada para representar um domínio genérico.
+ * 
+ * Superclasse é uma classe que servirá de forma a servir de herança para os métodos e atributos das classes derivadas.
  *
- *  Implementado por: 221020940.
+ *As classes derivadas devem implementar o método de validação de acordo com suas respectivas regras de formato.
+ *
+ * As classes derivadas desta biblioteca herdarão no modo public, ou seja: 
+ * -Os atributos e métodos públicos serão herdados normalmente pelas classes derivadas.
+ * -Os atributos e métodos privados só serão herdados se declarados nas classes derivadas.
+ * -Métodos ou atributos protected serão herdados no modo public permanecem protected.
+ * 
+ * Os métodos das classes derivadas devem tratar do armazenamento, retorno e validação de seus atributos.
+ *  
+ *  Implementado por 221020940.
  */
 class Dominios {
    private:
@@ -60,12 +69,14 @@ inline string Dominios::getValor() const {
 //---------------------------------------------------------------------
 // DOMINIO CLASSE
 /**
- * @brief Padrão para representação da classe Classe;
- *
- * Herda no modo public a classe Dominios.
+ * @brief Padrão de representação para a classe Classe.
+ * 
+ * Herda métodos e atributos no modo public da classe Dominios.
+ * 
+ * Classe que representa 6 palavras - strings - pré-definidas.
  *
  * Regras de formato:
- * Strings com seis formatos possíveis.
+ * -Strings com seis formatos possíveis.
  * - 1ª opção: UNIDADE.
  * - 2ª opção: INTEGRACAO.
  * - 3ª opção: FUMACA.
@@ -86,16 +97,18 @@ class Classe : public Dominios {
 // DOMINIO CODIGO
 
 /**
- * @brief Padrão para representação da classe Codigo.
- *
- * Herda no modo public a classe Dominios.
+ * @brief Padrão de representação da classe Codigo.
+ * 
+ * Herda métodos e atributos no modo public da classe Dominios.
+ * 
+ * Classe que representa um codigo padronizado.
  *
  * Regras de formato:
  * - Strings de 6 caracteres.
  * - Os 3 primeiros caracteres são letras (maiúsculas ou minúsculas).
  * - Os 3 últimos caracteres são dígitos (de 0 a 9).
  *
- * Por 221006351
+ * Implementado por 221006351.
  */
 
 class Codigo : public Dominios {
@@ -108,15 +121,19 @@ class Codigo : public Dominios {
 // DOMINIO DATA
 
 /**
- * @brief Classe que representa uma data padronizada.
+ * @brief Padrão de representação para a classe Data.
  *
- * Padrão para representação de uma data:
+ * Herda métodos e atributos no modo public da classe Dominios.
+ *  
+ * Classe que representa uma data padronizada.
+ * 
+ * Regras de formato:
  * - Formato: DD/MMM/AAAA.
  * - DD é um valor inteiro entre 1 e 31 (depende do mês e do ano).
  * - MMM é uma string correspondente à sigla do mês (JAN, FEV, MAR, ABR, MAI, JUN, JUL, AGO, SET, OUT, NOV, DEZ).
  * - AAAA é um valor inteiro entre 2000 e 2999 correspondente ao ano.
  *
- * Implementado por: 221020940.
+ * Implementado por 221020940.
  */
 class Data : public Dominios {
    private:
@@ -129,15 +146,19 @@ class Data : public Dominios {
 // DOMINIO MATRICULA
 
 /**
- * @brief Padrão para representação para a classe Matricula.
- *
- * Herda no modo public da Classe Dominios.
+ * @brief Padrão de representação para a classe Matricula.
+ * 
+ * Herda métodos e atributos no modo public da classe Dominios.
+ * 
+ * Classe que representa uma matricula seguindo uma série de regras.
  *
  * Regras de formato:
  * - Strings de 7 caracteres.
  * - Os caracteres são números inteiros de 0 a 9
  * - O último dígito da string é o dígito verificador de módulo 10.
  * - O dígito verificador define se a string é válida ou não.
+ * 
+ * Implementado por 221006351.
  */
 class Matricula : public Dominios {
    private:
@@ -166,7 +187,9 @@ class Matricula : public Dominios {
 /**
  * @brief Padrão de representação para a classe Resultado.
  *
- * Herda no modo public a classe Dominios.
+ * Herda métodos e atributos no modo public da classe Dominios.
+ *  
+ * Classe que representa um resultado "APROVADO" ou um resultado "REPROVADO".
  *
  * Regras de formato:
  * -String com dois formatos possíveis.
@@ -185,9 +208,11 @@ class Resultado : public Dominios {
 // DOMINIO SENHA
 
 /**
- * @brief Padrão de representação para a classe.
+ * @brief Padrão de representação para a classe Senha.
  *
- * Classe derivada da classe abstrata Dominios usada para representar uma senha de formato válido.
+ * Herda métodos e atributos no modo public da classe Dominios.
+ * 
+ * Classe usada para representar uma senha de formato válido.
  *
  * Regras de formato:
  * - Formato: XXXXX.
@@ -205,12 +230,13 @@ class Senha : public Dominios {
 // DOMINIO TELEFONE
 
 /**
- * @brief Padrão para representação da Classe Telefone.
- *
- * Herda no modo public da Classe Dominios.
+ * @brief Padrão de representação da Classe Telefone.
+ * 
+ * Herda métodos e atributos no modo public da classe Dominios.
+ * 
+ * Classe que representa um número de telefone.
  *
  * Regras de formato:
- *
  * - Valor do telefone deve possui de 8 a 16 caracteres;
  * - O primeiro caractere sempre é "+";
  * - Os demais caracteres são dígitos;
@@ -230,7 +256,11 @@ class Telefone : public Dominios {
 // DOMINIO TEXTO
 
 /**
- * @brief Classe que representa texto padronizado.
+ * @brief Padrão de representação para a classe Texto.
+ * 
+ * Herda métodos e atributos no modo public da classe Dominios.
+ * 
+ * Classe que representa um texto padronizado.
  *
  * Padrão de representação de um texto:
  * - Possuem de 10 a 20 caracteres;

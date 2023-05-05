@@ -9,8 +9,19 @@
  * @brief Padrão de representação para a superclasse Entidade.
  *
  * Essa classe é usada como padrão para representar uma entidade genérica.
+ * 
+ * Superclasse é uma classe que servirá de forma a servir de herança para os métodos e atributos das classes derivadas.
  *
- *  As classes derivadas devem implementar o método de validação de acordo com suas respectivas regras de formato.
+ *As classes derivadas devem implementar o método de validação de acordo com suas respectivas regras de formato.
+ *
+ * As classes derivadas desta biblioteca herdarão no modo public, ou seja: 
+ * -Os atributos e métodos públicos serão herdados normalmente pelas classes derivadas.
+ * -Os atributos e métodos privados só serão herdados se declarados nas classes derivadas.
+ * -Métodos ou atributos protected serão herdados no modo public permanecem protected.
+ * 
+ * Os métodos das classes derivadas devem tratar do armazenamento e retorno de seus atributos.
+ * 
+ * Implementado por 221006351.
  */
 class Entidade {
    private:
@@ -46,8 +57,17 @@ inline Texto Entidade::getNome() const {
 // ENTIDADE DESENVOLVEDOR - 221006351
 /**
  * @brief Padrão de representação para a classe Desenvolvedor.
- *
- * Herda no modo public da classe Entidade.
+ * 
+ * Herda métodos e atributos no modo public da classe Entidade.
+ * 
+ * Classe que representa um desenvolvedor, que possui como atributos:
+ * -Uma matrícula.
+ * -Uma senha.
+ * -Um telefone.
+ * 
+ * Tais atributos são objetos de classes definidas em domínios.
+ * 
+ * Implementado por 221006351.
  */
 class Desenvolvedor : public Entidade {
    private:
@@ -96,56 +116,26 @@ class Desenvolvedor : public Entidade {
     Telefone getTelefone() const;
 };
 
-/**
- * @brief Implementação de Método inline para setMatricula.
- *
- * @param matricula
- */
 inline void Desenvolvedor::setMatricula(const Matricula &matricula) {
     this->matricula = matricula;
 }
 
-/**
- * @brief Implementação de Método inline para getMatricula.
- *
- * @return Matricula
- */
 inline Matricula Desenvolvedor::getMatricula() const {
     return matricula;
 }
 
-/**
- * @brief Implementação de Método inline para setSenha.
- *
- * @param senha
- */
 inline void Desenvolvedor::setSenha(const Senha &senha) {
     this->senha = senha;
 }
 
-/**
- * @brief Implementação de Método inline para getSenha.
- *
- * @return Senha
- */
 inline Senha Desenvolvedor::getSenha() const {
     return senha;
 }
 
-/**
- * @brief Implementação de Método inline para setTelefone.
- *
- * @param telefone
- */
 inline void Desenvolvedor::setTelefone(const Telefone &telefone) {
     this->telefone = telefone;
 }
 
-/**
- * @brief Implementação de Método inline para getTelefone.
- *
- * @return Telefone
- */
 inline Telefone Desenvolvedor::getTelefone() const {
     return telefone;
 }
@@ -153,14 +143,29 @@ inline Telefone Desenvolvedor::getTelefone() const {
 //---------------------------------------------------------------------
 // ENTIDADE TESTE - 221006389
 /**
- * @brief Padrão para representação da classe Teste.
- *
- * Herda no modo public da classe Entidade.
- *
+ * @brief Padrão de representação para a classe Teste.
+ * 
+ * Herda métodos e atributos no modo public da classe Entidade.
+ * 
+ * Classe que representa um teste, que possui como atributos:
+ * -Um codigo.
+ * -Uma classe.
+ * 
+ * Tais atributos são objetos de classes definidas em domínios.
+ * 
+ * Implementado por 221006389.
  */
 class Teste : public Entidade {
    private:
+   /**
+    * @brief Atributo que é instância da classe Codigo.
+    * 
+    */
     Codigo codigo;
+    /**
+     * @brief Atributo que é instância de Classe.
+     * 
+     */
     Classe classe;
 
    public:
@@ -199,7 +204,6 @@ inline Codigo Teste::getCodigo() const {
     return codigo;
 }
 
-
 inline void Teste::setClasse(const Classe &classe) {
     this->classe = classe;
 }
@@ -210,8 +214,20 @@ inline Classe Teste::getClasse() const {
 //---------------------------------------------------------------------
 // ENTIDADE CASO DE TESTE
 /**
- * @brief Padrão para representação da classe CasoDeTeste.
- * Herda no modo public da classe Entidade.
+ * @brief Padrão de representação para a classe CasoDeTeste.
+ * 
+ * Herda métodos e atributos no modo public da classe Entidade.
+ * 
+ * Classe que representa um caso de teste, que possui como atributos:
+ * -Um código.
+ * -Uma data.
+ * -Uma ação.
+ * -Uma resposta.
+ * -Um resultado.
+ * 
+ * Tais atributos são objetos de classes definidas em domínios.
+ * 
+ * Implementado por 221006351.
  *
  */
 class CasoDeTeste : public Entidade {
@@ -313,26 +329,21 @@ class CasoDeTeste : public Entidade {
     Resultado getResultado() const;
 };
 
-
 inline void CasoDeTeste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;
 }
-
 
 inline Codigo CasoDeTeste::getCodigo() const {
     return codigo;
 }
 
-
 inline void CasoDeTeste::setData(const Data &data) {
     this->data = data;
 }
 
-
 inline Data CasoDeTeste::getData() const {
     return data;
 }
-
 
 inline void CasoDeTeste::setAcao(const Texto &acao) {
     this->acao = acao;
@@ -353,11 +364,9 @@ inline Texto CasoDeTeste::getResposta() const {
     return resposta;
 }
 
-
 inline void CasoDeTeste::setResultado(const Resultado &resultado) {
     this->resultado = resultado;
 }
-
 
 inline Resultado CasoDeTeste::getResultado() const {
     return resultado;
