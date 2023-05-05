@@ -12,12 +12,12 @@
  * 
  * Superclasse é uma classe que servirá de forma a servir de herança para os métodos e atributos das classes derivadas.
  *
- *As classes derivadas devem implementar o método de validação de acordo com suas respectivas regras de formato.
+ * As classes derivadas devem implementar o método de validação de acordo com suas respectivas regras de formato.
  *
  * As classes derivadas desta biblioteca herdarão no modo public, ou seja: 
- * -Os atributos e métodos públicos serão herdados normalmente pelas classes derivadas.
- * -Os atributos e métodos privados só serão herdados se declarados nas classes derivadas.
- * -Métodos ou atributos protected serão herdados no modo public permanecem protected.
+ * - Os atributos e métodos públicos serão herdados normalmente pelas classes derivadas.
+ * - Os atributos e métodos privados só serão herdados se declarados nas classes derivadas.
+ * - Métodos ou atributos protected serão herdados no modo public permanecem protected.
  * 
  * Os métodos das classes derivadas devem tratar do armazenamento e retorno de seus atributos.
  * 
@@ -61,9 +61,9 @@ inline Texto Entidade::getNome() const {
  * Herda métodos e atributos no modo public da classe Entidade.
  * 
  * Classe que representa um desenvolvedor, que possui como atributos:
- * -Uma matrícula.
- * -Uma senha.
- * -Um telefone.
+ * - Uma matrícula.
+ * - Uma senha.
+ * - Um telefone.
  * 
  * Tais atributos são objetos de classes definidas em domínios.
  * 
@@ -148,8 +148,8 @@ inline Telefone Desenvolvedor::getTelefone() const {
  * Herda métodos e atributos no modo public da classe Entidade.
  * 
  * Classe que representa um teste, que possui como atributos:
- * -Um codigo.
- * -Uma classe.
+ * - Um codigo.
+ * - Uma classe.
  * 
  * Tais atributos são objetos de classes definidas em domínios.
  * 
@@ -219,11 +219,11 @@ inline Classe Teste::getClasse() const {
  * Herda métodos e atributos no modo public da classe Entidade.
  * 
  * Classe que representa um caso de teste, que possui como atributos:
- * -Um código.
- * -Uma data.
- * -Uma ação.
- * -Uma resposta.
- * -Um resultado.
+ * - Um código.
+ * - Uma data.
+ * - Uma ação.
+ * - Uma resposta.
+ * - Um resultado.
  * 
  * Tais atributos são objetos de classes definidas em domínios.
  * 
