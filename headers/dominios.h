@@ -230,7 +230,7 @@ class Senha : public Dominios {
 // DOMINIO TELEFONE
 
 /**
- * @brief Padrão de representação da Classe Telefone.
+ * @brief Padrão de representação da classe Telefone.
  * 
  * Herda métodos e atributos no modo public da classe Dominios.
  * 
