@@ -16,12 +16,12 @@ using namespace std;
  * 
  * Superclasse é uma classe que servirá de forma a servir de herança para os métodos e atributos das classes derivadas.
  *
- *As classes derivadas devem implementar o método de validação de acordo com suas respectivas regras de formato.
+ * As classes derivadas devem implementar o método de validação de acordo com suas respectivas regras de formato.
  *
  * As classes derivadas desta biblioteca herdarão no modo public, ou seja: 
- * -Os atributos e métodos públicos serão herdados normalmente pelas classes derivadas.
- * -Os atributos e métodos privados só serão herdados se declarados nas classes derivadas.
- * -Métodos ou atributos protected serão herdados no modo public permanecem protected.
+ * - Os atributos e métodos públicos serão herdados normalmente pelas classes derivadas.
+ * - Os atributos e métodos privados só serão herdados se declarados nas classes derivadas.
+ * - Métodos ou atributos protected serão herdados no modo public permanecem protected.
  * 
  * Os métodos das classes derivadas devem tratar do armazenamento, retorno e validação de seus atributos.
  *  
@@ -76,7 +76,7 @@ inline string Dominios::getValor() const {
  * Classe que representa 6 palavras - strings - pré-definidas.
  *
  * Regras de formato:
- * -Strings com seis formatos possíveis.
+ * - Strings com seis formatos possíveis.
  * - 1ª opção: UNIDADE.
  * - 2ª opção: INTEGRACAO.
  * - 3ª opção: FUMACA.
@@ -171,9 +171,9 @@ class Matricula : public Dominios {
      * @brief Método que verifica se o parâmetro é válido para a classe ou não.
      *
      * Validações executadas:
-     * -Verificar se o parâmetro é uma string de 7 caracteres.
-     * -Verificar se todos os caracteres da string são números inteiros de 0 a 9.
-     * -Verificar se o último caractere da string é o dígito verificador correto.
+     * - Verificar se o parâmetro é uma string de 7 caracteres.
+     * - Verificar se todos os caracteres da string são números inteiros de 0 a 9.
+     * - Verificar se o último caractere da string é o dígito verificador correto.
      *
      * @param matricula.
      *
@@ -192,9 +192,9 @@ class Matricula : public Dominios {
  * Classe que representa um resultado "APROVADO" ou um resultado "REPROVADO".
  *
  * Regras de formato:
- * -String com dois formatos possíveis.
- * -1° opção: APROVADO.
- * -2° opção: REPROVADO.
+ * - String com dois formatos possíveis.
+ * - 1° opção: APROVADO.
+ * - 2° opção: REPROVADO.
  *
  * Implementado por 221006389.
  */
