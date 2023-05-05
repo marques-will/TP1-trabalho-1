@@ -101,7 +101,7 @@ class Classe : public Dominios {
  * 
  * Herda métodos e atributos no modo public da classe Dominios.
  * 
- * Classe que representa um codigo padronizado.
+ * É uma classe que representa um codigo padronizado.
  *
  * Regras de formato:
  * - Strings de 6 caracteres.
@@ -125,7 +125,7 @@ class Codigo : public Dominios {
  *
  * Herda métodos e atributos no modo public da classe Dominios.
  *  
- * Classe que representa uma data padronizada.
+ * É uma classe que representa uma data padronizada.
  * 
  * Regras de formato:
  * - Formato: DD/MMM/AAAA.
@@ -150,7 +150,7 @@ class Data : public Dominios {
  * 
  * Herda métodos e atributos no modo public da classe Dominios.
  * 
- * Classe que representa uma matricula seguindo uma série de regras.
+ * É uma classe que representa uma matricula seguindo uma série de regras.
  *
  * Regras de formato:
  * - Strings de 7 caracteres.
@@ -189,7 +189,7 @@ class Matricula : public Dominios {
  *
  * Herda métodos e atributos no modo public da classe Dominios.
  *  
- * Classe que representa um resultado "APROVADO" ou um resultado "REPROVADO".
+ * É uma classe que representa um resultado "APROVADO" ou um resultado "REPROVADO".
  *
  * Regras de formato:
  * - String com dois formatos possíveis.
@@ -212,7 +212,7 @@ class Resultado : public Dominios {
  *
  * Herda métodos e atributos no modo public da classe Dominios.
  * 
- * Classe usada para representar uma senha de formato válido.
+ * É uma classe usada para representar uma senha de formato válido.
  *
  * Regras de formato:
  * - Formato: XXXXX.
@@ -234,7 +234,7 @@ class Senha : public Dominios {
  * 
  * Herda métodos e atributos no modo public da classe Dominios.
  * 
- * Classe que representa um número de telefone.
+ * É uma classe que representa um número de telefone.
  *
  * Regras de formato:
  * - Valor do telefone deve possui de 8 a 16 caracteres;
@@ -260,7 +260,7 @@ class Telefone : public Dominios {
  * 
  * Herda métodos e atributos no modo public da classe Dominios.
  * 
- * Classe que representa um texto padronizado.
+ * É uma classe que representa um texto padronizado.
  *
  * Padrão de representação de um texto:
  * - Possuem de 10 a 20 caracteres;
