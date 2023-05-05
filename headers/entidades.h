@@ -60,7 +60,7 @@ inline Texto Entidade::getNome() const {
  * 
  * Herda métodos e atributos no modo public da classe Entidade.
  * 
- * Classe que representa um desenvolvedor, que possui como atributos:
+ * É uma classe que representa um desenvolvedor, que possui como atributos:
  * - Uma matrícula.
  * - Uma senha.
  * - Um telefone.
@@ -147,7 +147,7 @@ inline Telefone Desenvolvedor::getTelefone() const {
  * 
  * Herda métodos e atributos no modo public da classe Entidade.
  * 
- * Classe que representa um teste, que possui como atributos:
+ * É uma classe que representa um teste, que possui como atributos:
  * - Um codigo.
  * - Uma classe.
  * 
@@ -218,7 +218,7 @@ inline Classe Teste::getClasse() const {
  * 
  * Herda métodos e atributos no modo public da classe Entidade.
  * 
- * Classe que representa um caso de teste, que possui como atributos:
+ * É uma classe que representa um caso de teste, que possui como atributos:
  * - Um código.
  * - Uma data.
  * - Uma ação.
