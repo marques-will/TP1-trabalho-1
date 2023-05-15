@@ -329,6 +329,11 @@ class CasoDeTeste : public Entidade {
     Resultado getResultado() const;
 };
 
+class ResultadoAutenticacao: public Resultado, Desenvolvedor{
+    private:
+        Matricula matricula;
+        Senha senha;
+};
 inline void CasoDeTeste::setCodigo(const Codigo &codigo) {
     this->codigo = codigo;
 }
